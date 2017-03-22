@@ -64,7 +64,7 @@ I=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))
 
 
 
-\subsection{Coherence}
+\subsection{Coherence \label{Coherence section}}
 
 Coherence is an ideal property of light waves enabling the phenomenon of interference discussed in the previous section. It is in principle defined as the degree of correlation of physical quantities of a single wave or between multiple waves or even wave packets. This degree of correlation can vary between $0$ which is the case for complete incoherence and $1$ which describes waves perfectly coherent. In other words, coherence describes the ability to make predictions of the physical quantities of a wave at one point from knowing what it looks like at another point (see figure ). There are two types of coherence, namely temporal and spatial coherence which are further discussed below. Theoretically, plane waves as well as spherical waves should be perfectly coherent, however this is not the case in reality. Instead there is are physical quantities called the coherence length and time, describing over which spatial and temporal extension a given wave can be seen as coherent. Two sources are described as perfectly coherent if they have the same phase difference and the same wavelength. In principle this is the reason that interference can only be observed for coherent waves. For coherent waves the intensity in a point where two waves with intensities $I_1$ and $I_2$ and phase difference $\Delta \phi$ hit, is given by
 
@@ -281,7 +281,7 @@ We speak of an Area Hologram if the thickness of the plate is of the same order 
 There are two different types of diffraction gratings: Amplitude gratings and Phase gratings. Amplitude gratings have certain spots allowing light to pass through and others that block it off. As a consequence the amplitude, and thereby the intensity of the light wave, is reduced. Phase gratings on the other hand have different optical densities or different refractive indexes causing phase modulation little effecting the intensity.
 The same distinction is feasible for holograms by varying the development technique. In order to achieve an amplitude hologram the silver formed during the development is simply fixed. Bleaching the hologram will turn the silver into a transparent silver halogen effectively transforming the amplitude hologram to a phase hologram. 
 
-\subsubsection{Reflection- and Transmission Holograms}
+\subsubsection{Reflection- and Transmission Holograms \label{ReflTrans}}
 
 During the exposure of the photo plate it is possible to let the object and the reference beam incide from the same side, which we call a transmission hologram, as well as from opposite sides, which we call a reflection hologram. (see figure \ref{RTH1})The alignment of the beams chosen determines from which side one has to study the hologram later to observe the reconstructed image of the object.
 As the name suggests a transmission hologram needs to be studied with transmitting light (from the side opposite the inciding reference beam). Likewise a reflection hologram has to be studied in reflected light.
@@ -307,7 +307,7 @@ This method has the same underlying principle as real time holography with the d
 
 
 
-\subsection{Elastic Modulus of a Beam}
+\subsection{Elastic Modulus of a Beam \label{EMB}}
 
 A horizontal beam, that is clamped on one side can be considered as multiple layers on top of one another. When this beam deformed by a force acting on it,there will be a middle layer which length stays constant while all other layers will either be stretched or compressed (see figure \ref{beam}).
 
@@ -356,15 +356,61 @@ z=-\frac{12F}{Ebc^3}\left(\frac{ax^2}{2}-\frac{x^3}{6} \right)
 
 \subsection{Oscillations of an Aluminium Plate}
 
+Aluminum plate with a speaker behind it causing it to oscillate can be considered as driven harmonic oscillator. In the following we want to outline the calculation of the resonant frequencies, exact calculations are too complex to discuss here and can be found in \cite{staats}.
+The starting point to derive an equation describing its behavior is the following differential equation:
+
+\begin{align}
+\frac{\partial^2 u}{\partial t^2}+\frac{h^2E}{12\rho(1-\mu^2)}\Delta\Delta u=0
+\end{align}
+
+where $\Delta$ denotes the Laplace-Operator, $h$ denotes the thickness of the plate and $\rho$ its density respectively while $\mu$ is the poisson number of the plate and $E$ its elastic modulus.
+
+Solving this equation yields:
+
+\begin{align}
+f_{m\nu}=\frac{x_{m\nu}^2h}{2\pi R^2}\sqrt{\frac{E}{12\rho(1-\mu^2)}} \label{resfreq}
+\end{align}
+
+The $x_{m\nu}$ values are the numerical solution to the following equation:
+
+\begin{align}
+J_m(ix)\left[ J_{m-1}(x) - J_{m+1}(x)  \right]  - iJ_m(x)\left[ J_{m-1}(ix) - J_{m+1}(ix)  \right] = 0
+\end{align}
+
+with $J$ denoting the Bessel functions of the first kind. Solving these equation (which was done using Mathematica) for $x_{m\nu}$ and then subbing this in in \ref{resfreq} gives the following results:
+
+{\centering{}
+	\begin{tabular}{c|c|c}
+		Mode 		& $x_{m\nu}$ & Calculated Frequency [Hz] 	 \\ \hline\hline
+		$m=0,\nu=0$	&$3.19622$   &$5082$						\\ \hline
+		$m=1,\nu=0$	& $4.61090$  & $10577$					\\ \hline
+		$m=0,\nu=1$	& $6.30644$  & $19787$					\\ \hline
+		$m=2,\nu=0$	& $5.90568$  & $17352$					\\ \hline
+		$m=2,\nu=1$	& $9.19688$  & $42081$					\\ \hline
+		$m=1,\nu=1$	& $7.79927$  & $30263$				     \\ \hline
+		$m=3,\nu=0$	& $7.14353$  & $25388$                \\ \hline
+     	$m=3,\nu=1$	& $10.53670$ & $55235$
+	\end{tabular} }\vskip 0.2cm
+
+where we used the following values in \ref{resfreq}:
+
+\begin{itemize}
+	\item $ R = (5.0\pm0.5)\,\mathrm{cm}$
+	\item $h=5\,\mathrm{mm}$
+	\item $E=70\,\mathrm{GPa}$
+	\item $\rho = 2700\,\frac{\mathrm{kg}}{\mathrm{m^3}}$
+	\item $\mu = 0.34$ 
+\end{itemize}
+
 
 
 \subsection{Working principles of the Experimentel apparatus}
 
-\subsubsection{Helium-Neon-Laser}
+\subsubsection{Helium-Neon-Laser \label{HeNe1}}
 
 A cavity with partially transparent mirrors is filled with helium and neon gas with a ratio about 10:1. Applying high voltages can achieve ``pumping'' of Helium atoms (pumping medium) to higher energy levels which can than transfer their energy to Neon Atoms (laser medium) by colliding with them. They get than excited to a higher energy level that has a relatively long life time due to forbidden dipole transitions causing population inversion.
 The Helium atoms return to the ground state emitting two photons by stimulated emission. Spontaneous emission is suppressed due to the long life time of the excited state. It is important to generate the first stimulated emissions when turning on the laser though.
-The energy level system of a Helium-Neon laser is displayed in figure \ref{HeNe}.
+The energy level system of a Helium-Neon laser is displayed in figure \ref{HeNe}. A helium-Neon laser typically has a wavelength of $632.8\,\mathrm{nm}$
 
 \graX[0.5]{HeNe}{Energy level system Helium Neon Laser}{Functioning principle of the Helium Neon laser: Energy level system and population inversion for pumping and lasing medium \label{HeNe} \footnotemark}\footnotetext{https://lp.uni-goettingen.de/get/text/1804}
 
@@ -379,11 +425,9 @@ Spatial Filters are used to filter laser light. Undesired noise and interference
 
 \subsubsection{Pockels Cell}
 
+Pockel cells are voltage-controlled wave plates. Their operational principle is the Pockels effect as the name suggests. The Pockels effect describes the change of the refracting properties of an opitical medium induced by an electric field, namely altering or causing birefringence which is the property of a medium to have a refractive index depending on the polarization of light and/or the propagation direction of light. It is often quantified by the maximum difference of refractive indexes inherit to a material. The applications of a Pockels cell are numerous. For example it can create a fast shutter, able to alternate between ``open'' and ``close'' in nanoseconds, by varying the optical rotation between $0\degree$ and $90\degree$. Furthermore it can also be used to pulse a laser by preventing the optical feedback with a polarizing prism preventing optical amplification by directing light of a specific polarization out of the resonator. This results in the gain medium to being pumped in a highly excited state. When it saturates in energy the Pockels cell is switched reinstating optical feedback leading to all energy built up being very quickly released in form of a light pulse of very high intensity. This is known as active Q-switching.
+The Pockels cell is crucial for the observation of the resonant frequencies of the aluminium plate in the third part of the experiment where the laser needs to be pulsed with a similar pulse seperation as the time period of the oscillations.
 
-%Hinter dem Laser befindet sich ein elektrooptischer Modulator. Das polarisierte Licht wird in diesem
-%spannungsabhängig gedreht und tritt anschließend durch einen Polarisationsfilter wieder aus. So kann
-%die Intensität des Strahls beeinflusst werden, indem die Spannung z.B. so eingestellt wird, dass das
-%Licht im Modulator gerade in die gleiche Richtung gedreht wird, wie der Polarisator steht. Dann kann
-%das gesamte Laserlicht den Polarisator passieren. Dreht der Modulator das Licht im 90-Winkel zum
-%Polarisator, kommt kein Licht hindurch.
+
+
 

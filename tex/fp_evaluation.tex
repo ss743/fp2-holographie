@@ -1,1 +1,66 @@
 \section{Evaluation}
+
+\subsection{Michelson Interferometer}
+
+In order to observe interference, the beam had to be expanded a fair bit, so that we observed the pattern on the wall as it was not visible with the eye on a screen on the table. The interference pattern observed can be seen in figure \ref{MichelsonInterference}.
+
+\graX[0.7]{michelson1}{Interference pattern - Michelson Interferometer}{Observed interference pattern with the Michelson interferometer (recorded at a path difference of $36\,\mathrm{cm}$) \label{MichelsonInterference}}
+
+Varying the path difference between $0$ and $36\,\mathrm{cm}$ did not have a noticeable impact on the interference pattern leading to the conclusion of a Coherence Length $C_L \geq 36\,\mathrm{cm}$ which is sufficient for the successive parts of the experiment and was considered in future set-ups. Minor Disturbances like talking or walking shook the interference pattern while it completely disappeared when jumping. This was also kept in mind in the next three parts of the hologram meaning movement, noise and other disturbances were kept to an absolute minimum during the exposure while also proceeding extremely carefully in general. 
+
+\subsection{Determination of the Elastic Modulus of different Materials}
+
+Photographs of the hologram were taken with a digital camera as described in \ref{ReflTrans}. In order to determine the position of the interference maxima and minima a ruler was positioned next to each of the beams for scaling paying attention to taking those photos from the same perspective as the photograph of the hologram itself (see \ref{Scaling} ).
+
+\graXThree[0.5]{staebe1}{staebe2}{staebe3}{Scaling of the interference pattern on the Beams}{Scaling of the interference pattern on the Beams using a ruler \label{Scaling}}
+
+
+Figure \ref{ELastic} shows the Interference Pattern we were able to observe resulting from the Double Exposure. We used the program Gwyddion (a multiplatform modular free software for visualization and analysis of data) to analyze the interference pattern.  
+
+\graX[0.7]{staebe4}{Interference Pattern on the Beams}{Interference Pattern on the Beams left: Steel middle: Brass three: Aluminium \label{ELastic}}
+
+In a first step we used the photos in \ref{Scaling} to calculate the correct conversion between pixels and millimeters. We then used Gwiddyion to extrapolate the intensity profile along a beam as it can be seen in figure REF where we folded with a 5 px Gaussian to reduce noise and make the profile smoother as this makes it a lot easier to determine the local minimas. We then export the data and plot them with R determining the local minima of the smooth profile with a simple for loop (see REF).  Here and in the following we will do the evaluation for steel. The evaluation for brass and aluminum is enitrely analogous and can be found in the appendix (see REF). Note that the Intensity given by Gwiddyon does not have a unit, as this is irrelevant for the determination of the elastic modulus this will however not be further conisdered.
+
+\graXTwoB{0.5}{0.9}{Stab2gwid}{Stab2R1}{Intensity profile of the Interference pattern}{Intensity profile of the Interference pattern. Top: Adaptation of the Photos in Gwiddyon; bottom: Extrapoloated profile plotted in R (local minima marked in red)}
+
+The minima in the interference pattern appear at a phase difference of
+
+\begin{align*}
+\Delta \varphi=\frac{\pi}{2}(2n+1)\hspace{0.5cm}\mbox{with }n=0,1,2,...,
+\end{align*}
+
+as the intensity of interference pattern is proportional to $\cos^2(\Delta\varphi)$. As a conclusion this means that the beam's position due to the deformation $y$ resulting from the weights at the minimum of order $n$ is given by:
+
+\begin{align*}
+y=\frac{\lambda}{4}(2n+1)\hspace{0.5cm}\mbox{with }n=0,1,2,... .
+\end{align*}
+
+In a next step we plot the deformation $y$ in dependency of $x$. The wavelength of the Helium-Neon Laser is given in \ref{HeNe1}. From \ref{EMB} we know that the correct function to fit is:
+
+\begin{align*}
+y(x)=A\cdot\left(5x^2-\frac{1}{6}x^3\right)+Bx+C .
+\end{align*}  
+
+The plot and fit we obtain for brass is given in figure \ref{Fit}.
+
+\graX[]{Stab2R2}{Fit for the Elastic Modulus of the Steel Beam}{Fit for the Elastic Modulus of the Brass Beam with the parameters: $A=0.02399\pm0.00016$ $B= 0.210\pm 0.006$ and $C= 0.241 \pm 0.011$ \label{Fit}}
+
+With the width  $b=(1.00\pm0.01)\mathrm{cm}$ and the depth  $c=(0.50\pm0.01)\mathrm{cm}$ of the beam as well as the gravitational accelaration $g=9.81\frac{\mathrm{m}}{\mathrm{s}^2}$ and the mass of the weigths the Elastic Modulus is calculated by: 
+
+\begin{align}
+E=\frac{12mg}{Abc^3}
+\end{align}
+
+The mass of the weight for the steel beam was chosen higher as suggested in the Staatsexamensarbeit \cite{staat} ($m=50\mathrm{g}$ instead of $m=20\mathrm{g}$) as we expect a higher Elastic Modulus and hence less deformation for this material  which might result in less visible interference minima and less data points for the fit.
+The error for the Elastic Modulus $E$ was caluclated with Gaussian error propagation.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c}
+		Material							& Steel (left)	& Brass (middle)	& Aluminum (right)\\ \hline\hline
+		meassured $E$ [GPa]			& $196\pm5$	& $68.5\pm1.6$			& $104\pm3$			\\ \hline
+		rel. Fehler $s_E/E$				& $6$\%			& $6$\%				& $6$\%				\\ \hline
+	literature value \cite{staat} $E_{lit}$ [GPa]	& 195			& 100				& 72
+	\end{tabular}
+	\caption{Results for the Elastic Modulus}
+\end{table}
