@@ -1,18 +1,24 @@
 \section{Theoretical Background}
 
+In the following section the theoretical knowledge necessary to understand and perform the experiment will be discussed.
+
 \subsection{Maxwell Equations}
 
 Light is described by electromagnetic waves with a wavelength in a range of $400-800\,\mathrm{nm}$. The behavior and propagation of electromagnetic waves is governed by Maxwell equations which in its source-free form are given as follows:
 
 \begin{align}
-\Delta \vec{E} + \frac{1}{c^2} \ddot{\vec{E}}= 0
+	\nab \vec{E}&=0\\
+	\nab \vec{B}&=0\\
+	\nab\times\vec{E}&=-\del[\vec B]{t}\\
+	\nab\times\vec{B}&=\frac1{c^2}\del[\vec B]{t}\text{ ,}
 \end{align}
-
+from which we obtain the electromagnetic wave equations:
 \begin{align}
-\Delta \vec{B} + \frac{1}{c^2} \ddot{\vec{B}}= 0
+	\Delta \vec{E} + \frac{1}{c^2} \ddot{\vec{E}}&= 0\\
+	\Delta \vec{B} + \frac{1}{c^2} \ddot{\vec{B}}&= 0\text{ ,}
 \end{align}
 
-where the electric field is denoted by E and the magnetic field by B respectively. It can easily be shown that the solution of these differential equations are given by waves which is why this form of Maxwell equations is also commonly referred to as wave equations.\cite{demtroeder2} In the following we will only consider the electric field when talking about waves for simplicity. Two particular solutions, plane and spherical waves, will be discusses in more detail in the following paragraphs.
+where the electric field is denoted by E and the magnetic field by B respectively. It can easily be shown that the solutions of these differential equations are given by waves which gives the equations their name.\cite{demtroeder2} In the following we will only consider the electric field when talking about waves for simplicity. Two particular solutions, plane and spherical waves, will be discussed in more detail in the following paragraphs.
 \paragraph{Plane Waves}
 
 This solution of Maxwell equations describes a monochromatic, homogeneous plane wave. The amplitude of such a wave will be given by a sinusoidal function of the position r and time t. Practically ideal plane waves aren't possible as they would have to fill all space and be of infinite extent in order to propagate as plane waves. However, plane waves often yield a good approximation locally. Plane waves are described as follows:
@@ -27,7 +33,7 @@ where k denotes the wave vector and $\omega$ the angular frequency with the disp
 The equation governing monochromatic spherical waves in three dimensions is
 
 \begin{align}
-E(r, t) = \frac{E_0}{r}e^{i(kr-\omega t+\phi)}
+E(r, t) = \frac{E_0}{r}e^{i(kr-\omega t+\phi)}\text{ .}
 \end{align}
 
 The equiphase surface for spherical waves is a sphere giving them their name.
