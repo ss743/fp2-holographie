@@ -360,13 +360,13 @@ z=-\frac{12F}{Ebc^3}\left(\frac{ax^2}{2}-\frac{x^3}{6} \right)
 
 \graX[0.7]{balken_biegen}{Elastic Modulus of a Beam}{Deformation of a Beam \cite{staats} \label{beam}}
 
-\subsection{Oscillations of an Aluminium Plate}
+\subsection{Oscillations of an Aluminium Plate \label{Oscillations}}
 
 Aluminum plate with a speaker behind it causing it to oscillate can be considered as driven harmonic oscillator. In the following we want to outline the calculation of the resonant frequencies, exact calculations are too complex to discuss here and can be found in \cite{staats}.
 The starting point to derive an equation describing its behavior is the following differential equation:
 
 \begin{align}
-\frac{\partial^2 u}{\partial t^2}+\frac{h^2E}{12\rho(1-\mu^2)}\Delta\Delta u=0
+\frac{\partial^2 u}{\partial t^2}+\frac{h^2E}{12\rho(1-\mu^2)}\nabla u=0
 \end{align}
 
 where $\Delta$ denotes the Laplace-Operator, $h$ denotes the thickness of the plate and $\rho$ its density respectively while $\mu$ is the poisson number of the plate and $E$ its elastic modulus.
