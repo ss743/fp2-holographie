@@ -19,7 +19,7 @@ Figure \ref{ELastic} shows the Interference Pattern we were able to observe resu
 
 \graX[0.7]{staebe4}{Interference Pattern on the Beams}{Interference Pattern on the Beams left: Steel middle: Brass three: Aluminium \label{ELastic}}
 
-In a first step we used the photos in figure \ref{Scaling} to calculate the correct conversion between pixels and millimeters. We then used Gwyddion to extrapolate the intensity profile along a beam as it can be seen in figure \ref{stab2gwid} where we folded with a 5 px Gaussian to reduce noise and make the profile smoother as this makes it a lot easier to determine the local minimas. We then export the data and plot them with R determining the local minima of the smooth profile with a simple for loop (see section \ref{code}).  Here and in the following we will do the evaluation for brass. The evaluation for steel and aluminum is entirely analogous and can be found in the appendix (see section \ref{gwyddion}). Note that the Intensity given by Gwyddion does not have a unit, as this is irrelevant for the determination of the elastic modulus this will however not be further considered.\\
+In a first step we used the photos in figure \ref{Scaling} to calculate the correct conversion between pixels and millimeters. We then used Gwyddion to extrapolate the intensity profile along a beam as it can be seen in figure \ref{stab2gwid} where we folded with a 5 px Gaussian to reduce noise and make the profile smoother as this makes it a lot easier to determine the local minimas. We then export the data and plot them with R determining the local minima of the smooth profile with a simple for loop (see section \ref{code}).  Here and in the following we will do the evaluation for steel. The evaluation for brass and aluminum is entirely analogous and can be found in the appendix (see section \ref{gwyddion}). Note that the Intensity given by Gwyddion does not have a unit, as this is irrelevant for the determination of the elastic modulus this will however not be further considered.\\
 
 The minima in the interference pattern appear at a phase difference of
 
@@ -39,11 +39,11 @@ In a next step we plot the deformation $y$ in dependency of $x$. The wavelength 
 y(x)=A\cdot\left(5x^2-\frac{1}{6}x^3\right)+Bx+C .
 \end{align*}  
 
-The plot and fit we obtain for brass is given in figure \ref{Fit}.
+The plot and fit we obtain for steel is given in figure \ref{Fit}.
 
 \graXTwoB{0.45}{0.75}{Stab2gwid}{Stab2R1}{Intensity profile of the Interference pattern}{Intensity profile of the Interference pattern. Top: Adaptation of the Photos in Gwyddion; bottom: Extrapolated profile plotted in R (local minima marked in red)\label{stab2gwid}}
 
-\graX[0.7]{Stab2R2}{Fit for the Elastic Modulus of the Steel Beam}{Fit for the Elastic Modulus of the Brass Beam with the parameters: $A=0.02399\pm0.00016$ $B= 0.210\pm 0.006$ and $C= 0.241 \pm 0.011$ \label{Fit}}
+\graX[0.7]{Stab2R2}{Fit for the Elastic Modulus of the Steel Beam}{Fit for the Elastic Modulus of the Steel Beam with the parameters: $A=0.02399\pm0.00016$ $B= 0.210\pm 0.006$ and $C= 0.241 \pm 0.011$ \label{Fit}}
 
 With the width  $b=(1.00\pm0.01)\mathrm{cm}$ and the depth  $c=(0.50\pm0.01)\mathrm{cm}$ of the beam as well as the gravitational accelaration $g=9.81\frac{\mathrm{m}}{\mathrm{s}^2}$ and the mass of the weigths the Elastic Modulus is calculated by: 
 
@@ -135,4 +135,4 @@ The pictures in figure \ref{correlation} were recorded representing the cross-co
 
 Once can clearly tell that the process of recording the hologram was successful and auto-correlation for $0\degree$ as well as cross-correlation for the other angles can be observed. The angles represent a rough estimation and are given without an error as this is a qualitative measurement. The expected images are presented in figure \ref{FourierFaltungSimulation}. There is a consensus between the experimental images and the simulated ones as far as we can tell with the poor resolution given.
  
-\graX[0.55]{FourierFaltung}{Simulations of the Cross-Correlation and COnvolution of a Single Slit}{Simulations of the Cross-Correlation and Convolution of a Single Slit \cite{anleitung} \label{FourierFaltungSimulation}}
+\graX[0.55]{FourierFaltung}{Simulations of the Cross-Correlation and Convolution of a Single Slit}{Simulations of the Cross-Correlation and Convolution of a Single Slit \cite{anleitung} \label{FourierFaltungSimulation}}
