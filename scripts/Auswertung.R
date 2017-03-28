@@ -34,7 +34,7 @@ arrayI1=10^6*arrayI1
     
 draw(x1, y1,xlab="Position of Minima/cm", ylab="Intensity")
 draw(arrayx1, arrayy1, add=TRUE, col="red")
-drawCIxx(arrayx1, arrayI1, sx=10^-2*(arrayx1/arrayx1), xlab="Position of Minima/cm", ylab="displacement/µm")
+drawCIxx(arrayx1, arrayI1, sx=10^-2*(arrayx1/arrayx1), xlab="Position of Minima/cm", ylab="displacement/mu m")
 
 fit1=crazyfit(data.frame(x=arrayx1, y=arrayI1))
 plotcrazy(fit1)
@@ -69,7 +69,7 @@ for(i in 1:27){
 arrayI2=10^6*arrayI2
 draw(x2, y2, xlab="Position of Minima/cm", ylab="Intensity")
 draw(arrayx2, arrayy2, add=TRUE, col="red")
-drawCIxx(arrayx2, arrayI2, sx=10^-2*(arrayx2/arrayx2), xlab="Position of Minima/cm", ylab="displacement/µm")
+drawCIxx(arrayx2, arrayI2, sx=10^-2*(arrayx2/arrayx2), xlab="Position of Minima/cm", ylab="displacement/mu m")
 
 fit2=crazyfit(data.frame(x=arrayx2, y=arrayI2))
 plotcrazy(fit2)
@@ -104,7 +104,7 @@ for(i in 1:19){
 arrayI3=10^6*arrayI3
 draw(x3, y3, xlab="Position of Minima/cm", ylab="Intensity")
 draw(arrayx3, arrayy3, add=TRUE, col="red")
-drawCIxx(arrayx3, arrayI3, sx=10^-2*(arrayx3/arrayx3), xlab="Position of Minima/cm", ylab="displacement/µm")
+drawCIxx(arrayx3, arrayI3, sx=10^-2*(arrayx3/arrayx3), xlab="Position of Minima/cm", ylab="displacement/mu m")
 
 fit3=crazyfit(data.frame(x=arrayx3, y=arrayI3))
 plotcrazy(fit3)
