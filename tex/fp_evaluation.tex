@@ -10,7 +10,7 @@ Varying the path difference between $0$ and $36\,\mathrm{cm}$ did not have a not
 
 \subsection{Determination of the Elastic Modulus of different Materials}
 
-Photographs of the hologram were taken with a digital camera as described in \ref{ReflTrans}. In order to determine the position of the interference maxima and minima a ruler was positioned next to each of the beams for scaling paying attention to taking those photos from the same perspective as the photograph of the hologram itself (see \ref{Scaling} ).
+Photographs of the hologram were taken with a digital camera as described in \ref{ReflTrans}. In order to determine the position of the interference maxima and minima a ruler was positioned next to each of the beams for scaling paying attention to taking those photos from the same perspective as the photograph of the hologram itself (see figure \ref{Scaling}).
 
 \graXThree[0.5]{staebe1}{staebe2}{staebe3}{Scaling of the interference pattern on the Beams}{Scaling of the interference pattern on the Beams using a ruler \label{Scaling}}
 
@@ -19,9 +19,7 @@ Figure \ref{ELastic} shows the Interference Pattern we were able to observe resu
 
 \graX[0.7]{staebe4}{Interference Pattern on the Beams}{Interference Pattern on the Beams left: Steel middle: Brass three: Aluminium \label{ELastic}}
 
-In a first step we used the photos in \ref{Scaling} to calculate the correct conversion between pixels and millimeters. We then used Gwiddyion to extrapolate the intensity profile along a beam as it can be seen in figure REF where we folded with a 5 px Gaussian to reduce noise and make the profile smoother as this makes it a lot easier to determine the local minimas. We then export the data and plot them with R determining the local minima of the smooth profile with a simple for loop (see REF).  Here and in the following we will do the evaluation for steel. The evaluation for brass and aluminum is enitrely analogous and can be found in the appendix (see REF). Note that the Intensity given by Gwiddyon does not have a unit, as this is irrelevant for the determination of the elastic modulus this will however not be further conisdered.
-
-\graXTwoB{0.5}{0.9}{Stab2gwid}{Stab2R1}{Intensity profile of the Interference pattern}{Intensity profile of the Interference pattern. Top: Adaptation of the Photos in Gwiddyon; bottom: Extrapoloated profile plotted in R (local minima marked in red)}
+In a first step we used the photos in figure \ref{Scaling} to calculate the correct conversion between pixels and millimeters. We then used Gwyddion to extrapolate the intensity profile along a beam as it can be seen in figure \ref{stab2gwid} where we folded with a 5 px Gaussian to reduce noise and make the profile smoother as this makes it a lot easier to determine the local minimas. We then export the data and plot them with R determining the local minima of the smooth profile with a simple for loop (see section \ref{code}).  Here and in the following we will do the evaluation for brass. The evaluation for steel and aluminum is entirely analogous and can be found in the appendix (see section \ref{gwyddion}). Note that the Intensity given by Gwyddion does not have a unit, as this is irrelevant for the determination of the elastic modulus this will however not be further considered.\\
 
 The minima in the interference pattern appear at a phase difference of
 
@@ -43,7 +41,9 @@ y(x)=A\cdot\left(5x^2-\frac{1}{6}x^3\right)+Bx+C .
 
 The plot and fit we obtain for brass is given in figure \ref{Fit}.
 
-\graX[]{Stab2R2}{Fit for the Elastic Modulus of the Steel Beam}{Fit for the Elastic Modulus of the Brass Beam with the parameters: $A=0.02399\pm0.00016$ $B= 0.210\pm 0.006$ and $C= 0.241 \pm 0.011$ \label{Fit}}
+\graXTwoB{0.45}{0.75}{Stab2gwid}{Stab2R1}{Intensity profile of the Interference pattern}{Intensity profile of the Interference pattern. Top: Adaptation of the Photos in Gwyddion; bottom: Extrapolated profile plotted in R (local minima marked in red)\label{stab2gwid}}
+
+\graX[0.7]{Stab2R2}{Fit for the Elastic Modulus of the Steel Beam}{Fit for the Elastic Modulus of the Brass Beam with the parameters: $A=0.02399\pm0.00016$ $B= 0.210\pm 0.006$ and $C= 0.241 \pm 0.011$ \label{Fit}}
 
 With the width  $b=(1.00\pm0.01)\mathrm{cm}$ and the depth  $c=(0.50\pm0.01)\mathrm{cm}$ of the beam as well as the gravitational accelaration $g=9.81\frac{\mathrm{m}}{\mathrm{s}^2}$ and the mass of the weigths the Elastic Modulus is calculated by: 
 
@@ -51,7 +51,7 @@ With the width  $b=(1.00\pm0.01)\mathrm{cm}$ and the depth  $c=(0.50\pm0.01)\mat
 E=\frac{12mg}{Abc^3}
 \end{align}
 
-The mass of the weight for the steel beam was chosen higher as suggested in the Staatsexamensarbeit \cite{staat} ($m=50\mathrm{g}$ instead of $m=20\mathrm{g}$) as we expect a higher Elastic Modulus and hence less deformation for this material  which might result in less visible interference minima and less data points for the fit.
+The mass of the weight for the steel beam was chosen higher as suggested in the Staatsexamensarbeit \cite{staats} ($m=50\mathrm{g}$ instead of $m=20\mathrm{g}$) as we expect a higher Elastic Modulus and hence less deformation for this material  which might result in less visible interference minima and less data points for the fit.
 The error for the Elastic Modulus $E$ was caluclated with Gaussian error propagation.
 
 \begin{table}[h!]
@@ -67,7 +67,7 @@ The error for the Elastic Modulus $E$ was caluclated with Gaussian error propaga
 
 \subsection{Eigenoscillation of the aluminium plate}
 
-Unfortunately there were various problems with the set-up in this part expecially regarding the bleaching, so that the resonant frequency patterns can not be seen as neatly as expected. However, a hologram was obtained good enough to determine the first six resonant frequencies. The photographs taken with a digital camera as well as the reference pictures are presented in figures \ref{ResFreq1}-\ref{ResFreq6}.
+Unfortunately there were various problems with the set-up in this part especially regarding the bleaching, so that the resonant frequency patterns can not be seen as neatly as expected. However, a hologram was obtained good enough to determine the first six resonant frequencies. The photographs taken with a digital camera as well as the reference pictures are presented in figures \ref{ResFreq1}-\ref{ResFreq6}.
 
 \graXTwoB{0.65}{0.34}{aluminium2_edit}{aluminium2_lit}{Oscillation of the aluminium plate at $(441.5\pm0.5)\,\si{Hz}$}{Oscillation of the aluminium plate at $f_{00,exp}=(441.5\pm0.5)\,\si{Hz}$ (left: edited image; right: theoretical image \label{ResFreq1} ( $f_{00,lit}=448\mathrm{Hz}$) \cite{staats})}
 \graXTwoB{0.65}{0.34}{aluminium3_edit}{aluminium3_lit}{Oscillation of the aluminium plate at $(1059.0\pm1.0)\,\si{Hz}$}{Oscillation of the aluminium plate at $f_{10,exp}=(1059.0\pm1.0)\,\si{Hz}$ (left: edited image; right: theoretical image ($f_{10,lit}=983\mathrm{Hz}$) \cite{staats})}
@@ -79,14 +79,14 @@ Unfortunately there were various problems with the set-up in this part expeciall
 The frequencies were associated with the modes by comparing with the images given in the Staatsexamensarbeit which conveyed the impression to be conclusive most of the time.
 
 As the lower frequencies seemed to be a lot more sensitive and more fine tuning was necessary, we estimated these errors to be relatively low. For the higher frequencies it got increasingly more difficult to adjust the frequency. Additionally, the resonance pattern seemingly became less sensitive which resulted in higher estimated errors. 
-As the resonant frequencies calculated in \ref{Oscillations} are in a different order of magnitude as the once we meassured a comparison between these two was assessed to not be meaningful. Instead, we compare the measured frequencies with the values given in the Staatsexamensarbeit that are listed as literature values in the captions of figures \ref{ResFreq1}-\ref{ResFreq6} and in the following will be referred to as theoretical values.
+As the resonant frequencies calculated in \ref{Oscillations} are in a different order of magnitude as the ones we measured a comparison between these two was assessed to not be meaningful. Instead, we compare the measured frequencies with the values given in the Staatsexamensarbeit that are listed as literature values in the captions of figures \ref{ResFreq1}-\ref{ResFreq6} and in the following will be referred to as theoretical values.
 
 We observe that the measured frequencies and the theoretical frequencies are not compatible within three standard deviations. However, this does not imply that we need to dismiss our measurements right away. In order to check for possible systematical errors we plot the measured frequencies against the theoretical frequencies. Furthermore we will also plot the measured values in dependance of the $x_{m\nu}^2$ values calculated in \ref{Oscillations} as the expected relation is known to be linear (see \ref{Oscillations}). Those two plots are presented in figure \ref{LinFitResFreq}.
 
 \graXTwo[]{LinFitResFreq}{LinFitResFreq1}{Linear Fit to check Systematical Errors}{Left: Linear Fit of the relation of measured and theoretical frequencies to check for Systematical Errors Right: Linear Fit of the measured frequencies and $x_{m\nu}$ values to validate the measurements adjusted R-square-value: $ 0.9977 $ \label{LinFitResFreq}}
 
 First of all we notice that one of the points makes the impression to be a clear outlier. As it was hard to attribute the observed interference patterns with the right modes due to the problems described earlier when performing the experiment (i.e. poor bleaching) and a resulting poor quality of the hologram, we might not have matched this frequency with the correct mode and therefore neglect it for the Linear Fits and further discussions.
-As we can see the slope of the line is equal to one within two standard deviations while the offset is equal to zero within one standard deviation, so there do not seem to be any significant systematical errors. This also speaks in favour of our measurement as this result makes both values seem a lot more compatible and suggests underestimated statistical errors. Simultaneously we also observe that the Linear dependancy of the $x_{m\nu}$ values holds up. 
+As we can see the slope of the line is equal to one within two standard deviations while the offset is equal to zero within one standard deviation, so there do not seem to be any significant systematical errors. This also speaks in favour of our measurement as this result makes both values seem a lot more compatible and suggests underestimated statistical errors. Simultaneously we also observe that the Linear dependency of the $x_{m\nu}$ values holds up. 
 
 
 \subsection{Fourier Spectroscopy}
@@ -94,7 +94,7 @@ As we can see the slope of the line is equal to one within two standard deviatio
 The following pictures were recorded representing the cross-correlation of two slits. Note that a setting of $0\degree$ here was chosen to be vertical. As the observed pattern was rather small, it was difficult to take pictures with the digital camera and the observed hologram couldn't be resolved as nicely as it was observed with the eye.
 
 
-\begin{figure}[h!]
+\begin{figure}
 	\centering
 	\begin{overpic}[width=0.3\textwidth,tics=10]
 		{../figures/fourier-0-2-edit.png}
@@ -135,4 +135,4 @@ The following pictures were recorded representing the cross-correlation of two s
 
 Once can clearly tell that the process of recording the hologram was successful and auto-correlation for $0\degree$ as well as cross-correlation for the other angles can be observed. The angles represent a rough estimation and are given without an error as this is a qualitative measurement. The expected images are presented in \ref{FourierFaltungSimulation}. There is a consensus between the experimental images and the simulated ones as far as we can tell with the poor resolution given.
  
-\graX[]{FourierFaltung}{Simulations of the Cross-Correlation and COnvolution of a Single Slit}{Simulations of the Cross-Correlation and COnvolution of a Single Slit \cite{anleitung} \label{FourierFaltungSimulation}}
+\graX[0.55]{FourierFaltung}{Simulations of the Cross-Correlation and COnvolution of a Single Slit}{Simulations of the Cross-Correlation and COnvolution of a Single Slit \cite{anleitung} \label{FourierFaltungSimulation}}

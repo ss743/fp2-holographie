@@ -4,7 +4,7 @@ In the following section the theoretical knowledge necessary to understand and p
 
 \subsection{Maxwell Equations}
 
-Light is described by electromagnetic waves with a wavelength in a range of $400-800\,\mathrm{nm}$. The behavior and propagation of electromagnetic waves is governed by Maxwell equations which in its source-free form are given as follows:
+Light is described by electromagnetic waves with a wavelength in a range of $400-800\,\mathrm{nm}$. The behavior and propagation of electromagnetic waves is governed by Maxwell equations which in its source-free form are given as follows \cite{demtroeder2}:
 
 \begin{align}
 	\nab \vec{E}&=0\\
@@ -18,7 +18,7 @@ from which we obtain the electromagnetic wave equations:
 	\Delta \vec{B} + \frac{1}{c^2} \ddot{\vec{B}}&= 0\text{ ,}
 \end{align}
 
-where the electric field is denoted by E and the magnetic field by B respectively. It can easily be shown that the solutions of these differential equations are given by waves which gives the equations their name.\cite{demtroeder2} In the following we will only consider the electric field when talking about waves for simplicity. Two particular solutions, plane and spherical waves, will be discussed in more detail in the following paragraphs.
+where the electric field is denoted by E and the magnetic field by B respectively. It can easily be shown that the solutions of these differential equations are given by waves which gives the equations their name. In the following we will only consider the electric field when talking about waves for simplicity. Two particular solutions, plane and spherical waves, will be discussed in more detail in the following paragraphs.
 \paragraph{Plane Waves}
 
 This solution of Maxwell equations describes a monochromatic, homogeneous plane wave. The amplitude of such a wave will be given by a sinusoidal function of the position r and time t. Practically ideal plane waves aren't possible as they would have to fill all space and be of infinite extent in order to propagate as plane waves. However, plane waves often yield a good approximation locally. Plane waves are described as follows:
@@ -57,7 +57,7 @@ Using the relations $2\cos(x) = e^{ix} + e^{-ix}$, $I_i=E_i^2$ as well as $\Delt
 I=I_1+I_2 +2 \sqrt{I_1I_2}\cos(\Delta \delta) \label{Intensity}
 \end{align}
 
-So the interference pattern of two plane waves will be stripes on a screen as it can be seen in figure \ref{stripies} . \cite{staats}
+So the interference pattern of two plane waves will be stripes on a screen as it can be seen in figure \ref{stripies}. \cite{staats}
 
 \graX{stripes}{Interference of two plane waves}{Interference of two plane waves \label{stripies} \footnotemark}
 \footnotetext{http://www.mdpi.com/2072-666X/2/2/221/htm}
@@ -99,15 +99,15 @@ We speak of a wave packet being temporal coherent, if two measurements of a fiel
 \Delta \phi \left( t \right) - \phi\left( t + \tau\right)  = \text{const.}
 \end{align}
 
-As this is equivalent to two measurements in longitudinal direction, temporal coherence is also referred to as longitudinal coherence. The maximum temporal separation $tau_c$ which still fulfills the previously mentioned condition for a given wave package is defined as the coherence time and is given by:
+As this is equivalent to two measurements in longitudinal direction, temporal coherence is also referred to as longitudinal coherence. The maximum temporal separation $\tau_c$ which still fulfills the previously mentioned condition for a given wave package is defined as the coherence time and is given by:
 
 \begin{align}
 \tau_c = \frac{1}{\Delta \nu} \approx\approx \frac{\lambda^2}{c\Delta \lambda}
 \end{align}
 
-A straight forward way to measure the coherence time and the longitudinal coherence respectively is the Michelson interferometer which is also used in this experiment and described in section REF.
+A straight forward way to measure the coherence time and the longitudinal coherence respectively is the Michelson interferometer which is also used in this experiment and described in section \ref{sec:michelson}.
 \subsubsection{Spatial Coherence}
-Spatial Coherence, also referred to as Transverse Coherence and is defined as constant phase relation between two points that are shifted perpendicular to the propagation direction. The maximum distance over which the physical quantities of the waves still correlate to a certain degree is defined as coherence length. An ideal plane wave obviously has an infinite coherence length. The most straight forward method to measure transverse coherence is the Young interferometer commonly referred to as Double Slit experiment.
+Spatial Coherence, also referred to as Transverse Coherence, is defined as constant phase relation between two points that are shifted perpendicular to the propagation direction. The maximum distance over which the physical quantities of the waves still correlate to a certain degree is defined as coherence length. An ideal plane wave obviously has an infinite coherence length. The most straight forward method to measure transverse coherence is the Young interferometer commonly referred to as Double Slit experiment.
 
 \subsection{Diffraction}
 
@@ -115,7 +115,7 @@ Diffraction, just like interference, is another characteristic wave phenomena.
 
 \subsection{Fourier Optics}
 
-The Fresnel-Kirchhoff Integral Formula describing the diffraction of light for any given obstacle can easily be derived from the Kirchhoff Integral Theorem. The geometry of the obstacle is given by the aperture function $g$. The Fresnel-Kirchhoff Integral formula states that the field distribution of the light passing through any given obstacle is the Fourier transform of its aperture function (see \ref{FKK}). The intensity distribution in the far field (far field condition: $\frac{W^2}{L\lambda} \ll 1$, where W denotes the size of the aperture and L the distance to the screen) can then be calculated as follows:
+The Fresnel-Kirchhoff Integral Formula describing the diffraction of light for any given obstacle can easily be derived from the Kirchhoff Integral Theorem. The geometry of the obstacle is given by the aperture function $g$. The Fresnel-Kirchhoff Integral formula states that the field distribution of the light passing through any given obstacle is the Fourier transform of its aperture function (see \ref{FKK}). The intensity distribution in the far field (far field condition: $\frac{W^2}{L\lambda} \ll 1$, where $W$ denotes the size of the aperture and $L$ the distance to the screen) can then be calculated as follows:
 
 
 \begin{align}
@@ -132,16 +132,16 @@ In the following we will discuss Fraunhofer diffraction for a single slit.
 
 \subsubsection{Single Slit}
 
-The aperture function of a single slit with the width b $b$ abd length $l$ is given by
+The aperture function of a single slit with the width $b$ and length $l$ is given by
 
 \begin{align}
 g(x)=\begin{cases}1 &\mbox{ falls }|x|\leq\frac{b}{2}\\0 &\mbox{ sonst }\end{cases}
 \end{align}
 
-Its Fourier Transform is described by the $sinc$ function in the following manner:
+Its Fourier Transform is described by the $\sinc$ function in the following manner:
 
 \begin{align}
-\mathscr{F}\left[ g(x) \right] = \left| b\right| \cdot \sinc\left( \frac{k \cdot b}{2}\right)  = 2 \cdot \left| b\right| \cdot \frac{\sinc\left( \frac{k \cdot b}{2}\right)}{k \cdot b}
+\mathscr{F}\left[ g(x) \right] = \left| b\right| \cdot \sinc\left( \frac{k \cdot b}{2}\right)  = 2 \cdot \left| b\right| \cdot \frac{\sin\left( \frac{k \cdot b}{2}\right)}{k \cdot b}
 \end{align}
 
 \graX{Einzelspalt}{Single Slit}{Fourier optics for a single slit \footnotemark \label{Spalt}}
@@ -164,14 +164,14 @@ I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left( \left| b\right| \cd
 (f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t-\tau) d\tau \label{Convo1}
 \end{align}
 
-As it turns out, convolution of two functions corresponds to a Multiplication in Fourier Space which is known as Convolution Theorem (see REF) and makes things a lot more convenient as this is a lot easier to compute.
+As it turns out, convolution of two functions corresponds to a Multiplication in Fourier Space which is known as Convolution Theorem (see \cite{demtroeder2}) and makes things a lot more convenient as this is a lot easier to compute.
 
 \begin{align}
 \mathscr{F}(f*g)=const. \mathscr{F}(f)\cdot \mathscr{F}(g)
 \end{align}
  An example for the Convolution of two Functions and the corresponding multiplication in the Fourier Space is given in figure \ref{Convo}.
  
- \graX[0.5]{Convolution}{Illustration of the Convolution theorem}{Illustration of the Convolution theorem with the example of the double slit \label{Convo} \footnotemark}\footnotetext{http://www4.uwsp.edu/physastr/kmenning/images/Hecht4.11.F.31.png}
+ \graX[0.8]{Convolution}{Illustration of the Convolution theorem}{Illustration of the Convolution theorem with the example of the double slit \label{Convo} \footnotemark}\footnotetext{http://www4.uwsp.edu/physastr/kmenning/images/Hecht4.11.F.31.png}
 
 \paragraph{Cross-Correlation} describes the similarity of two functions dependent on the displacement of one relative to another. It is very similar to the mathematical definition of the convolution operation ( see \ref{Convo1}) with the only difference being the plus sign instead of the minus sign in the argument of the $g$ function on the right hand side of the equation:
 
@@ -180,7 +180,7 @@ As it turns out, convolution of two functions corresponds to a Multiplication in
 \end{align}
 
 Comparing \ref{Convo1} and \ref{corr} we see that cross-correlation of two functions $f(t)$ and $g(t)$ corresponds to the convolution of $f^*(-t)$ and $g(t)$. If the two cross-correlated functions happen to be identical, this process is called autocorrelation.
-A comparison between Convolution, Cross-Correlation and Autocorrelation is illustrated ib figure \ref{corsscor}. All three are maximized when the two input functions match up. For this reason the autocorrelation function is also referred to as self-similarity function.
+A comparison between Convolution, Cross-Correlation and Autocorrelation is illustrated in figure \ref{corsscor}. All three are maximized when the two input functions match up. For this reason the autocorrelation function is also referred to as self-similarity function.
 
 \graX[0.5]{correlation}{Visual comparison of convolution, cross-correlation and autocorrelation}{Visual comparison of convolution, cross-correlation and autocorrelation \label{corsscor} \footnotemark} \footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}
 
@@ -222,7 +222,7 @@ A_2(r)=E_2\ e^{ikx \sin\theta}
 \end{align}
 
 
-The interference of a plane and a spherical wave yields ( as previously discussed in \ref{Interference}):
+The interference of a plane and a spherical wave yields (as previously discussed in \ref{Interference}):
 
 \begin{align}
 I=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))
@@ -261,7 +261,7 @@ $T_0$ and $C$ being constants. $t_B$ denotes the exposure time and $I$ denotes t
 This finally yields the following formula:
 
 \begin{align}
-A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{keine Information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vituelles Bild}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{reelles Bild}}
+A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vitual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}
 \end{align}
 
 
@@ -346,7 +346,7 @@ Identifying the previous two relations \ref{1} and \ref{2} with one another yiel
 dF=\frac{zE}{r}dzdy
 \end{align}
 
-This force cause a momentum compensating the force at the end of the beam ( $x=a$). For small deformations we obtain the differential equation
+This force cause a momentum compensating the force at the end of the beam ($x=a$). For small deformations we obtain the differential equation
 
 \begin{align}
 \frac{d^2z}{dx^2}=-\frac{12F}{Ebc^3}(a-x)
@@ -383,9 +383,18 @@ The $x_{m\nu}$ values are the numerical solution to the following equation:
 J_m(ix)\left[ J_{m-1}(x) - J_{m+1}(x)  \right]  - iJ_m(x)\left[ J_{m-1}(ix) - J_{m+1}(ix)  \right] = 0
 \end{align}
 
-with $J$ denoting the Bessel functions of the first kind. Solving these equation (which was done using Mathematica) for $x_{m\nu}$ and then subbing this in in \ref{resfreq} gives the following results:
+with $J$ denoting the Bessel functions of the first kind. Solving these equation (which was done using Mathematica) for $x_{m\nu}$ and then subbing this in in \ref{resfreq} gives the results as seen in Table \ref{tab:eigen} with the following values:
 
-{\centering{}
+\begin{itemize}
+	\item $ R = (5.0\pm0.5)\,\mathrm{cm}$
+	\item $h=5\,\mathrm{mm}$
+	\item $E=70\,\mathrm{GPa}$
+	\item $\rho = 2700\,\frac{\mathrm{kg}}{\mathrm{m^3}}$
+	\item $\mu = 0.34$ 
+\end{itemize} 
+
+\begin{table}[h]
+\centering
 	\begin{tabular}{c|c|c}
 		Mode 		& $x_{m\nu}$ & Calculated Frequency [Hz] 	 \\ \hline\hline
 		$m=0,\nu=0$	&$3.19622$   &$5082$						\\ \hline
@@ -396,27 +405,22 @@ with $J$ denoting the Bessel functions of the first kind. Solving these equation
 		$m=1,\nu=1$	& $7.79927$  & $30263$				     \\ \hline
 		$m=3,\nu=0$	& $7.14353$  & $25388$                \\ \hline
      	$m=3,\nu=1$	& $10.53670$ & $55235$
-	\end{tabular} }\vskip 0.2cm
-
-where we used the following values in \ref{resfreq}:
-
-\begin{itemize}
-	\item $ R = (5.0\pm0.5)\,\mathrm{cm}$
-	\item $h=5\,\mathrm{mm}$
-	\item $E=70\,\mathrm{GPa}$
-	\item $\rho = 2700\,\frac{\mathrm{kg}}{\mathrm{m^3}}$
-	\item $\mu = 0.34$ 
-\end{itemize}
+	\end{tabular} \vskip 0.2cm
+	\caption{Calculated eigenfrequencies of the aluminium plate}
+	\label{tab:eigen}
+\end{table}
 
 
 
-\subsection{Working principles of the Experimentel apparatus}
+
+
+\subsection{Working principles of the experimental apparatus}
 
 \subsubsection{Helium-Neon-Laser \label{HeNe1}}
 
-A cavity with partially transparent mirrors is filled with helium and neon gas with a ratio about 10:1. Applying high voltages can achieve ``pumping'' of Helium atoms (pumping medium) to higher energy levels which can than transfer their energy to Neon Atoms (laser medium) by colliding with them. They get than excited to a higher energy level that has a relatively long life time due to forbidden dipole transitions causing population inversion.
+A cavity with partially transparent mirrors is filled with helium and neon gas with a ratio about 10:1. Applying high voltages can achieve ``pumping'' of Helium atoms (pumping medium) to higher energy levels which can than transfer their energy to Neon Atoms (laser medium) by colliding with them. They then get excited to a higher energy level that has a relatively long life time due to forbidden dipole transitions causing population inversion.
 The Helium atoms return to the ground state emitting two photons by stimulated emission. Spontaneous emission is suppressed due to the long life time of the excited state. It is important to generate the first stimulated emissions when turning on the laser though.
-The energy level system of a Helium-Neon laser is displayed in figure \ref{HeNe}. A helium-Neon laser typically has a wavelength of $632.8\,\mathrm{nm}$
+The energy level system of a Helium-Neon laser is displayed in figure \ref{HeNe}. A helium-Neon laser typically has a wavelength of $632.8\,\mathrm{nm}$.
 
 \graX[0.5]{HeNe}{Energy level system Helium Neon Laser}{Functioning principle of the Helium Neon laser: Energy level system and population inversion for pumping and lasing medium \label{HeNe} \footnotemark}\footnotetext{https://lp.uni-goettingen.de/get/text/1804}
 
@@ -427,7 +431,7 @@ Spatial Filters are used to filter laser light. Undesired noise and interference
 
 \graX[0.5]{SpatialFilter}{Spatial Filter}{Set-Up of a Spatial Filter \label{SF1}}
 
-\subsubsection{Holographic Medium}
+%\subsubsection{Holographic Medium}
 
 \subsubsection{Pockels Cell}
 
