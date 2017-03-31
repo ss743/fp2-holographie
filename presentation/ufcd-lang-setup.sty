@@ -1,0 +1,357 @@
+%%
+%% This is file `ufcd-lang-setup.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `lang-setup')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ufcd-lang-setup}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (HO)]%
+\ufcdLanguageSetup{ngerman}{%
+  babel.ldf=ngermanb,%
+  polyglossia.name=german,%
+  polyglossia.setting={spelling=new},%
+}
+\ufcdLanguageSetup{ogerman}{%
+  babel.name=german,%
+  babel.ldf=germanb,%
+  polyglossia.setting={spelling=old},%
+}
+\ufcdLanguageSetup{german}{%
+  babel.name=ngerman,%
+  babel.ldf=ngermanb,%
+  polyglossia.setting={spelling=new},%
+}
+\ufcdLanguageSetup{naustrian}{%
+  babel.ldf=naustrianb,%
+  polyglossia.name=german,%
+  polyglossia.setting={spelling=new},%
+}
+\ufcdLanguageSetup{oaustrian}{%
+  babel.name=austrian,%
+  babel.ldf=germanb,%
+  polyglossia.name=german,%
+  polyglossia.setting={spelling=old},%
+}
+\ufcdLanguageSetup{austrian}{%
+  babel.name=naustrian,%
+  babel.ldf=ngermanb,%
+  polyglossia.name=german,%
+  polyglossia.setting={spelling=new},%
+}
+\ufcdLanguageSetup{english}{%
+  polyglossia.setting={variant=english},%
+}
+\ufcdLanguageSetup{american}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=american},%
+}
+\ufcdLanguageSetup{australian}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=australian},%
+}
+\ufcdLanguageSetup{british}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=british},%
+}
+\ufcdLanguageSetup{canadian}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=american},%
+}
+\ufcdLanguageSetup{newzealand}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=newzealand},%
+}
+\ufcdLanguageSetup{UKenglish}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=british},%
+}
+\ufcdLanguageSetup{USenglish}{%
+  babel.ldf=english,%
+  polyglossia.name=english,%
+  polyglossia.setting={variant=american},%
+}
+\ufcdLanguageSetup{french}{%
+  babel.ldf=frenchb,%
+  polyglossia.name=french,%
+}
+\ufcdLanguageSetup{frenchle}{%
+  polyglossia.name=french,%
+}
+\ufcdLanguageSetup{acadian}{%
+  babel.ldf=frenchb,%
+  polyglossia.name=french,%
+}
+\ufcdLanguageSetup{canadien}{%
+  babel.ldf=frenchb,%
+  polyglossia.name=french,%
+}
+\ufcdLanguageSetup{francais}{%
+  babel.ldf=frenchb,%
+  polyglossia.name=french,%
+}
+\ufcdLanguageSetup{greek}{%
+  babel.ldf=greek,%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=monotonic},%
+}
+\ufcdLanguageSetup{monogreek}{%
+  babel.name=greek,%
+  babel.ldf=greek,%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=monotonic},%
+}
+\ufcdLanguageSetup{polygreek}{%
+  babel.name=greek,%
+  babel.ldf=greek,%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=polytonic},%
+}
+\ufcdLanguageSetup{ancientgreek}{%
+  babel.name=greek,%
+  babel.ldf=greek,%
+  babel.load={%
+    \input{greek.ldf}%
+    \languageattribute{greek}{polutoniko}%
+  },%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=ancient},%
+}
+\ufcdLanguageSetup{polutonikogreek}{%
+  babel.ldf=greek,%
+  babel.load={%
+    \input{greek.ldf}%
+    \languageattribute{greek}{polutoniko}%
+  },%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=ancient},%
+}
+\ufcdLanguageSetup{bgreek}{%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=monotonic},%
+}
+\ufcdLanguageSetup{ibygreek}{%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=monotonic},%
+}
+\ufcdLanguageSetup{ibycus}{%
+  polyglossia.name=greek,%
+  polyglossia.setting={variant=monotonic},%
+}
+\ufcdLanguageSetup{afrikaans}{%
+  babel.ldf=dutch,%
+  polyglossia.name=dutch,%
+}
+\ufcdLanguageSetup{albanian}{}
+\ufcdLanguageSetup{amharic}{%
+  babel.name=ethiop,%
+  babel.ldf=ethiop,%
+}
+\ufcdLanguageSetup{arabic}{}
+\ufcdLanguageSetup{bahasa}{%
+  babel.ldf=bahasai,%
+  polyglossia.name=bahasai,%
+}
+\ufcdLanguageSetup{bahasai}{}%
+\ufcdLanguageSetup{indon}{%
+  babel.ldf=bahasai,%
+  polyglossia.name=bahasai,%
+}
+\ufcdLanguageSetup{indonesian}{%
+  babel.ldf=bahasai,%
+  polyglossia.name=bahasai,%
+}
+\ufcdLanguageSetup{malay}{%
+  babel.ldf=bahasam,%
+  polyglossia.name=bahasam,%
+}
+\ufcdLanguageSetup{meyalu}{%
+  babel.ldf=bahasam,%
+  polyglossia.name=bahasam,%
+}
+\ufcdLanguageSetup{bahasam}{}%
+\ufcdLanguageSetup{basque}{}%
+\ufcdLanguageSetup{brazil}{%
+  babel.ldf=portuges,%
+}
+\ufcdLanguageSetup{brazilian}{%
+  babel.ldf=portuges,%
+  polyglossia.name=brazil,%
+}
+\ufcdLanguageSetup{breton}{}
+\ufcdLanguageSetup{bulgarian}{}
+\ufcdLanguageSetup{catalan}{}
+\ufcdLanguageSetup{croatian}{}
+\ufcdLanguageSetup{czech}{}
+\ufcdLanguageSetup{danish}{}
+\ufcdLanguageSetup{dutch}{}
+\ufcdLanguageSetup{esperanto}{}
+\ufcdLanguageSetup{estonian}{}
+\ufcdLanguageSetup{ethiop}{%
+  polyglossia.name=amharic,%
+}
+\ufcdLanguageSetup{farsi}{}
+\ufcdLanguageSetup{finnish}{}
+\ufcdLanguageSetup{galician}{}
+\ufcdLanguageSetup{hebrew}{%
+  babel.load={%
+    \input{rlbabel.def}%
+    \input{hebrew.def}%
+  },%
+}
+\ufcdLanguageSetup{hindi}{}
+\ufcdLanguageSetup{icelandic}{}
+\ufcdLanguageSetup{interlingua}{}
+\ufcdLanguageSetup{irish}{}
+\ufcdLanguageSetup{italian}{}
+\ufcdLanguageSetup{latin}{}
+\ufcdLanguageSetup{lowersorbian}{%
+  babel.ldf=lsorbian,%
+  polyglossia.name=lsorbian,%
+}
+\ufcdLanguageSetup{lsorbian}{}
+\ufcdLanguageSetup{magyar}{}
+\ufcdLanguageSetup{norsk}{}
+\ufcdLanguageSetup{nynorsk}{%
+  babel.ldf=norsk,%
+}
+\ufcdLanguageSetup{polish}{}
+\ufcdLanguageSetup{portuges}{}
+\ufcdLanguageSetup{portuguese}{%
+  babel.ldf=portuges,%
+  polyglossia.name=portuges,%
+}
+\ufcdLanguageSetup{romanian}{}
+\ufcdLanguageSetup{russian}{%
+  babel.ldf=russianb,%
+}
+\ufcdLanguageSetup{samin}{}
+\ufcdLanguageSetup{scottish}{}
+\ufcdLanguageSetup{serbian}{}
+\ufcdLanguageSetup{slovak}{}
+\ufcdLanguageSetup{slovene}{%
+  polyglossia.name=slovenian,%
+}
+\ufcdLanguageSetup{slovenian}{%
+  babel.name=slovene,%
+  babel.ldf=slovene,%
+}
+\ufcdLanguageSetup{spanish}{}
+\ufcdLanguageSetup{spanishmx}{%
+  polyglossia.name=spanish,%
+}
+\ufcdLanguageSetup{swedish}{}
+\ufcdLanguageSetup{thai}{%
+  babel.name=thaicjk,%
+  babel.ldf=thaicjk,%
+}
+\ufcdLanguageSetup{turkish}{}
+\ufcdLanguageSetup{ukrainian}{%
+  babel.ldf=ukraineb,%
+}
+\ufcdLanguageSetup{uppersorbian}{%
+  babel.ldf=usorbian,%
+  polyglossia.name=usorbian,%
+}
+\ufcdLanguageSetup{usorbian}{}
+\ufcdLanguageSetup{vietnam}{%
+  polyglossia.name=vietnamese,%
+}
+\ufcdLanguageSetup{vietnamese}{%
+  babel.name=vietnam,%
+  babel.ldf=vietnam,%
+}
+\ufcdLanguageSetup{welsh}{}
+\ifxetex
+  \ufcdLanguageSetup{coptic}{babel.name={}}%
+  \ufcdLanguageSetup{dihevi}{babel.name={}}%
+  \ufcdLanguageSetup{latvian}{babel.name={}}%
+  \ufcdLanguageSetup{sankrit}{babel.name={}}%
+  \ufcdLanguageSetup{syriac}{babel.name={}}%
+\else
+  \ufcdLanguageSetup{kurmanji}{polyglossia.name={}}%
+  \ufcdLanguageSetup{lithuanian}{polyglossia.name={}}%
+  \ufcdLanguageSetup{mongolian}{polyglossia.name={}}%
+  \ufcdLanguageSetup{pinyin}{polyglossia.name={}}%
+\fi
+\InputIfFileExists{ufcd-lang-setup.cfg}{}{}
+\endinput
+%%
+%% End of file `ufcd-lang-setup.sty'.

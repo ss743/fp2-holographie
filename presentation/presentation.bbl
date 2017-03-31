@@ -1,0 +1,46 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global}
+    \entry{staats}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=aefe316cf0026615dacd676d348583eb}{%
+           family={Unm\"{u}{\ss{}}ig},
+           family_i={U\bibinitperiod},
+           given={Stefan},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Physikalisches Instiut, Fakult\"{a}t f\"{u}r Mathematik und Physik, Universit\"{a}t Freiburg}%
+      }
+      \strng{namehash}{aefe316cf0026615dacd676d348583eb}
+      \strng{fullhash}{aefe316cf0026615dacd676d348583eb}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Holographie}
+      \field{type}{Staatsexamensarbeit}
+      \field{year}{1995}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

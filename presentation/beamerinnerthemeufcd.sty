@@ -1,0 +1,446 @@
+%%
+%% This is file `beamerinnerthemeufcd.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `beamer-inner')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemeufcd}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (SD)]%
+
+\DeclareOptionBeamer{identitylevel}{\def\ident@level{#1}}
+\DeclareOptionBeamer{e1}{\ExecuteOptionsBeamer{identitylevel=1}}
+\DeclareOptionBeamer{e1e}{\ExecuteOptionsBeamer{identitylevel=1e}}
+\DeclareOptionBeamer{e2}{\ExecuteOptionsBeamer{identitylevel=2}}
+\ExecuteOptionsBeamer{identitylevel=1}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\defbeamertemplate*{title page}{ufcd theme}[1][]
+{%
+  \lineskip=0pt
+  %%% Anpassen des verf"ugbaren Platzes f"ur Seite
+  \beamer@tempdim=\paperwidth%
+  \advance\beamer@tempdim by-\beamer@sidebarwidth%
+  %%% Anpassen des verf"ugbaren Platzes f"ur Seite
+  \ufcd@tempdima=\paperheight%
+  \ifthenelse{\equal{\ident@level}{2}}{%
+    \advance\ufcd@tempdima by-\ufcdBeamerTwoWidthI%
+  }{%
+    \advance\ufcd@tempdima by-\ufcdBeamerOneWidthI%
+  }
+  \advance\ufcd@tempdima by-\ufcdTitlepageHeadheight%
+  \thispagestyle{empty}%
+  \vskip-\headheight%
+  %%% die eigentliche Seite
+  \vbox to\paperheight{%
+    \ifx\beamer@sidebarside\beamer@lefttext%
+      %%% sidebar left
+      \begin{beamercolorbox}[leftskip=0.5cm,rightskip=\beamer@rightmargin,wd=\beamer@tempdim,ht=\ufcdTitlepageHeadheight,dp=0pt,vmode,#1]{title}%
+        \vbox to\ufcdTitlepageHeadheight{%
+          \ifthenelse{\equal{\ident@level}{1}}{}{%
+            \ifbeamertemplateempty{logo}{}{%
+              \hbox to \beamer@tempdim{%
+                \hfill\usebeamercolor[bg]{logo}\rule{\ufcd@logowidth}{\beamer@headheight}%
+                \hskip-\ufcd@logowidth
+                \hbox to \ufcd@logowidth{%
+                  \usebeamercolor[fg]{logo}%
+                  \hss\vbox to \beamer@headheight{%
+                    \vss\hbox{\insertlogo}\vss
+                  }\hskip\beamer@rightmargin%
+                }%
+              }%
+              \hskip-\beamer@rightmargin
+            }%
+          }%
+          \vfill
+          \usebeamerfont{title}\inserttitle\par%
+          \ifx\insertsubtitle\@empty%
+          \else%
+            \vskip0.25em%
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+          \fi%
+          \vfill
+          \ifthenelse{\equal{\ident@level}{1}}{%
+            {\hfill\rmfamily\fontsize{6}{7}\selectfont Albert-Ludwigs-Universit\"at~Freiburg}
+          }{}%
+          \vskip3pt
+        }%
+      \end{beamercolorbox}%
+      \vskip-\baselineskip%
+      \ifthenelse{\equal{\ident@level}{1}}{%
+        \vskip\ufcdBeamerOneWidthI%
+        \ufcd@tempdimb=\beamer@tempdim%
+        \advance\ufcd@tempdimb by -\ufcdBeamerOneSumI%
+        \hbox{\hskip-\beamer@leftmargin\hskip\ufcdBeamerOneSumI%
+          \usebeamercolor[bg]{separation line}\rule{\ufcd@tempdimb}{\ufcdBeamerOneWidthI}%
+        }%
+        \vskip-\baselineskip%
+        \hbox{%
+          \UFCD@put(%
+            0pt,0pt%
+          ){%
+            \makebox(0,0)[lb]{%
+              \hskip-\beamer@leftmargin\hskip-3\ufcdBeamerOneSumI%
+              \raisebox{-\ufcdBeamerOneWidthUNI+\ufcdBeamerOneWidthI}[0pt][0pt]{%
+                \llap{\color{Uni-Grau}\rule[\ufcdBeamerOneWidthUNI-\ufcdBeamerOneWidthI]{\beamer@sidebarwidth-3\ufcdBeamerOneSumI-\ufcdBeamerOneWidthI}{\ufcdBeamerOneWidthI}\hskip\ufcdBeamerOneWidthI}%
+                \includegraphics[%
+                  scale={\UFCD@BeamerOneScale}%
+                ]{%
+                  ufcd-logo-e1-right-a4-color%
+                }%
+              }%
+            }%
+          }%
+        }%
+      }{%
+        \ifthenelse{\equal{\ident@level}{1e}}{%
+          \vskip\ufcdBeamerOneWidthI%
+          \ufcd@tempdimb=\beamer@tempdim%
+          \advance\ufcd@tempdimb by -\ufcdBeamerOneSumI%
+          \hbox{\hskip-\beamer@leftmargin\hskip\ufcdBeamerOneSumI%
+            \usebeamercolor[bg]{normal text}\rule{\ufcd@tempdimb}{\ufcdBeamerOneWidthI}%
+          }%
+          \vskip-\baselineskip%
+          \hbox{%
+            \UFCD@put(%
+              0pt,0pt%
+            ){%
+              \makebox(0,0)[lb]{%
+                \hskip-\beamer@leftmargin\hskip-3\ufcdBeamerOneSumI%
+                \raisebox{-\ufcdBeamerOneWidthUNI+\ufcdBeamerOneWidthI}[0pt][0pt]{%
+                  \llap{\color{Uni-Grau}\rule[\ufcdBeamerOneWidthUNI-\ufcdBeamerOneWidthI]{\beamer@sidebarwidth-3\ufcdBeamerOneSumI-\ufcdBeamerOneWidthI}{\ufcdBeamerOneWidthI}\hskip\ufcdBeamerOneWidthI}%
+                  \includegraphics[%
+                    scale={\UFCD@BeamerOneScale}%
+                  ]{%
+                    ufcd-logo-e1-emblemless-color%
+                  }%
+                }%
+              }%
+            }%
+          }%
+        }{%
+          \vskip\ufcdBeamerTwoWidthI%
+          \ufcd@tempdimb=\beamer@tempdim%
+          \advance\ufcd@tempdimb by -\ufcdBeamerTwoWidthI%
+          \hbox{\hskip-\beamer@leftmargin\hskip\ufcdBeamerTwoWidthI%
+            \usebeamercolor[bg]{separation line}\rule{\ufcd@tempdimb}{\ufcdBeamerTwoWidthI}%
+          }%
+          \vskip-\baselineskip%
+          \hbox{%
+            \UFCD@put(%
+              0pt,0pt%
+            ){%
+              \makebox(0,0)[lb]{%
+                \hskip-\beamer@leftmargin\hskip-4\ufcdBeamerTwoSumI\hskip\ufcdBeamerTwoWidthI%
+                \raisebox{-\ufcdBeamerTwoWidthUNI+\ufcdBeamerTwoWidthI}[0pt][0pt]{%
+                  \llap{\color{Uni-Grau}\rule[\ufcdBeamerTwoWidthUNI-\ufcdBeamerTwoWidthI]{\beamer@sidebarwidth-4\ufcdBeamerTwoSumI}{\ufcdBeamerTwoWidthI}\hskip\ufcdBeamerTwoWidthI}%
+                  \includegraphics[%
+                    scale={\UFCD@BeamerTwoImageScale}%
+                  ]{%
+                    ufcd-logo-e2-a4-color%
+                  }%
+                }%
+              }%
+            }%
+          }%
+        }%
+      }%
+      \hbox to\beamer@tempdim{%
+        \begin{beamercolorbox}[leftskip=0.5cm,rightskip=\beamer@rightmargin,wd=\beamer@tempdim,ht=\ufcd@tempdima,dp=0pt,vmode,#1]{institute}
+          \vbox to\ufcd@tempdima{%
+            \vskip3pt
+            \ifthenelse{\equal{\ident@level}{1e}}{%
+              {\hfill\rmfamily\fontsize{6}{7}\selectfont Albert-Ludwigs-Universit\"at~Freiburg}
+            }{}%
+            \vfill
+            \usebeamerfont{author}\insertauthor\par
+            \vskip.5ex
+            \usebeamerfont{institute}\insertinstitute\par
+            \usebeamerfont{date}\insertdate\par
+            \vfill
+    \ifx\inserttitlegraphic\@empty\else%
+              \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+              \vfill
+            \fi%
+          }
+        \end{beamercolorbox}%
+        \hbox to0pt{%
+          \hfill\raisebox{\footheight-2pt}[0pt][0pt]{%
+            \usebeamercolor{normal text}%
+            \llap{\usebeamerfont{sidebar}\usebeamertemplate***{navigation symbols}}%
+          }%
+        }%
+        \hfill
+      }%
+    \else
+      %%% sidebar right
+      \begin{beamercolorbox}[leftskip=\beamer@leftmargin,rightskip=0.5cm,wd=\beamer@tempdim,ht=\ufcdTitlepageHeadheight,dp=0pt,vmode,#1]{title}
+        \vbox to\ufcdTitlepageHeadheight{%
+          \ifthenelse{\equal{\ident@level}{1}}{}{%
+            \ifbeamertemplateempty{logo}{}{%
+              \hbox to \beamer@tempdim{%
+                \usebeamercolor[bg]{logo}\rule{\ufcd@logowidth}{\beamer@headheight}%
+                \hskip-\ufcd@logowidth
+                \hbox to \ufcd@logowidth{%
+                  \usebeamercolor[fg]{logo}%
+                  \hskip\beamer@leftmargin\vbox to \beamer@headheight{%
+                    \vss\hbox{\insertlogo}\vss
+                  }\hss%
+                }\hfill%
+              }%
+              \hskip-\beamer@rightmargin
+            }%
+          }%
+          \vfill
+          \usebeamerfont{title}\inserttitle\par%
+          \ifx\insertsubtitle\@empty%
+          \else%
+            \vskip0.25em%
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+          \fi%
+          \vfill
+          \ifthenelse{\equal{\ident@level}{1}}{%
+            {\rmfamily\fontsize{6}{7}\selectfont Albert-Ludwigs-Universit\"at~Freiburg\hfill}
+          }{}%
+          \vskip3pt
+        }%
+      \end{beamercolorbox}%
+      \vbox{%
+        \ifthenelse{\equal{\ident@level}{1}}{%
+          \hbox to\beamer@tempdim{%
+            \ufcd@tempdimb=\beamer@tempdim%
+            \advance\ufcd@tempdimb by -\ufcdBeamerOneSumI%
+            \hskip-\beamer@leftmargin\usebeamercolor[bg]{separation line}\rule{\ufcd@tempdimb}{\ufcdBeamerOneWidthI}%
+            \UFCD@put(%
+              4\ufcdBeamerOneSumI,%
+              0pt%
+            ){%
+              \makebox(0,0)[rb]{%
+                \raisebox{-\ufcdBeamerOneWidthUNI+\ufcdBeamerOneWidthI}[0pt][0pt]{%
+                  \includegraphics[%
+                      scale={\UFCD@BeamerOneScale}%
+                  ]{%
+                    ufcd-logo-e1-left-a4-color%
+                  }%
+                  \rlap{\hskip\ufcdBeamerOneWidthI
+                  \color{Uni-Grau}\rule[\ufcdBeamerOneWidthUNI-\ufcdBeamerOneWidthI]{\beamer@sidebarwidth-3\ufcdBeamerOneSumI-\ufcdBeamerOneWidthI}{\ufcdBeamerOneWidthI}}%
+                }%
+              }%
+            }%
+            \hfill
+          }%
+        }{\ifthenelse{\equal{\ident@level}{1e}}{%
+            \hbox to\beamer@tempdim{%
+              \ufcd@tempdimb=\beamer@tempdim%
+              \advance\ufcd@tempdimb by -\ufcdBeamerOneSumI%
+              \hskip-\beamer@leftmargin\usebeamercolor[bg]{normal text}\rule{\ufcd@tempdimb}{\ufcdBeamerOneWidthI}%
+              \UFCD@put(%
+                4\ufcdBeamerOneSumI,%
+                0pt%
+              ){%
+                \makebox(0,0)[rb]{%
+                  \raisebox{-\ufcdBeamerOneWidthUNI+\ufcdBeamerOneWidthI}[0pt][0pt]{%
+                    \includegraphics[%
+                        scale={\UFCD@BeamerOneScale}%
+                    ]{%
+                      ufcd-logo-e1-emblemless-color%
+                    }%
+                    \rlap{\hskip\ufcdBeamerOneWidthI
+                    \color{Uni-Grau}\rule[\ufcdBeamerOneWidthUNI-\ufcdBeamerOneWidthI]{\beamer@sidebarwidth-3\ufcdBeamerOneSumI-\ufcdBeamerOneWidthI}{\ufcdBeamerOneWidthI}}%
+                  }%
+                }%
+              }%
+              \hfill
+            }%
+          }{%
+            \hbox to\beamer@tempdim{%
+              \ufcd@tempdimb=\beamer@tempdim%
+              \advance\ufcd@tempdimb by -\ufcdBeamerTwoWidthI%
+              \hskip-\beamer@leftmargin\usebeamercolor[bg]{separation line}\rule{\ufcd@tempdimb}{\ufcdBeamerTwoWidthI}%
+              \UFCD@put(%
+                4\ufcdBeamerTwoSumI,%
+                0pt%
+              ){%
+                \makebox(0,0)[rb]{%
+                  \raisebox{-\ufcdBeamerTwoWidthUNI+\ufcdBeamerTwoWidthI}[0pt][0pt]{%
+                    \includegraphics[%
+                        scale={\UFCD@BeamerTwoImageScale}%
+                    ]{%
+                      ufcd-logo-e2-a4-color%
+                    }%
+                    \rlap{\hskip\ufcdBeamerTwoWidthI
+                    \color{Uni-Grau}\rule[\ufcdBeamerTwoWidthUNI-\ufcdBeamerTwoWidthI]{\beamer@sidebarwidth-4\ufcdBeamerTwoSumI}{\ufcdBeamerTwoWidthI}}%
+                  }%
+                }%
+              }%
+              \hfill
+            }%
+          }%
+        }%
+        \hbox to\beamer@tempdim{%
+          \begin{beamercolorbox}[leftskip=\beamer@leftmargin,rightskip=0.5cm,wd=\beamer@tempdim,ht=\ufcd@tempdima,dp=0pt,vmode,#1]{institute}
+            \vbox to\ufcd@tempdima{%
+              \vskip3pt
+              \ifthenelse{\equal{\ident@level}{1e}}{%
+                {\rmfamily\fontsize{6}{7}\selectfont Albert-Ludwigs-Universit\"at~Freiburg\hfill}
+              }{}%
+              \vfill
+              \usebeamerfont{author}\insertauthor\par
+              \vskip.5ex
+              \usebeamerfont{institute}\insertinstitute\par
+              \usebeamerfont{date}\insertdate\par
+              \vfill
+              \ifx\inserttitlegraphic\@empty\else%
+                \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+                \vfill
+              \fi
+            }%
+          \end{beamercolorbox}%
+          \hbox to0pt{%
+            \hfill\raisebox{\footheight-2pt}[0pt][0pt]{%
+              \usebeamercolor{normal text}%
+              \llap{\usebeamerfont{sidebar}\usebeamertemplate***{navigation symbols}}%
+            }%
+          }%
+          \hfill
+        }%
+      }%
+    \fi
+    \vfill
+  }%
+  \vskip-\footheight
+}
+
+
+\defbeamertemplate*{block begin}{ufcd theme}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=0.2cm]{block title}
+    \usebeamerfont*{block title}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title}
+  {}
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=0.2cm,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+\defbeamertemplate*{block end}{ufcd theme}
+{\end{beamercolorbox}\vskip\smallskipamount}
+
+\defbeamertemplate*{block alerted begin}{ufcd theme}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=0.2cm]{block title alerted}
+    \usebeamerfont*{block title alerted}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title alerted}
+  {}
+  {\ifbeamercolorempty[bg]{block body alerted}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body alerted}%
+  \begin{beamercolorbox}[colsep*=0.2cm,vmode]{block body alerted}%
+    \ifbeamercolorempty[bg]{block body alerted}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+
+\defbeamertemplate*{block alerted end}{ufcd theme}
+{\end{beamercolorbox}\vskip\smallskipamount}
+
+\defbeamertemplate*{block example begin}{ufcd theme}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=0.2cm]{block title example}
+    \usebeamerfont*{block title example}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title example}
+  {}
+  {\ifbeamercolorempty[bg]{block body example}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body example}%
+  \begin{beamercolorbox}[colsep*=0.2cm,vmode]{block body example}%
+    \ifbeamercolorempty[bg]{block body example}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+\defbeamertemplate*{block example end}{ufcd theme}
+{\end{beamercolorbox}\vskip\smallskipamount}
+
+\setbeamertemplate{items}[square]
+
+\mode
+<all>
+\endinput
+%%
+%% End of file `beamerinnerthemeufcd.sty'.

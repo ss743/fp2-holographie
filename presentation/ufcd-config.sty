@@ -1,0 +1,228 @@
+%%
+%% This is file `ufcd-config.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `config')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ufcd-config}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (HO)]%
+\RequirePackage{ltxcmds}[2009/08/05]
+\RequirePackage{ufcd-kvopt}[2012/03/16]
+\define@key{UFCD}{config}{%
+  \csname UFCD@ConfigState@\UFCD@ConfigState\endcsname{#1}%
+}
+\def\UFCD@ConfigState{Load}
+\def\UFCD@ConfigQueue{}
+\let\UFCD@ConfigDo\relax
+\def\UFCD@ConfigState@Load#1{%
+  \ufcdAddConfigOption{#1}%
+  \edef\UFCD@ConfigQueue{%
+    \UFCD@ConfigQueue
+    \UFCD@ConfigDo{#1}%
+  }%
+}
+\def\UFCD@ConfigState@#1{%
+  \ufcdAddConfigOption{#1}%
+  \ufcdConfigLoad{#1}%
+  \ufcdConfigCall{#1}%
+}
+\def\UFCD@ConfigProcess{%
+  \let\UFCD@ConfigState\ltx@empty
+  \let\UFCD@ConfigProcess\relax
+  \def\UFCD@ConfigDo##1{%
+    \UFCD@ConfigState@{##1}%
+  }%
+  \UFCD@ConfigQueue
+  \let\UFCD@ConfigQueue\ltx@empty
+}
+\def\UFCD@ConfigInput#1{%
+  \edef\UFCD@RestoreAtCatcode{%
+    \catcode64=\the\catcode64\relax
+  }%
+  \makeatother
+  \input{#1}%
+  \UFCD@RestoreAtCatcode
+}
+\newcommand*{\ufcdConfigLoad}[1]{%
+  \@ifundefined{UFCD@Config@#1}{%
+    \edef\UFCD@ConfigRestoreAtCode{%
+      \catcode64=\the\catcode64\relax
+    }%
+    \makeatletter
+    \IfFileExists{ufcd-config-#1.cfg}{%
+      \UFCD@ConfigInput{ufcd-config-#1.cfg}%
+      \@ifundefined{UFCD@Config@#1}{%
+        \PackageError{ufcd-config}{%
+          Configuration file `ufcd-config-#1.cfg'\MessageBreak
+          does not call \string\ufcdConfigSetup{#1}{...}%
+        }\@ehc
+      }{}%
+    }{%
+      \PackageError{ufcd-config}{%
+        Configuration file `ufcd-config-#1.cfg' is missing%
+      }\@ehc
+    }%
+    \UFCD@ConfigRestoreAtCode
+  }{%
+  }%
+}
+\newcommand*{\ufcdConfigSetup}{%
+  \@ifstar\UFCD@ConfigSetupNoFile\UFCD@ConfigSetup
+}
+\def\UFCD@ConfigSetupNoFile#1{%
+  \expandafter\providecommand\expandafter*%
+  \csname UFCD@ConfigOption@#1\endcsname{}%
+  \UFCD@ConfigSetup{#1}%
+}
+\def\UFCD@ConfigSetup#1{%
+  \@ifundefined{UFCD@Config@#1}{%
+    \expandafter\def\csname UFCD@Config@#1\endcsname
+  }{%
+    \PackageError{ufcd-config}{%
+      Configuration `#1' is already defined%
+    }\@ehc
+    \ltx@gobble
+  }%
+}
+\def\ufcdConfigCall#1{%
+  \begingroup\expandafter\expandafter\expandafter\endgroup
+  \expandafter\ifx\csname UFCD@Config@#1\endcsname\relax
+    \PackageError{UFCD@-config}{%
+      Configuration `#1' does not exist%
+    }\@ehc
+  \else
+    \csname UFCD@Config@#1\endcsname
+  \fi
+}
+\newcommand*{\ufcdIfLetterClass}{%
+  \begingroup\expandafter\expandafter\expandafter\endgroup
+  \expandafter\ifx\csname ver@scrlttr2.cls\endcsname\relax
+    \expandafter\ltx@secondoftwo
+  \else
+    \expandafter\ltx@firstoftwo
+  \fi
+}
+\newcommand*{\ufcdAddConfigOption}[1]{%
+  \@ifundefined{UFCD@ConfigOption@#1}{%
+    \@ifundefined{KV@UFCD@#1}{%
+      \edef\UFCD@ConfigRestoreAtCode{%
+        \catcode64=\the\catcode64\relax
+      }%
+      \makeatletter
+      \IfFileExists{ufcd-config-#1.cfg}{%
+        \SetupKeyvalOptions{%
+          family=UFCD,%
+          prefix=UFCD@ConfigOption@,%
+        }%
+        \DeclareVoidOption{#1}{%
+          \KV@UFCD@config{#1}%
+        }%
+        \PackageInfo{ufcd-config}{%
+          Configuration option `#1' added%
+        }%
+      }{%
+        \PackageWarningNoLine{ufcd-config}{%
+          Cannot add configuration\MessageBreak
+          option `#1',\MessageBreak
+          because configuration file\MessageBreak
+          `ufcd-config-#1.cfg'\MessageBreak
+          is missing%
+        }%
+      }%
+      \UFCD@ConfigRestoreAtCode
+    }{%
+      \PackageWarningNoLine{ufcd-config}{%
+        Cannot add configuration option `#1',\MessageBreak
+        because `#1' is already an option.\MessageBreak
+        Use `config=#1' for loading the configuration%
+      }%
+    }%
+  }{}%
+}
+\ufcdAddConfigOption{mw}
+\ufcdAddConfigOption{fuest}
+\ufcdAddConfigOption{iif}
+\ufcdAddConfigOption{imtek}
+\ufcdAddConfigOption{tf}
+\ufcdAddConfigOption{tf-dekanat}
+\ufcdAddConfigOption{tf-dekpamt}
+\ufcdAddConfigOption{tf-praktikumsamt}
+\ufcdAddConfigOption{tf-bibliothek}
+\ufcdAddConfigOption{template-e1}
+\ufcdAddConfigOption{template-e2}
+\InputIfFileExists{ufcd-config.cfg}{}{}
+\endinput
+%%
+%% End of file `ufcd-config.sty'.

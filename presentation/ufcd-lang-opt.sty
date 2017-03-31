@@ -1,0 +1,279 @@
+%%
+%% This is file `ufcd-lang-opt.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `lang-opt')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ufcd-lang-opt}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (HO)]%
+\RequirePackage{ifxetex}
+\RequirePackage{ufcd-kvopt}[2012/03/16]
+\UFCD@SetupKeyvalOptions
+\ifxetex
+  \def\UFCDlang@Package{polyglossia}%
+\else
+  \def\UFCDlang@Package{babel}%
+\fi
+\@ifpackageloaded{\UFCDlang@Package}{%
+  \PackageError{ufcd-lang-opt}{%
+    Package `\UFCDlang@Package' is already loaded.\MessageBreak
+    Load this package first%
+  }%
+  \@ehd
+}{}
+\def\UFCD@temp#1{%
+  \define@key{UFCDLANG}{#1}{%
+    \@namedef{UFCDlang@\UFCD@temp @#1}{##1}%
+  }%
+}
+\UFCD@temp{babel.name}
+\UFCD@temp{babel.ldf}
+\UFCD@temp{babel.load}
+\UFCD@temp{polyglossia.name}
+\UFCD@temp{polyglossia.setting}
+\newcommand*{\ufcdLanguageSetup}[2]{%
+  \def\UFCD@temp{#1}%
+  \@namedef{UFCDlang@#1@babel.name}{#1}%
+  \@namedef{UFCDlang@#1@babel.ldf}{#1}%
+  \@namedef{UFCDlang@#1@babel.load}{}%
+  \@namedef{UFCDlang@#1@polyglossia.name}{#1}%
+  \@namedef{UFCDlang@#1@polyglossia.setting}{}%
+  \setkeys{UFCDLANG}{#2}%
+  \UFCD@SetupKeyvalOptions
+  \UFCD@DeclareVoidOption{#1}{%
+    \ufcdSetup{language={#1}}%
+  }%
+}
+\def\UFCDlang@IfKnown#1{%
+  \@ifundefined{UFCDlang@#1@load}{%
+    \PackageError{ufcd-lang-opt}{%
+      Unknown language `#1'%
+    }\@ehc
+    \@secondoftwo
+  }\@firstoftwo
+}
+\ifxetex
+  \def\UFCDlang@Call#1#2{%
+    \expandafter\expandafter\expandafter
+    #1\expandafter\expandafter\expandafter[%
+      \expandafter\expandafter\expandafter{%
+        \csname UFCDlang@#2@polyglossia.setting%
+        \expandafter\expandafter\expandafter\endcsname
+      \expandafter\expandafter\expandafter}%
+    \expandafter\expandafter\expandafter]%
+    \expandafter\expandafter\expandafter{%
+      \csname UFCDlang@#2@polyglossia.name\endcsname
+    }%
+  }%
+  \newcommand*{\ufcdSelectLanguage}[1]{%
+    \def\ufcdLanguageName{#1}%
+    \UFCDlang@IfKnown{#1}{%
+      \UFCDlang@Call\selectlanguage{#1}%
+    }{}%
+  }%
+  \newcommand{\ufcdtextlang}[2]{%
+    \UFCDlang@IfKnown{#1}{%
+      \UFCDlang@Call\foreignlanguage{#1}%
+    }{}%
+    {%
+      \def\ufcdLanguageName{#1}%
+      #2%
+    }%
+  }%
+  \newenvironment*{ufcdlang}[1]{%
+    \def\ufcdLanguageName{#1}%
+    \UFCDlang@IfKnown{#1}{%
+      \def\UFCDlang@EndLang{\@nameuse{endotherlanguage}}%
+      \UFCD@Call\otherlanguage{#1}%
+    }{%
+      \def\UFCDlang@EndLang{}%
+    }%
+  }{%
+    \UFCDlang@EndLang
+  }%
+  \newenvironment*{ufcdlang*}[1]{%
+    \def\ufcdLanguageName{#1}%
+    \UFCDlang@IfKnown{#1}{%
+      \def\UFCDlang@EndLang{\@nameuse{endotherlanguage}}%
+      \edef\UFCD@temp{%
+        \expandafter\noexpand
+        \csname captions%
+            \csnameUFCDlang@#1@polyglossia.name\endcsname\endcsname
+      }%
+      \expandafter\let\expandafter\UFCDlang@saved\UFCD@temp
+      \expandafter\let\UFCD@temp\@empty
+      \edef\UFCD@temp{%
+        \noexpand\UFCD@Call\noexpand\otherlanguage{#1}%
+        \let\expandafter\noexpand\UFCD@temp\noexpand\UFCDlang@saved
+      }%
+      \UFCD@temp
+    }{%
+      \def\UFCDlang@EndLang{}%
+    }%
+  }{%
+    \UFCDlang@EndLang
+  }%
+\else
+  \newcommand*{\ufcdSelectLanguage}[1]{%
+    \def\ufcdLanguageName{#1}%
+    \UFCDlang@IfKnown{#1}{%
+      \expandafter\expandafter\expandafter
+      \selectlanguage\expandafter\expandafter\expandafter{%
+        \csname UFCDlang@#1@babel.name\endcsname
+      }%
+    }{}%
+  }%
+  \newcommand{\ufcdtextlang}[2]{%
+    \UFCDlang@IfKnown{#1}{%
+      \expandafter\expandafter\expandafter
+      \foreignlanguage\expandafter\expandafter\expandafter{%
+        \csname UFCDlang@#1@babel.name\endcsname
+      }%
+    }{}%
+    {%
+      \def\UFCD@LanguageName{#1}%
+      #2%
+    }%
+  }%
+  \newenvironment*{ufcdlang}[1]{%
+    \def\ufcdLanguageName{#1}%
+    \UFCDlang@IfKnown{#1}{%
+      \def\UFCDlang@EndLang{\@nameuse{endotherlanguage}}%
+      \expandafter\expandafter\expandafter
+      \otherlanguage\expandafter\expandafter\expandafter{%
+        \csname UFCDlang@#1@babel.name\endcsname
+      }%
+    }{%
+      \def\UFCDlang@EndLang{}%
+    }%
+  }{%
+    \UFCDlang@EndLang
+  }%
+  \newenvironment*{ufcdlang*}[1]{%
+    \def\ufcdLanguageName{#1}%
+    \UFCDlang@IfKnown{#1}{%
+      \def\UFCDlang@EndLang{\@nameuse{endotherlanguage*}}%
+      \csname otherlanguage*%
+      \expandafter\expandafter\expandafter\endcsname
+      \expandafter\expandafter\expandafter{%
+        \csname UFCDlang@#1@babel.name\endcsname
+      }%
+    }{%
+      \def\UFCDlang@EndLang{}%
+    }%
+  }{%
+    \UFCDlang@EndLang
+  }%
+\fi
+\newcommand*{\ufcdIfLanguageName}[1]{%
+  \def\UFCD@temp{#1}%
+  \ifx\UFCD@temp\ufcdLanguageName
+    \expandafter\@firstoftwo
+  \else
+    \expandafter\@secondoftwo
+  \fi
+}
+\define@key{UFCD}{language}{%
+  \csname UFCDlang@State\UFCDlang@State\endcsname{#1}%
+}
+\def\UFCDlang@State{Load}
+\def\UFCDlang@List{}
+\def\UFCDlang@StateLoad#1{%
+  \expandafter\providecommand\expandafter*%
+  \csname UFCDlang@#1@\UFCDlang@Package.name\endcsname{}%
+  \expandafter
+  \ifx\csname UFCDlang@#1@\UFCDlang@Package.name\endcsname\@empty
+    \PackageError{ufcd-lang-opt}{%
+      No setup for language `#1' found%
+    }\@ehc
+  \else
+    \edef\UFCDlang@List{\UFCDlang@List,#1}%
+    \@namedef{UFCDlang@#1@load}{}%
+  \fi
+}
+\RequirePackage{ufcd-lang-setup}[2012/03/16]
+\define@key{UFCD}{mainlanguage}{%
+  \def\UFCDlang@Main{#1}%
+}
+\ufcdSetup{%
+  language=german,%
+  language=ngerman,%
+  language=english,%
+  mainlanguage=german,%
+}%
+\InputIfFileExists{ufcd-lang-opt.cfg}{}{}
+\endinput
+%%
+%% End of file `ufcd-lang-opt.sty'.

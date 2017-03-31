@@ -1,0 +1,463 @@
+%%
+%% This is file `beamerouterthemeufcd.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `beamer-outer')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemeufcd}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (SD)]%
+
+\DeclareOptionBeamer{identitylevel}{\def\ident@level{#1}}
+\DeclareOptionBeamer{e1}{\ExecuteOptionsBeamer{identitylevel=1}}
+\DeclareOptionBeamer{e1e}{\ExecuteOptionsBeamer{identitylevel=1e}}
+\DeclareOptionBeamer{e2}{\ExecuteOptionsBeamer{identitylevel=2}}
+\ExecuteOptionsBeamer{identitylevel=1}
+
+\newif\ifbeamer@sidebartoc\beamer@sidebartocfalse
+\DeclareOptionBeamer{showtoc}[true]{\csname beamer@sidebartoc#1\endcsname}
+
+\DeclareOptionBeamer{hideothersubsections}[]{\beamer@nav@subsectionstyle{show/show/hide}}
+\DeclareOptionBeamer{hideallsubsections}[]{\beamer@nav@subsectionstyle{hide}}
+
+\DeclareOptionBeamer{width}{\beamer@sidebarwidth=#1}
+\DeclareOptionBeamer{height}{\beamer@headheight=#1}
+\DeclareOptionBeamer{left}{\def\beamer@sidebarside{left}}
+\DeclareOptionBeamer{right}{\def\beamer@sidebarside{right}}
+\ExecuteOptionsBeamer{right}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\ifdim\beamer@headheight>0pt
+  \setbeamercolor*{frametitle}{parent=headline}
+  %%% Kopfzeilen-Hintergrund incl. Ecke und (Uni-)Logo
+  \defbeamertemplate*{headline}{ufcd theme}%
+  {%
+    %%% Anpassen des verf"ugbaren Platzes f"ur Kopfzeile
+    \beamer@tempdim=\paperwidth%
+    \advance\beamer@tempdim by -\beamer@sidebarwidth%
+    %%% Berechnen der Logo-Breite
+    \ifbeamertemplateempty{logo}{%
+      \global\ufcd@logowidth=0pt%
+    }{%
+      \setbox\beamer@logobox=\hbox{\usebeamertemplate*{logo}}%
+      \global\ufcd@logowidth=\wd\beamer@logobox%
+      \global\advance\ufcd@logowidth by 3pt%
+      \ifx\beamer@sidebarside\beamer@lefttext%
+        \global\advance\ufcd@logowidth by \beamer@rightmargin
+      \else
+        \global\advance\ufcd@logowidth by \beamer@leftmargin
+      \fi
+    }%
+    %
+    \leavevmode\hbox to \paperwidth{%
+      \ifx\beamer@sidebarside\beamer@lefttext%
+        %%% sidebar left
+        \hskip\beamer@sidebarwidth%
+        \vbox{%
+          \begin{beamercolorbox}[wd=\beamer@tempdim,ht=\beamer@headheight]{headline}%
+          \end{beamercolorbox}%
+          \ifthenelse{\equal{\ident@level}{1}}{%
+            \begin{beamercolorbox}[wd=\beamer@tempdim,ht=\ufcdBeamerOneWidthI]{separation line}%
+            \end{beamercolorbox}%
+            \hbox{
+              \UFCD@put(%
+                0pt,0pt%
+              ){%
+                \makebox(0,0)[lb]{%
+                  \hskip-3\ufcdBeamerOneSumI%
+                  \raisebox{-\ufcdBeamerOneWidthUNI+\ufcdBeamerOneWidthI}[0pt][0pt]{%
+                    \llap{\color{Uni-Grau}\rule[\ufcdBeamerOneWidthUNI-\ufcdBeamerOneWidthI]{\beamer@sidebarwidth-3\ufcdBeamerOneSumI-\ufcdBeamerOneWidthI}{\ufcdBeamerOneWidthI}\hskip\ufcdBeamerOneWidthI}%
+                    \includegraphics[%
+                      scale={\UFCD@BeamerOneScale}%
+                    ]{%
+                      ufcd-logo-e1-right-a4-color%
+                    }%
+                  }%
+                }%
+              }%
+            }%
+          }{%
+            \ifbeamertemplateempty{logo}{}{%
+              \vskip-\beamer@headheight
+              \hbox to \beamer@tempdim{%
+                \hfill
+                \begin{beamercolorbox}[leftskip=3pt,wd=\ufcd@logowidth,ht=\beamer@headheight]{logo}%
+                  \vbox to \beamer@headheight{%
+                    \vss\hbox{\insertlogo}\vss
+                  }%
+                \end{beamercolorbox}%
+              }%
+            }%
+            \begin{beamercolorbox}[wd=\beamer@tempdim,ht=\ufcdBeamerTwoWidthI]{separation line}%
+            \end{beamercolorbox}%
+          }%
+        }%
+      \else
+        %%% sidebar right
+        \vbox{%
+          \begin{beamercolorbox}[wd=\beamer@tempdim,ht=\beamer@headheight]{headline}%
+          \end{beamercolorbox}%
+          \ifthenelse{\equal{\ident@level}{1}}{%
+            \hbox{%
+              \begin{beamercolorbox}[wd=\beamer@tempdim,ht=\ufcdBeamerOneWidthI]{separation line}%
+              \end{beamercolorbox}%
+              \UFCD@put(%
+                3\ufcdBeamerOneSumI,%
+                0pt%
+              ){%
+                \makebox(0,0)[rb]{%
+                  \raisebox{-\ufcdBeamerOneWidthUNI+\ufcdBeamerOneWidthI}[0pt][0pt]{%
+                    \includegraphics[%
+                      scale={\UFCD@BeamerOneScale}%
+                    ]{%
+                      ufcd-logo-e1-left-a4-color%
+                    }%
+                    \rlap{\hskip\ufcdBeamerOneWidthI
+                    \color{Uni-Grau}\rule[\ufcdBeamerOneWidthUNI-\ufcdBeamerOneWidthI]{\beamer@sidebarwidth-3\ufcdBeamerOneSumI-\ufcdBeamerOneWidthI}{\ufcdBeamerOneWidthI}}%
+                  }%
+                }%
+              }%
+            }%
+          }{%
+            \ifbeamertemplateempty{logo}{}{%
+              \vskip-\beamer@headheight
+              \begin{beamercolorbox}[leftskip=\beamer@leftmargin,wd=\ufcd@logowidth,ht=\beamer@headheight]{logo}%
+                \vbox to \beamer@headheight{%
+                  \vss\hbox{\insertlogo}\vss
+                }%
+              \end{beamercolorbox}
+            }%
+            \begin{beamercolorbox}[wd=\beamer@tempdim,ht=\ufcdBeamerTwoWidthI]{separation line}%
+            \end{beamercolorbox}%
+          }%
+          \hfill%
+        }%
+      \fi%
+    }%
+  }%
+
+  \defbeamertemplate*{frametitle}{ufcd theme}
+  {%
+    %%% Anpassen des verf"ugbaren Platzes f"ur Kopfzeile
+    \beamer@tempdim=\paperwidth%
+    \advance\beamer@tempdim by -\beamer@sidebarwidth%
+    \ifthenelse{\equal{\ident@level}{1}}{}{\advance\beamer@tempdim by -\ufcd@logowidth}%
+    \nointerlineskip%
+    \vskip-\beamer@headheight%
+    \vbox to \beamer@headheight{%
+      \vfil
+      \leftskip=-\beamer@leftmargin%
+      \rightskip=-\beamer@rightmargin%
+      \ifthenelse{\equal{\ident@level}{1}}{%
+        \advance\leftskip by0.5cm%
+        \advance\rightskip by0.5cm plus1fil%
+      }{%
+        \ifbeamertemplateempty{logo}{%
+          \advance\leftskip by0.5cm%
+          \advance\rightskip by0.5cm plus1fil%
+        }{%
+          \advance\leftskip by0.2cm%
+          \advance\rightskip by0.2cm plus1fil%
+        }%
+      }%
+      \ifx\beamer@sidebarside\beamer@lefttext%
+        %%% sidebar left
+        \ifthenelse{\equal{\ident@level}{1}}{\advance\leftskip by 0.5cm}{\advance\rightskip by\ufcd@logowidth}
+      \else
+        %%% sidebar right
+        \ifthenelse{\equal{\ident@level}{1}}{\advance\rightskip by 0.5cm}{\advance\leftskip by\ufcd@logowidth}
+      \fi
+      {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\strut\insertframetitle\strut\par}%
+      {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\ifx\insertframesubtitle\empty\else\strut\insertframesubtitle\strut\fi\par}%
+      \vbox{}%
+      \vskip-1em%
+      \vfil
+    }%
+  }
+\fi
+
+\ufcd@beamersidebarwidthreduced=\beamer@sidebarwidth
+\ifthenelse{\equal{\ident@level}{1}}{%
+  \advance\ufcd@beamersidebarwidthreduced by -2\ufcdBeamerOneHeightI%
+  \advance\ufcd@beamersidebarwidthreduced by -\ufcdBeamerOneWidthI%
+}{%
+  \advance\ufcd@beamersidebarwidthreduced by -3\ufcdBeamerTwoHeightI%
+}%
+
+\def\beamer@sidebarformat#1#2#3{%
+  \begin{beamercolorbox}[wd=\ufcd@beamersidebarwidthreduced,leftskip=#1,rightskip=1ex plus1fil,vmode]{#2}
+    \vbox{}%
+    \hspace{0pt}#3\par%
+    \vbox{}%
+    \vskip-1.5ex%
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{section in sidebar}{ufcd theme}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar}{\insertsectionhead}%
+  }%
+}
+
+\defbeamertemplate*{section in sidebar shaded}{ufcd theme}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar shaded}{\insertsectionhead}%
+  }%
+}
+
+\defbeamertemplate*{subsection in sidebar}{ufcd theme}
+{%
+  \beamer@sidebarformat{5pt}{subsection in sidebar}{\insertsubsectionhead}%
+}
+
+\defbeamertemplate*{subsection in sidebar shaded}{ufcd theme}
+{%
+  \beamer@sidebarformat{5pt}{subsection in sidebar shaded}{\insertsubsectionhead}%
+}
+
+\defbeamertemplate*{subsubsection in sidebar}{ufcd theme}
+{%
+  \beamer@sidebarformat{7pt}{subsubsection in sidebar}{\insertsubsubsectionhead}%
+}
+
+\defbeamertemplate*{subsubsection in sidebar shaded}{ufcd theme}
+{%
+  \beamer@sidebarformat{7pt}{subsubsection in sidebar shaded}{\insertsubsubsectionhead}%
+}
+
+\ifdim\beamer@sidebarwidth>0pt
+
+                                % Sidebar
+  \setbeamersize{sidebar width \beamer@sidebarside=\beamer@sidebarwidth}
+  \defbeamertemplate*{sidebar \beamer@sidebarside}{ufcd theme}
+  {%
+    \ifbeamer@sidebartoc%
+      \ifx\beamer@sidebarside\beamer@lefttext%
+      \else%
+      \ifthenelse{\equal{\ident@level}{1}}{\hskip2\ufcdBeamerOneHeightI\hskip\ufcdBeamerOneWidthI}{\hskip3\ufcdBeamerTwoHeightI}%
+      \fi%
+      \vbox{%
+        \ifthenelse{\equal{\ident@level}{1}}{\vskip\ufcdBeamerOneWidthUNI}{}%
+        \insertverticalnavigation{\ufcd@beamersidebarwidthreduced}%
+      }%
+    \fi%
+    \vfill%
+    \ifx\beamer@sidebarside\beamer@lefttext%
+    \else%
+      \usebeamercolor{normal text}%
+      \llap{\usebeamerfont{sidebar}\usebeamertemplate***{navigation symbols}\hskip\beamer@rightmargin}%
+      \vskip2pt%
+    \fi%
+  }%
+  \ifx\beamer@sidebarside\beamer@lefttext%
+    \defbeamertemplate*{sidebar right}{ufcd theme}
+    {%
+      \vfill%
+      \usebeamercolor{normal text}%
+      \llap{\usebeamerfont{sidebar}\usebeamertemplate***{navigation symbols}\hskip\beamer@rightmargin}%
+      \vskip2pt}%
+  \fi
+  \ifx\beamer@sidebarside\beamer@lefttext%
+    \setbeamersize{text margin left=0.2cm,text margin right=0.5cm}
+  \else
+    \setbeamersize{text margin left=0.5cm,text margin right=0.2cm}
+  \fi
+\fi
+
+                                % footer
+\defbeamertemplate*{footline}{ufcd theme}
+{%
+  %%% Anpassen des verf"ugbaren Platzes f"ur Fu"szeile
+  \beamer@tempdim=\paperwidth
+  \advance\beamer@tempdim by -\beamer@sidebarwidth
+  %
+  \leavevmode%
+  \hbox to\paperwidth{%
+    \ifx\beamer@sidebarside\beamer@lefttext%
+      %%% sidebar left
+      \hskip\beamer@sidebarwidth%
+      \ifthenelse{\equal{\ident@level}{1}}{}{%
+        \ifthenelse{\equal{\ident@level}{1e}}{}{%
+          \hbox{
+            \UFCD@put(%
+              0pt,0pt%
+            ){%
+              \makebox(0,0)[lb]{%
+                \hskip-4\ufcdBeamerTwoSumI%
+                \hskip\ufcdBeamerTwoWidthI%
+                \raisebox{0pt}[0pt][0pt]{%
+                  \llap{\color{Uni-Grau}\rule[\ufcdBeamerTwoWidthUNI-\ufcdBeamerTwoWidthI]{\beamer@sidebarwidth-4\ufcdBeamerTwoSumI}{\ufcdBeamerTwoWidthI}\hskip\ufcdBeamerTwoWidthI}%
+                  \includegraphics[%
+                    scale={\UFCD@BeamerTwoScale}%
+                  ]{%
+                    ufcd-logo-e1-emblemless-color%
+                  }%
+                }%
+              }%
+            }%
+          }%
+        }{%
+          \hbox{
+            \UFCD@put(%
+              0pt,0pt%
+            ){%
+              \makebox(0,0)[lb]{%
+                \hskip-4\ufcdBeamerTwoSumI%
+                \hskip\ufcdBeamerTwoWidthI%
+                \raisebox{0pt}[0pt][0pt]{%
+                  \llap{\color{Uni-Grau}\rule[\ufcdBeamerTwoWidthUNI-\ufcdBeamerTwoWidthI]{\beamer@sidebarwidth-4\ufcdBeamerTwoSumI}{\ufcdBeamerTwoWidthI}\hskip\ufcdBeamerTwoWidthI}%
+                  \includegraphics[%
+                    scale={\UFCD@BeamerTwoImageScale}%
+                  ]{%
+                    ufcd-logo-e2-a4-color%
+                  }%
+                }%
+              }%
+            }%
+          }%
+        }%
+      }%
+    \else
+      %%% sidebar right
+    \fi
+    \begin{beamercolorbox}[wd=\beamer@tempdim,ht=2.5ex,dp=1.25ex]{footline}%
+      \hspace*{\beamer@leftmargin}%
+      \rlap{\usebeamerfont{date in head/foot}\insertshortdate{}}%
+      \hfill
+      \usebeamerfont{author in head/foot}\insertshortauthor%
+      ~--~%
+      \usebeamerfont{title in head/foot}\insertshorttitle%
+      \hfill
+      \llap{\insertframenumber{} / \inserttotalframenumber}\hspace*{\beamer@rightmargin}
+    \end{beamercolorbox}%
+    \ifx\beamer@sidebarside\beamer@lefttext%
+      %%% sidebar left
+    \else
+      %%% sidebar right
+      \ifthenelse{\equal{\ident@level}{1}}{}{%
+        \ifthenelse{\equal{\ident@level}{1e}}{}{%
+          \hbox{%
+            \UFCD@put(%
+              4\ufcdBeamerTwoSumI-\ufcdBeamerTwoWidthI,%
+              0pt%
+            ){%
+              \makebox(0,0)[rb]{%
+                \raisebox{0pt}[0pt][0pt]{%
+                  \includegraphics[%
+                    scale={\UFCD@BeamerTwoScale}%
+                  ]{%
+                    ufcd-logo-e1-emblemless-color%
+                  }%
+                  \rlap{\hskip\ufcdBeamerTwoWidthI\color{Uni-Grau}\rule[\ufcdBeamerTwoWidthUNI-\ufcdBeamerTwoWidthI]{\beamer@sidebarwidth-4\ufcdBeamerTwoSumI}{\ufcdBeamerTwoWidthI}}%
+                }%
+              }%
+            }%
+          }%
+        }{%
+          \hbox{%
+            \UFCD@put(%
+              4\ufcdBeamerTwoSumI-\ufcdBeamerTwoWidthI,%
+              0pt%
+            ){%
+              \makebox(0,0)[rb]{%
+                \raisebox{0pt}[0pt][0pt]{%
+                  \includegraphics[%
+                    scale={\UFCD@BeamerTwoImageScale}%
+                  ]{%
+                    ufcd-logo-e2-a4-color%
+                  }%
+                  \rlap{\hskip\ufcdBeamerTwoWidthI\color{Uni-Grau}\rule[\ufcdBeamerTwoWidthUNI-\ufcdBeamerTwoWidthI]{\beamer@sidebarwidth-4\ufcdBeamerTwoSumI}{\ufcdBeamerTwoWidthI}}%
+                }%
+              }%
+            }%
+          }%
+        }%
+      }%
+      \hfill
+    \fi
+  }%
+  \vskip0pt%
+}
+
+\mode
+<all>
+\endinput
+%%
+%% End of file `beamerouterthemeufcd.sty'.

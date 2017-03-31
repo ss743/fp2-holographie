@@ -1,0 +1,197 @@
+%%
+%% This is file `beamerthemeufcd.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `beamer-theme')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeufcd}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (SD)]%
+
+\RequirePackage{ufcd-kvopt}  % Optionen und Konfiguration
+\RequirePackage{ufcd-config} % Einlesen und Bearbeiten der Konfigurationsdateien
+\RequirePackage{ufcd-lang-opt}
+\RequirePackage{ufcd-lang-setup}
+\RequirePackage{ufcd-lang-load} % Sprach-Definitionen, u.a. in Konfigurationsdateien benutzt
+  \UFCD@SetupKeyvalOptions
+  \UFCD@ConfigProcess
+
+\mode<presentation>
+\def\ps@empty{%
+  \let\@mkboth\@gobbletwo%
+  \def\@oddhead{\begingroup%
+    \setbox\beamer@tempbox=\hbox{\usebeamertemplate***{background canvas}\hyper@pagetransition\hyper@pageduration}%
+    \beamer@tempdim=\ht\beamer@tempbox%
+    \setbox\beamer@tempbox=\hbox{\lower\beamer@tempdim\hbox{\box\beamer@tempbox}}%
+    \wd\beamer@tempbox=0pt\ht\beamer@tempbox=0pt\dp\beamer@tempbox=0pt%
+    \setbox\@tempboxa=\hbox{\usebeamertemplate***{background}}%
+    \beamer@tempdim=\ht\@tempboxa%
+    \setbox\@tempboxa=\hbox{\lower\beamer@tempdim\hbox{\box\@tempboxa}}%
+    \wd\@tempboxa=0pt\ht\@tempboxa=0pt\dp\@tempboxa=0pt%
+    \vbox{\hbox{\hskip-\Gm@lmargin\raise\headheight\box\beamer@tempbox\box\@tempboxa}\hfil}%
+    \endgroup%
+  }
+  \def\@oddfoot{\normalcolor{\hypertarget{Navigation\the\c@page}{}\hfil%
+    \setbox\beamer@tempbox=\hbox{}%
+    \ht\beamer@tempbox=0pt%
+    \dp\beamer@tempbox=0pt%
+    \box\beamer@tempbox}}
+  \let\@evenhead\@oddhead\let\@evenfoot\@oddfoot}
+
+\RequirePackage{ifthen}
+
+\RequirePackage{ufcd-base}[2012/03/16] % diverse Hilfsfunktionen
+\RequirePackage{ufcd-kvopt}[2012/03/16] % diverse Hilfsfunktionen
+\RequirePackage{ufcd-logo} % definiert auch verschiedene Laengen auf Logo-Basis!
+\RequirePackage{ufcd-color} % definiert auch verschiedene Farben auf Logo-Basis!
+
+\DeclareOptionBeamer{identitylevel}{\def\ident@level{#1}}
+\DeclareOptionBeamer{e1}{\ExecuteOptionsBeamer{identitylevel=1}}
+\DeclareOptionBeamer{e1e}{\ExecuteOptionsBeamer{identitylevel=1e}}
+\DeclareOptionBeamer{e2}{\ExecuteOptionsBeamer{identitylevel=2}}
+\ExecuteOptionsBeamer{identitylevel=1}
+
+\InputIfFileExists{ufcd.cfg}{}{}
+\makeatletter
+\InputIfFileExists{ufcd-beamer.cfg}{}{}
+\makeatletter
+
+\newdimen\beamer@origsidebarwidth          % Default-Breite Seitenleiste
+\newdimen\beamer@origheadheight            % Default-Hoehe Kopf
+\beamer@origsidebarwidth=0.1035\paperwidth % Default-Breite Seitenleiste
+\beamer@origheadheight=0.126\paperwidth    % Default-Hoehe Kopf
+\newdimen\beamer@sidebarwidth
+\newdimen\beamer@headheight
+\newdimen\ufcdTitlepageHeadheight          % Default-Hoehe Oberteil Titelseite
+\ufcdTitlepageHeadheight=0.6\paperheight   % Default-Hoehe Oberteil Titelseite
+\newdimen\ufcd@tempdima
+\newdimen\ufcd@tempdimb
+\newdimen\ufcd@beamersidebarwidthreduced
+\newdimen\ufcd@logowidth                   % Breite der \logo{}-Box
+
+\newcommand*{\UFCD@BeamerOneScale}{.38}
+\newcommand*{\UFCD@BeamerTwoScale}{.27}
+\newcommand*{\UFCD@BeamerTwoImageScale}{.37965}
+\def\UFCD@temp#1#2{%
+  \expandafter\UFCD@newsetlength
+  \csname ufcd#1#2\expandafter\endcsname
+  \expandafter{%
+    \csname UFCD@#1Scale\endcsname
+    \csname ufcd#2\endcsname
+  }%
+}
+\UFCD@temp{BeamerOne}{WidthI}
+\UFCD@temp{BeamerOne}{HeightI}
+\UFCD@temp{BeamerOne}{SumI}
+\UFCD@temp{BeamerOne}{WidthUNI}
+\UFCD@temp{BeamerTwo}{WidthI}
+\UFCD@temp{BeamerTwo}{HeightI}
+\UFCD@temp{BeamerTwo}{SumI}
+\UFCD@temp{BeamerTwo}{WidthUNI}
+
+\beamer@sidebarwidth=\beamer@origsidebarwidth
+\beamer@headheight=\beamer@origheadheight
+
+\setbeamersize{text margin left=0.0512\paperwidth,text margin right=0.0512\paperwidth}
+
+\def\beamer@lefttext{left}
+
+\DeclareOptionBeamer{width}{\beamer@sidebarwidth=#1}
+\DeclareOptionBeamer{height}{\beamer@headheight=#1}
+\DeclareOptionBeamer{titleheight}{\ufcdTitlepageHeadheight=#1}
+\DeclareOptionBeamer{left}{\def\beamer@sidebarside{left}}
+\DeclareOptionBeamer{right}{\def\beamer@sidebarside{right}}
+\ExecuteOptionsBeamer{right}
+
+\DeclareOptionBeamer{showtoc}[true]{\PassOptionsToPackage{showtoc=#1}{beamerouterthemeufcd}}
+\ExecuteOptionsBeamer{showtoc=false}
+
+\DeclareOptionBeamer{hideothersubsections}{\PassOptionsToPackage{hideothersubsections}{beamerouterthemeufcd}}
+\DeclareOptionBeamer{hideallsubsections}{\PassOptionsToPackage{hideallsubsections}{beamerouterthemeufcd}}
+\ProcessOptionsBeamer
+
+\PassOptionsToPackage{identitylevel=\ident@level}{beamercolorthemeufcd}
+\usecolortheme{ufcd}
+\usefonttheme{ufcd}
+\PassOptionsToPackage{identitylevel=\ident@level}{beamerinnerthemeufcd}
+\useinnertheme{ufcd}
+\PassOptionsToPackage{\beamer@sidebarside}{beamerouterthemeufcd}
+\PassOptionsToPackage{identitylevel=\ident@level}{beamerouterthemeufcd}
+\useoutertheme{ufcd}
+
+\mode
+<all>
+\endinput
+%%
+%% End of file `beamerthemeufcd.sty'.

@@ -1,0 +1,481 @@
+%%
+%% This is file `ufcd-lang-load.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ufcd.dtx  (with options: `lang-load')
+%% 
+%% This is a generated file.
+%% 
+%% Lizenz
+%% ======
+%% 
+%% Alle Rechte liegen bei der
+%%   Universit"at Freiburg
+%%   Stabsstelle Marketing und Wissensmanagement
+%%   Fahnenbergplatz, D-79085 Freiburg
+%%   Homepage: http://www.mw.uni-freiburg.de
+%% Ansprechpartner ist deren Leiter
+%%   Dr. Reiner Fuest
+%%   Tel. 0761/203-5012
+%%   E-Mail: reiner.fuest at mw.uni-freiburg.de
+%% 
+%% Die Dateien dieses Projektes stehen allen Mitgliedern der
+%% Universit"at Freiburg zur Benutzung zur Verf"ugung.
+%% 
+%% Verteilt werden d"urfen diese Dateien nur an Mitglieder der
+%% Universit"at Freiburg in TDS-Archiv-Form. Insbesondere hat
+%% dies vollst"andig und unver"andert zu geschehen. Es d"urfen
+%% aber weitere Dateien hinzugef"ugt werden (Logos,
+%% Konfigurationsdateien, ...). Im TDS-Archiv liegen die Dateien
+%% in Verzeichnissen vor, die dem TDS-Standard entsprechen
+%% 
+%%   TDS = TeX Directory Structure, siehe
+%%   ftp://ftp.ctan.org/tex-archive/tds/tds.pdf
+%% 
+%% Ver"anderungen bed"urfen der Namens"anderung der Pakete oder
+%% Klassen. Es gelten insbesondere die Bedingungen zur Verteilung
+%% und Ver"anderung der LPPL 1.3 "`Conditions on Distribution
+%% and Modification"', Punkte 1, 2 und 6. Aktueller Betreuer
+%% schlie"sst den Rechteinhaber ein.
+%% 
+%%   LPPL = LaTeX Project Public License
+%%   http://www.latex-project.org/lppl.txt
+%% 
+%% Es besteht keinerlei Gew"ahrleistung, soweit dies gesetzlich
+%% zul"assig ist. Es gilt der Abschnitt "`No Warranty" aus
+%% der LPPL.
+%% 
+%% Betreut wird das Projekt im Wintersemester 2009/10 vom Autor,
+%%   Heiko Oberdiek
+%%   E-Mail: heiko.oberdiek at googlemail.com
+%% Danach liegt die Betreuung beim Rechteinhaber "Stabsstelle
+%% Marketing und Wissensmanagement".
+%% 
+%% Das Projekt UFCD besteht aus folgenden Dateien:
+%%   ufcd.sty, ufcd.pdf, ufcd.ins, ufcd.drv, ufcd.bib, ufcd-info.cls,
+%%    ufcd-letter.cls, ufcd-memo.cls, ufcd-babel.sty,
+%%    ufcd-base.sty, ufcd-color.sty, ufcd-foldmarks.sty,
+%%    ufcd-font.sty, ufcd-kvopt.sty, ufcd-lang-load.sty,
+%%    ufcd-lang-opt.sty, ufcd-lang-setup.sty, ufcd-logo.sty,
+%%    ufcd-inputenx.sty, ufcd-inputenx-setup.sty, ufcd-adr.sty,
+%%    ufcd-config.sty, ufcd-config-mw.cfg, ufcd-config-fuest.cfg,
+%%    ufcd-config-iif.cfg, ufcd-config-imtek.cfg,
+%%    ufcd-config-tf.cfg, ufcd-config-tf-dekanat.cfg,
+%%    ufcd-config-tf-dekpamt.cfg,
+%%    ufcd-config-tf-praktikumsamt.cfg,
+%%    ufcd-config-tf-bibliothek.cfg, ufcd-config-template-e1.cfg,
+%%    ufcd-config-template-e2.cfg, beamerthemeufcd.sty,
+%%    beamercolorthemeufcd.sty, beamerfontthemeufcd.sty,
+%%    beamerinnerthemeufcd.sty, beamerouterthemeufcd.sty,
+%%    ufcd-example-letter1.tex, ufcd-example-letter2.tex,
+%%    ufcd-example-letter3.tex, ufcd-example-letter4.tex,
+%%    ufcd-example-memo.tex, ufcd-example-info.tex,
+%%    ufcd-example-beamer.tex,
+%%    ufcd-signature-mustermann.tex
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ufcd-lang-load}%
+  [2012/04/17 v1.0 Uni Freiburg Coporate Design (HO)]%
+\RequirePackage{ufcd-lang-opt}[2012/03/16]
+\UFCD@SetupKeyvalOptions
+\@ifpackageloaded{UFCDlang@Package}{%
+  \PackageError{ufcd-lang-load}{%
+    Package `\UFCDlang@Package' is already loaded.\MessageBreak
+    Load this package first%
+  }\@ehd
+}{}
+\ifxetex
+  \def\UFCDlang@SetMain{%
+    \ifx\UFCDlang@Main\@empty
+    \else
+      \expandafter\ifx
+          \csname UFCDlang@\UFCDlang@Main @polyglossia.name\endcsname
+          \xpg@main@language
+      \else
+        \UFCDlang@Call\resetdefaultlanguage\UFCDlang@Main
+      \fi
+    \fi
+  }%
+  \RequirePackage{etoolbox}%
+  \AtEndPreamble{%
+    \UFCDlang@SetMain
+    \DisableKeyvalOption[%
+      action=error,%
+      package=ufcd-lang-load%
+    ]{UFCD}{mainlanguage}%
+  }%
+\else
+  \def\UFCDlang@SetMain{%
+    \ifx\UFCDlang@Main\@empty
+    \else
+      \expandafter\ifx
+          \csname UFCDlang@\UFCDlang@Main @babel.name\endcsname
+          \bbl@main@language
+      \else
+        \expandafter\main@language\expandafter{%
+          \UFCDlang@Main
+        }%
+      \fi
+    \fi
+  }%
+  \AtBeginDocument{%
+    \UFCDlang@SetMain
+    \DisableKeyvalOption[%
+      action=error,%
+      package=ufcd-lang-load%
+    ]{UFCD}{mainlanguage}%
+  }%
+\fi
+\AtEndOfPackage{\UFCDlang@SetMain}
+\RequirePackage{kvsetkeys}[2009/07/19]
+\begingroup
+  \ifxetex
+  \else
+    \ifx\UFCDlang@Main\@empty
+    \else
+      \@ifundefined{UFCDlang@\UFCDlang@Main @babel.name}{%
+        \PackageError{ufcd-lang-load}{%
+          Main language `\UFCDlang@Main' is not set up%
+        }\@ehc
+        \let\UFCDlang@Main\@empty
+      }{%
+        \expandafter\ifx
+            \csname UFCDlang@\UFCDlang@Main @babel.name\endcsname
+            \@empty
+          \PackageError{ufcd-lang-load}{%
+            Main language `\UFCDlang@Main' is not set up for babel%
+          }\@ehc
+          \let\UFCDlang@Main\@empty
+        \else
+          \edef\UFCDlang@Main{%
+            \csname UFCDlang@\UFCDlang@Main @babel.name\endcsname
+          }%
+        \fi
+      }%
+    \fi
+    \def\x{}%
+    \expandafter\comma@parse\expandafter{%
+      \UFCDlang@List
+    }{%
+      \@ifundefined{UFCDlang@\comma@entry @babel.name}{%
+        \PackageError{ufcd-lang-load}{%
+          Language `\comma@entry' is not set up%
+        }\@ehc
+      }{%
+        \expandafter\ifx
+            \csname UFCDlang@\comma@entry @babel.name\endcsname
+            \@empty
+          \PackageError{ufcd-lang-load}{%
+            Language `\comma@entry' is not set up for babel%
+          }\@ehc
+        \else
+          \edef\x{%
+            \x,%
+            \csname UFCDlang@\comma@entry @babel.name\endcsname
+          }%
+        \fi
+      }%
+      \@gobble
+    }%
+    \let\UFCDlang@List\x
+  \fi
+  \def\x{}%
+  \@namedef{UFCD@-tmp@\UFCDlang@Main}{}%
+  \let\y\relax
+  \expandafter\comma@parse\expandafter{%
+    \UFCDlang@List
+  }{%
+    \let\last\comma@entry
+    \@ifundefined{UFCD@-tmp@\comma@entry}{%
+      \@namedef{UFCD@-tmp@\comma@entry}{}%
+      \ifx\x\@empty
+        \edef\x{\comma@entry}%
+      \else
+        \edef\x{\x,\comma@entry}%
+      \fi
+    }{}%
+    \@gobble
+  }%
+  \ifx\last\relax
+  \else
+    \expandafter\let\expandafter\x\expandafter\@empty
+    \expandafter\comma@parse\expandafter{\x}{%
+      \ifx\comma@entry\last
+      \else
+        \ifx\x\@empty
+          \let\x\comma@entry
+        \else
+          \edef\x{\x,\comma@entry}%
+        \fi
+      \fi
+      \@gobble
+    }%
+    \ifx\x\@empty
+      \let\x\last
+    \else
+      \edef\x{\x,\last}%
+    \fi
+  \fi
+  \ifx\x\@empty
+    \let\x\UFCDlang@Main
+  \else
+    \ifx\UFCDlang@Main\@empty
+    \else
+      \ifxetex
+        \edef\x{\UFCDlang@Main,\x}%
+      \else
+        \edef\x{\x,\UFCDlang@Main}%
+      \fi
+    \fi
+  \fi
+\expandafter\endgroup\expandafter
+\def\expandafter\UFCDlang@List\expandafter{\x}
+\ifxetex
+  \RequirePackage{polyglossia}%
+  \def\UFCDlang@LoadLanguage#1{%
+    \@namedef{UFCDlang@#1@load}{}%
+    \begingroup\expandafter\expandafter\expandafter\endgroup
+    \expandafter\ifx\csname xpg@main@language\endcsname\relax
+      \UFCDlang@Call\setdefaultlanguage{#1}%
+    \else
+      \begingroup\expandafter\expandafter\expandafter\endgroup
+      \expandafter\ifx\csname
+          \csname UFCDlang@#1@polyglossia.name\endcsname
+          @loaded\endcsname\relax
+        \UFCDlang@Call\setotherlanguage{#1}%
+      \fi
+    \fi
+  }%
+  \expandafter\comma@parse@normalized\expandafter{\UFCDlang@List}{%
+    \expandafter\UFCDlang@LoadLanguage\expandafter{\comma@entry}%
+    \@gobble
+  }%
+\else
+  \expandafter\RequirePackage\expandafter[\UFCDlang@List]{babel}%
+  \def\UFCDlang@LoadLanguage#1{%
+    \@namedef{UFCDlang@#1@load}{}%
+    \@ifundefined{UFCDlang@#1@babel.name}{%
+      \PackageError{ufcd-lang-load}{%
+        Language `#1' is not set up%
+      }\@ehc
+    }{%
+      \@ifundefined{UFCDlang@#1@babel.ldf}{%
+        \PackageError{ufcd-lang-load}{%
+          Missing ldf file name for language `#1'%
+        }\@ehc
+      }{%
+        \IfFileExists{\@nameuse{UFCDlang@#1@babel.ldf}.ldf}{%
+          \UFCD@@LoadLanguage{#1}%
+        }{%
+          \PackageError{ufcd-lang-load}{%
+            Language file `\@nameuse{UFCDlang@#1@babel.ldf}.ldf'%
+            \MessageBreak
+            not found for language `#1'%
+          }\@ehc
+        }%
+      }%
+    }%
+  }%
+  \def\UFCD@@LoadLanguage#1{%
+    \let\UFCD@OrgCurrentOption\CurrentOption
+    \edef\CurrentOption{\csname UFCDlang@#1@babel.name\endcsname}%
+    \edef\UFCD@RestoreAtCode{%
+      \noexpand\catcode`@=\the\catcode`@\relax
+    }%
+    \let\UFCD@OrgAtEndOfPackage\AtEndOfPackage
+    \global\let\UFCD@AfterLoadHook\@empty
+    \def\AtEndOfPackage{%
+      \g@addto@macro\UFCD@AfterLoadHook
+    }%
+    \let\UFCD@OrgDeclareOption\DeclareOption
+    \def\DeclareOption{%
+      \@ifstar\@gobble\@gobbletwo
+    }%
+    \makeatletter
+    \@ifundefined{UFCDlang@#1@babel.load}{%
+      \@nameuse{UFCDlang@#1@babel.load}%
+    }{%
+      \input{\@nameuse{UFCDlang@#1@babel.ldf}.ldf}%
+    }%
+    \let\CurrentOption\UFCD@OrgCurrentOption
+    \let\AtEndOfPackage\UFCD@OrgAtEndOfPackage
+    \UFCD@AfterLoadHook
+    \global\let\UFCD@AfterLoadHook\@empty
+    \let\DeclareOption\UFCD@OrgDeclareOption
+    \UFCD@RestoreAtCode
+  }%
+\fi
+\def\UFCDlang@State{Preamble}
+\def\UFCDlang@StatePreamble#1{%
+  \@ifundefined{UFCDlang@#1@load}{%
+    \UFCDlang@LoadLanguage{#1}%
+  }{}%
+}
+\def\UFCDlang@StateDocument#1{%
+  \@ifundefined{UFCDlang@#1@load}{%
+    \@PackageError{ufcdlang-load}{%
+      Unknown language `#1'%
+    }\@ehc
+  }{%
+    \ufcdSelectLanguage{#1}%
+  }%
+}
+\AtBeginDocument{%
+  \def\UFCDlang@State{Document}%
+}
+\ifxetex
+  \newcommand*{\ufcdLanguageListGerman}{german}%
+\else
+  \newcommand*{\ufcdLanguageListGerman}{%
+    austrian,%
+    naustrian,%
+    german,%
+    germanb,%
+    ngerman%
+  }%
+\fi
+\ifxetex
+  \newcommand*{\ufcdLanguageListEnglish}{english}%
+\else
+  \newcommand*{\ufcdLanguageListEnglish}{%
+    american,%
+    australian,%
+    british,%
+    canadian,%
+    english,%
+    newzealand,%
+    UKenglish,%
+    USenglish%
+  }%
+\fi
+\newcommand*{\ufcdProvideCaptionName}[3]{%
+  \begingroup\expandafter\expandafter\expandafter\endgroup
+  \expandafter\ifx\csname captions#1\endcsname\relax
+    \@ifundefined{UFCD@SkipCaption@#1}{%
+      \@namedef{UFCD@SkipCaption@#1}{}%
+      \ifUFCD@verbose
+        \PackageInfo{ufcd-lang-load}{%
+          Captions for `#1' are not available.\MessageBreak
+          Ignoring this and further caption name settings\MessageBreak
+          for this language%
+        }%
+      \fi
+    }{}%
+  \else
+    \begingroup
+      \def\UFCD@temp{\@empty}%
+      \let#2\UFCD@temp
+      \csname captions#1\endcsname
+    \expandafter\endgroup
+    \ifx#2\UFCD@temp
+      \expandafter\g@addto@macro\csname captions#1\endcsname{%
+        \def#2{#3}%
+      }%
+      \begingroup
+        \edef\UFCD@temp{#1}%
+        \@onelevel@sanitize\UFCD@temp
+        \@onelevel@sanitize\languagename
+      \expandafter\endgroup
+      \ifx\UFCD@temp\languagename
+        \def#2{#3}%
+      \fi
+    \else
+      \ifUFCD@verbose
+        \PackageInfo{ufcd-lang-load}{%
+          \string\ufcdProvideCaptionName{#1}:\MessageBreak
+          \string#2 is already present%
+        }%
+      \fi
+    \fi
+  \fi
+}%
+\newcommand*{\ufcdSetCaptionName}[3]{%
+  \begingroup\expandafter\expandafter\expandafter\endgroup
+  \expandafter\ifx\csname captions#1\endcsname\relax
+    \@ifundefined{UFCD@SkipCaption@#1}{%
+      \@namedef{UFCD@SkipCaption@#1}{}%
+      \ifUFCD@verbose
+        \PackageInfo{ufcd-lang-load}{%
+          Captions for `#1' are not available.\MessageBreak
+          Ignoring this and further caption name settings\MessageBreak
+          for this language%
+        }%
+      \fi
+    }{}%
+  \else
+    \ifUFCD@verbose
+      \begingroup
+        \def\UFCD@temp{\@empty}%
+        \let#2\UFCD@temp
+        \csname captions#1\endcsname
+      \expandafter\endgroup
+      \ifx#2\UFCD@temp
+        \PackageInfo{ufcd-lang-load}{%
+          \string\ufcdSetCaptionName{#1}:\MessageBreak
+          \string#2 is added%
+        }%
+      \else
+        \PackageInfo{ufcd-lang-load}{%
+          \string\ufcdSetCaptionName{#1}:\MessageBreak
+          \string#2 is redefined%
+        }%
+      \fi
+    \fi
+    \expandafter\g@addto@macro\csname captions#1\endcsname{%
+      \def#2{#3}%
+    }%
+    \begingroup
+      \edef\UFCD@temp{#1}%
+      \@onelevel@sanitize\UFCD@temp
+      \@onelevel@sanitize\languagename
+    \expandafter\endgroup
+    \ifx\UFCD@temp\languagename
+      \def#2{#3}%
+    \fi
+  \fi
+}
+\newcommand*{\ufcdProvideCaptionNameGermanEnglish}[4][\z@]{%
+  \@for\UFCD@temp:=\ufcdLanguageListGerman\do{%
+    \ufcdProvideCaptionName\UFCD@temp#2{#3}%
+  }%
+  \@for\UFCD@temp:=\ufcdLanguageListEnglish\do{%
+    \ufcdProvideCaptionName\UFCD@temp#2{#4}%
+  }%
+  \ifcase#1\relax
+  \or
+    \providecommand*{#2}{#3}%
+  \or
+    \providecommand*{#2}{#4}%
+  \fi
+}
+\newcommand*{\ufcdSetCaptionNameGermanEnglish}[4][\z@]{%
+  \@for\UFCD@temp:=\ufcdLanguageListGerman\do{%
+    \ufcdSetCaptionName\UFCD@temp#2{#3}%
+  }%
+  \@for\UFCD@temp:=\ufcdLanguageListEnglish\do{%
+    \ufcdSetCaptionName\UFCD@temp#2{#4}%
+  }%
+  \ifcase#1\relax
+  \or
+    \def#2{#3}%
+  \or
+    \def#2{#4}%
+  \fi
+}
+\ufcdSetCaptionNameGermanEnglish[1]%
+  \universityname
+  {Albert-Ludwigs-Universit\"at Freiburg}%
+  {University of Freiburg}%
+\ufcdSetCaptionNameGermanEnglish[1]%
+  \imtekname
+  {Institut f\"ur Mikrosystemtechnik (IMTEK)}%
+  {Department of Microsystems Engineering (IMTEK)}%
+\ufcdSetCaptionNameGermanEnglish[1]%
+  \iifname
+  {Institut f\"ur Informatik}%
+  {Department of Computer Science}%
+\endinput
+%%
+%% End of file `ufcd-lang-load.sty'.
