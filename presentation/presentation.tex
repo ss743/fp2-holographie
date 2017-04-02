@@ -1,5 +1,12 @@
 \documentclass{beamer}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{mathrsfs}
+\usepackage{siunitx}
+\usepackage{multimedia}
+
 \usepackage{ufcd}
 \usepackage[english]{babel}
 \usepackage[backend=biber,backref=false,style=numeric-comp, sorting=none,block=ragged,firstinits=true]{biblatex}
@@ -8,6 +15,23 @@
 
 \usetheme{ufcd}
 
+\newcommand{\gra}[3][]{
+	\begin{tabular}[width=\textwidth]{c}
+		\includegraphics[width=#1\textwidth]{../figures/#2.png}\\
+		\small #3
+	\end{tabular}
+}
+\newcommand{\graTwo}[5][]{
+	\begin{tabular}[width=\textwidth]{cc}
+		\includegraphics[width=#1\textwidth]{../figures/#2.png}&
+		\includegraphics[width=#1\textwidth]{../figures/#3.png}\\
+		\small #4&\small #5
+	\end{tabular}
+	}
+\newcommand{\nlOne}{\\&\small }
+\newcommand{\nlTwo}{\\&\small }
+
+
 \title{Holography}
 \author{Saskia Bondza \& Simon Stephan}
 \date{04.04.2017}
@@ -15,15 +39,18 @@
 \begin{document}
 \maketitle
 \frame{\tableofcontents}
-\section{Theoretical Background}
+\section{Introduction}
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
 	\frametitle{Holography - How does it work?}
-	Blablabla\footfullcite{staats}
+	Blablabla
 \end{frame}
+
+\section{Theoretical Background}
+\frame{\tableofcontents[currentsection]}
+
 \begin{frame}
 	\frametitle{Interference}
-
 \end{frame}
 \begin{frame}
 	\frametitle{Coherence}
@@ -43,19 +70,19 @@
 \begin{frame}
 	\frametitle{Apparatus}
 \end{frame}
-\section{Procedure and Evaluation}
+\section{Experiments}
 \frame{\tableofcontents[currentsection]}
 \subsection{Michelson Interferometer}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Michelson Interferometer}
-	Blablabla
+	\movie[width=3cm,height=2cm,poster]{Blabla}{../figures/michelson.mov}
 \end{frame}
 \subsection{Double Exposure Hologram}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Double Exposure Hologram}
-	Blablabla
+	\gra[0.8]{staebe4}{Interference pattern on the beams}
 \end{frame}
 \begin{frame}
 	\frametitle{Calculation of the Elastic Modulus}
@@ -74,38 +101,37 @@
 \subsection{Fourier Interferometry}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
-	\frametitle{Fourier Interferometry}
-	Blablabla
-\end{frame}
-\begin{frame}
 	\frametitle{Fourier Optics - Huygen's Principle and Fraunhofer Diffraction}
 	Blablabla
 \end{frame}
 \begin{frame}
 	\frametitle{Convolution Theorem}
 	\begin{align}
-	(f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t-\tau) d\tau \label{Convo1}
+	(f*g)(t)&=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t-\tau) d\tau
 	\end{align}
-%	\begin{align}
-%	\mathscr{F}(f*g)=const. \mathscr{F}(f)\cdot \mathscr{F}(g)
-%	\end{align}
-%	 \graX[0.8]{Convolution}{Illustration of the Convolution theorem}{Illustration of the Convolution theorem with the example of the double slit \label{Convo} \footnotemark}\footnotetext{http://www4.uwsp.edu/physastr/kmenning/images/Hecht4.11.F.31.png}
+	\begin{align}
+	\mathscr{F}(f*g)&=const. \mathscr{F}(f)\cdot \mathscr{F}(g)
+	\end{align}
+\end{frame}
+\begin{frame}
+	\frametitle{Convolution Theorem}
+	\gra[0.4]{Convolution}{Illustration of the Convolution theorem with the example of the double slit}
 \end{frame}
 \begin{frame}
 	\frametitle{Cross- and Autocorrelation}
-%	\begin{align}
-%	(f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t+\tau) d\tau \label{corr}
-%	\end{align}
-%	\graX[0.5]{correlation}{Visual comparison of convolution, cross-correlation and autocorrelation}{Visual comparison of convolution, cross-correlation and autocorrelation \label{corsscor} \footnotemark} \footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}
+	\begin{align}
+	(f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t+\tau) d\tau \label{corr}
+	\end{align}
 \end{frame}
 \begin{frame}
-	\frametitle{Experimental Set-up}
-	Blablabla
+	\frametitle{Cross- and Autocorrelation}
+	\gra[0.5]{correlation}{Visual comparison of convolution, cross-correlation and autocorrelation  \footnotemark} \footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}
 \end{frame}
 \begin{frame}
-	\frametitle{Experimental Procedure}
+	\frametitle{Fourier Interferometry}
 	Blablabla
 \end{frame}
+
 \section{Summary and Discussion}
 \frame{\tableofcontents[currentsection]}
 \begin{frame}

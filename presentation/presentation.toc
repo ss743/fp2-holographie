@@ -1,19 +1,12 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \beamer@endinputifotherversion {3.36pt}
-\defcounter {refsection}{0}\relax 
 \select@language {ngerman}
-\defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {1}{Theoretical Background}{3}{0}{1}
-\defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {2}{Procedure and Evaluation}{12}{0}{2}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{1}{Michelson Interferometer}{13}{0}{2}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{2}{Double Exposure Hologram}{15}{0}{2}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{3}{Real Time Hologram}{18}{0}{2}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {2}{4}{Fourier Interferometry}{21}{0}{2}
-\defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Summary and Discussion}{28}{0}{3}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Theoretical Background}{5}{0}{2}
+\beamer@sectionintoc {3}{Experiments}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Michelson Interferometer}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Double Exposure Hologram}{16}{0}{3}
+\beamer@subsectionintoc {3}{3}{Real Time Hologram}{19}{0}{3}
+\beamer@subsectionintoc {3}{4}{Fourier Interferometry}{22}{0}{3}
+\beamer@sectionintoc {4}{Summary and Discussion}{29}{0}{4}
