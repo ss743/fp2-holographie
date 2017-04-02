@@ -6,6 +6,7 @@
 \usepackage{mathrsfs}
 \usepackage{siunitx}
 \usepackage{multimedia}
+\usepackage{nccfoots}
 
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering}p{#1}}
@@ -19,18 +20,24 @@
 \usetheme{ufcd}
 
 \newcommand{\gra}[3][]{
+	\begin{table}
+	\centering
 	\begin{tabular}[width=\textwidth]{c}
 		\includegraphics[width=#1\textwidth]{../figures/#2.png}\\
 		\small #3
 	\end{tabular}
+	\end{table}
 }
 \newcommand{\graTwo}[5][]{
-	\begin{tabular}[width=\textwidth]{cc}
-		\includegraphics[width=#1\textwidth]{../figures/#2.png}&
-		\includegraphics[width=#1\textwidth]{../figures/#3.png}\\
-		\small #4&\small #5
-	\end{tabular}
-	}
+	\begin{table}
+		\centering
+		\begin{tabular}[width=\textwidth]{cc}
+			\includegraphics[width=#1\textwidth]{../figures/#2.png}&
+			\includegraphics[width=#1\textwidth]{../figures/#3.png}\\
+			\small #4&\small #5
+		\end{tabular}
+	\end{table}
+}
 	
 \newcommand{\graFour}[9][]{
 	\begin{tabular}[width=\textwidth]{cc}
@@ -59,7 +66,8 @@
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
 	\frametitle{Holography - What is it?}
-	
+	\gra[0.7]{holo-schach}{}
+	\Footnotetext{}{http://www.holoworld.com/holo/images/hologram.jpg}
 \end{frame}
 \begin{frame}
 	\frametitle{Holography - What is it?}
@@ -100,8 +108,23 @@
 \subsection{Michelson Interferometer}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
-	\frametitle{Michelson Interferometer}
-	%\movie[width=3cm,height=2cm,poster,externalviewer]{Blabla}{../figures/michelson.mov}
+	\frametitle{Set Up}
+	\gra[0.83]{Coherence_length}{Set Up of the Michelson Interferometer}
+\end{frame}
+\begin{frame}
+	\frametitle{Set Up}
+	\begin{figure}
+		\centering
+		\begin{overpic}[width=0.3\textwidth,tics=10]
+			{../figures/fourier-0-2-edit.png}
+			\put(10,85){\Large\textcolor{white}{$\alpha=0\degree$}}
+		\end{overpic}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Interference}
+	\gra[0.67]{michelson1}{Interference in the Michelson interferometer}
+	\centering\movie[externalviewer]{\includegraphics[width=0.6cm]{../figures/play.png}Movie of the disturbance by jumping}{../figures/michelson.mov}
 \end{frame}
 \subsection{Double Exposure Hologram}
 \frame{\tableofcontents[currentsubsection]}
