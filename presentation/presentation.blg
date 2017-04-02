@@ -1,17 +1,17 @@
-[0] Config.pm:340> INFO - This is Biber 2.4
-[0] Config.pm:343> INFO - Logfile is 'presentation.blg'
-[33] biber:287> INFO - === Fr Mär 31, 2017, 10:43:46
-[112] Biber.pm:348> INFO - Reading 'presentation.bcf'
-[234] Biber.pm:742> INFO - Found 1 citekeys in bib section 0
-[239] Biber.pm:3151> INFO - Processing section 0
-[263] Biber.pm:3308> INFO - Looking for bibtex format file 'fp_refs.bib' for section 0
-[267] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[271] bibtex.pm:974> INFO - Found BibTeX data source 'fp_refs.bib'
-[292] UCollate.pm:65> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[292] UCollate.pm:65> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[292] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'de-DE'
-[292] Biber.pm:3032> INFO - No sort tailoring available for locale 'de-DE'
-[293] bbl.pm:519> INFO - Writing 'presentation.bbl' with encoding 'ascii'
-[297] Utils.pm:147> WARN - The entry 'staats' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[299] bbl.pm:615> INFO - Output to presentation.bbl
-[300] Biber.pm:109> INFO - WARNINGS: 1
+[0] Config.pm:343> INFO - This is Biber 2.5
+[0] Config.pm:346> INFO - Logfile is 'presentation.blg'
+[316] biber-MSWIN32:290> INFO - === 
+[492] Biber.pm:351> INFO - Reading 'presentation.bcf'
+[593] Biber.pm:776> INFO - Found 1 citekeys in bib section 0
+[627] Biber.pm:3493> INFO - Processing section 0
+[755] Biber.pm:3657> INFO - Looking for bibtex format file 'fp_refs.bib' for section 0
+[789] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[791] bibtex.pm:1048> INFO - Found BibTeX data source 'fp_refs.bib'
+[909] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[909] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[909] Biber.pm:3306> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'de-DE'
+[909] Biber.pm:3310> INFO - No sort tailoring available for locale 'de-DE'
+[910] bbl.pm:526> INFO - Writing 'presentation.bbl' with encoding 'ascii'
+[913] Utils.pm:149> WARN - The entry 'staats' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[913] bbl.pm:619> INFO - Output to presentation.bbl
+[914] Biber.pm:108> INFO - WARNINGS: 1
