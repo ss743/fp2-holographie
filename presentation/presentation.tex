@@ -11,6 +11,8 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering}p{#1}}
 
+\usepackage{overpic}
+
 \usepackage{ufcd}
 \usepackage[english]{babel}
 \usepackage[backend=biber,backref=false,style=numeric-comp, sorting=none,block=ragged,firstinits=true]{biblatex}
@@ -48,9 +50,20 @@
 		\includegraphics[width=#1\textwidth]{../figures/#5.png}\\
 		\small #8&\small #9
 	\end{tabular}
+	}
+\newcommand{\graTwoOne}[4][]{
+	\begin{table}
+		\centering
+	\begin{tabular}[width=\textwidth]{cc}
+		\includegraphics[width=#1\textwidth]{../figures/#2.png}&
+		\includegraphics[width=#1\textwidth]{../figures/#3.png}
+	\end{tabular}
+	{#4}
+	\end{table}
 }
 \newcommand{\nlOne}{\\&\small }
 \newcommand{\nlTwo}{\\&\small }
+\newcommand{\degree}{^\circ}
 
 \setbeamerfont{footnote}{size=\tiny}
 
@@ -109,15 +122,16 @@
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Set Up}
-	\gra[0.83]{Coherence_length}{Set Up of the Michelson Interferometer}
+	\gra[0.83]{Coherence_length}{}%Set Up of the Michelson Interferometer}
 \end{frame}
 \begin{frame}
 	\frametitle{Set Up}
 	\begin{figure}
 		\centering
-		\begin{overpic}[width=0.3\textwidth,tics=10]
-			{../figures/fourier-0-2-edit.png}
-			\put(10,85){\Large\textcolor{white}{$\alpha=0\degree$}}
+		\begin{overpic}[width=0.85\textwidth,tics=20,grid]
+			{../figures/aufbau_michelson.png}
+			\put(20,37){\small\textcolor{white}{Mirror 1}}
+			\put(30,17){\small\textcolor{white}{Mirror 2}}
 		\end{overpic}
 	\end{figure}
 \end{frame}
@@ -150,34 +164,124 @@
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Fourier Optics - Huygen's Principle and Fraunhofer Diffraction}
-	Blablabla
+	\gra{Huygen}{Propagation of Waves based on Huygen's Principle \footfullcite{http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide14.pdf}}
+\end{frame}
+\begin{frame}
+	\frametitle{Fourier Optics - Huygen's Principle and Fraunhofer Diffraction}
+	
+	Fresnel-Kirchhoff-Integral Formula:
+	\begin{align}
+	U(x_0) &= \frac{1}{\lambda L} C \mathscr{F}{g(x, y)}    = \frac{1}{\lambda L} C   \int\limits_{-\infty}^{\infty}  g(x,y)e^{-ikx}dx    &  C  \cdot C^* &= 1                         \label{FKK}
+	\end{align}
+	
+	Intensity Distribution in the Far field:
+	\begin{align}
+	I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
+	\end{align}
+\end{frame}
+\begin{frame}
+
 \end{frame}
 \begin{frame}
 	\frametitle{Convolution Theorem}
+	\textbf{Convolution} is a mathematical operation computing a third function out of two functions $f$ and $g$ that can be imagined as ``smearing'' function $f$ with $g$:
 	\begin{align}
 	(f*g)(t)&=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t-\tau) d\tau
 	\end{align}
+	Using the definition of the Fourier transfrom, one can easily prove:
 	\begin{align}
 	\mathscr{F}(f*g)&=const. \mathscr{F}(f)\cdot \mathscr{F}(g)
 	\end{align}
 \end{frame}
 \begin{frame}
 	\frametitle{Convolution Theorem}
-	\gra[0.4]{Convolution}{Illustration of the Convolution theorem with the example of the double slit}
+	\gra[0.7]{Convolution}{Illustration of the Convolution theorem with the example of the double slit}
 \end{frame}
 \begin{frame}
 	\frametitle{Cross- and Autocorrelation}
+\textbf{Cross-Correlation} describes the similarity of two functions dependent on the displacement of one relative to another:
 	\begin{align}
 	(f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t+\tau) d\tau \label{corr}
 	\end{align}
+\textbf{Auto-Correlation} describes the self-similarity of a function with a displaced version of itself
 \end{frame}
 \begin{frame}
 	\frametitle{Cross- and Autocorrelation}
-	\gra[0.5]{correlation}{Visual comparison of convolution, cross-correlation and autocorrelation  \footnotemark} \footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}
+	\gra[0.7]{correlation}{Visual comparison of convolution, cross-correlation and autocorrelation  \footnotemark} \footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}
 \end{frame}
 \begin{frame}
 	\frametitle{Fourier Interferometry}
 	Blablabla
+\end{frame}
+\begin{frame}
+	\frametitle{Fourier Interferometry - Experimental Set Up}
+   \gra[0.8]{Versuchsaufbau_4}{Experimental set-up for the cross-correlation measurement  \footfullcite{Bamberger}}
+\end{frame}
+\begin{frame}
+	\frametitle{Fourier Interferometry - Experimental Set Up}
+	\gra[0.8]{aufbau4}{Experimental set-up for the cross-correlation measurement}
+\end{frame}
+\begin{frame}
+		\frametitle{Fourier Interferometry - Experimental Procedure}
+	\begin{itemize}
+		\item Exposure: $8\,\mathrm{minutes}$
+		\item Development: $3\,\mathrm{minutes}$
+		\item Pre-watering: $10\,\mathrm{seconds}$
+		\item Watering: $2\,\mathrm{minutes}$
+		\item Bleaching: $45\,\mathrm{minutes}$
+		\item Pre-watering: $3 \times 30\,\mathrm{seconds}$
+		\item Watering: $1\,\mathrm{minutes}$
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Fourier Interferometry - Results}
+
+\begin{figure}
+	\centering
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-0-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=0\degree$}}
+	\end{overpic}
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-15-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=15\degree$}}
+	\end{overpic}\\
+		\vspace{0.2 cm}
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-30-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=30\degree$}}
+	\end{overpic}
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-45-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=45\degree$}}
+	\end{overpic}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Fourier Interferometry - Results}
+\begin{figure}
+	
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-60-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=60\degree$}}
+	\end{overpic}
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-75-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=75\degree$}}
+	\end{overpic}\\
+	
+	\vspace{0.2 cm}
+	
+	\begin{overpic}[width=0.3\textwidth,tics=10]
+		{../figures/fourier-90-2-edit.png}
+		\put(10,85){\Large\textcolor{white}{$\alpha=90\degree$}}
+	\end{overpic}
+
+\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Fourier Interferometry - Comparison with Theoretical Rsults}
+\graTwoOne[0.4]{Korrelation_Spalt1}{Korrelation_Spalt2}{Theoretical Predictions}
 \end{frame}
 
 \section{Summary and Discussion}
