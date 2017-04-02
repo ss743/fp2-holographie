@@ -7,6 +7,9 @@
 \usepackage{siunitx}
 \usepackage{multimedia}
 
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering}p{#1}}
+
 \usepackage{ufcd}
 \usepackage[english]{babel}
 \usepackage[backend=biber,backref=false,style=numeric-comp, sorting=none,block=ragged,firstinits=true]{biblatex}
@@ -28,6 +31,17 @@
 		\small #4&\small #5
 	\end{tabular}
 	}
+	
+\newcommand{\graFour}[9][]{
+	\begin{tabular}[width=\textwidth]{cc}
+		\includegraphics[width=#1\textwidth]{../figures/#2.png}&
+		\includegraphics[width=#1\textwidth]{../figures/#3.png}\\
+		\small #6&\small #7\\
+		\includegraphics[width=#1\textwidth]{../figures/#4.png}&
+		\includegraphics[width=#1\textwidth]{../figures/#5.png}\\
+		\small #8&\small #9
+	\end{tabular}
+}
 \newcommand{\nlOne}{\\&\small }
 \newcommand{\nlTwo}{\\&\small }
 
@@ -43,7 +57,14 @@
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
 	\frametitle{Holography - How does it work?}
-	Blablabla
+	%{
+		%\centering
+		\begin{tabular}{p{5cm}p{5cm}}
+			\textbf{Photography}&\textbf{Holography}\\
+			2-dimensional images&3-dimensional images\\
+			stores only amplitude information&stores amplitude and phase information
+		\end{tabular}
+	%}
 \end{frame}
 
 \section{Theoretical Background}
