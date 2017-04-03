@@ -40,7 +40,14 @@
 		\end{tabular}
 	\end{table}
 }
-	
+\newcommand{\graThree}[6][0.49]{
+	\begin{tabular}[width=\textwidth]{ccc}
+		\includegraphics[width=#1\textwidth]{../figures/#2.png}&
+		\includegraphics[width=#1\textwidth]{../figures/#3.png}&
+		\includegraphics[width=#1\textwidth]{../figures/#4.png}&
+		\captionof{figure}[#5]{#6}
+	\end{tabular}
+}	
 \newcommand{\graFour}[9][]{
 	\begin{tabular}[width=\textwidth]{cc}
 		\includegraphics[width=#1\textwidth]{../figures/#2.png}&
@@ -99,18 +106,16 @@
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
 	\frametitle{Holography - What is it?}
-	\gra[0.7]{holo-schach}{}
-	\footnotetext{}{http://www.holoworld.com/holo/images/hologram.jpg}
+	\gra[0.35]{holo-schach}{}
+	\footnotetext{http://www.holoworld.com/holo/images/hologram.jpg}
+		\begin{tabular}{p{5cm}|p{5cm}}
+			\textbf{Photography}&\textbf{Holography}\\\hline
+			2-dimensional images&3-dimensional images\\\hline
+			stores only amplitude information&stores amplitude and phase information\\\hline
+			can be seen at any light&can be seen only with the same beam as recorded with
+		\end{tabular}
 \end{frame}
-\begin{frame}
-	\frametitle{Holography - What is it?}
-	\begin{tabular}{p{5cm}|p{5cm}}
-		\textbf{Photography}&\textbf{Holography}\\\hline
-		2-dimensional images&3-dimensional images\\\hline
-		stores only amplitude information&stores amplitude and phase information\\\hline
-		can be studied at any light&can be studied only at special conditions
-	\end{tabular}
-\end{frame}
+
 
 \section{Theoretical Background}
 \frame{\tableofcontents[currentsection]}
@@ -118,22 +123,24 @@
 	\frametitle{Princple Set-Up of a Holography experiment}
 	\gra[0.8]{PrincipleSetUp}{}
 \end{frame}
-\begin{frame}
-	\frametitle{Interference}
-	\gra[0.7]{stripes}{Interference Pattern of two Plane Waves}
-\end{frame}
+
 \begin{frame}
 	\frametitle{Interference}
 	\begin{table}
 		\centering
 		\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
-			\includegraphics[width=0.7\textwidth]{../figures/Interference1.png}&
-					$A_1(r) = E_1(r) e^{i(kr+\phi_1)}$\newline
-					$A_2(r) = E_2 e^{i(kx\sin(\theta)+\phi_2)}$
+
+				
+			\gra[0.6]{stripes}{Interference Pattern of two Plane Waves}
+			&
+			\includegraphics[width=0.4\textwidth]{../figures/Interference1.png}\\
+			$A_1(r) = E_1(r) e^{i(kr+\phi_1)}$\newline
+			$A_2(r) = E_2 e^{i(kx\sin(\theta)+\phi_2)}$
+			$I=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))$
 		\end{tabular}
 	\end{table}
 	
-	$I=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))$
+	
 
 \end{frame}
 
@@ -143,8 +150,11 @@
 	\gra[0.8]{obj}{Blackness of a photo plate for an object point (spherical wave) \footfullcite{staats}}
 \end{frame}
 \begin{frame}
-	\frametitle{Hologram of an object point}
-	\gra[0.5]{obj2}{Blackness of a photo plate for two and four object points respectively \footfullcite{staats}}
+	\frametitle{Reconstruction of a Hologram}
+	
+	\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footfullcite{staats}}
+	$A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vitual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}$
+	
 \end{frame}
 \begin{frame}
 	\frametitle{Coherence}
@@ -166,7 +176,7 @@
 	\begin{table}
 		\centering
 		\begin{tabular}{p{5cm}p{5cm}}
-			\textbf{Temporal Coherence}&\textbf{Spatial Coherence}\\
+			\textbf{Temporal Coherence}&\\
 			
 			\begin{itemize}
 				\item $\Delta \phi \left( t \right) - \phi\left( t + \tau\right)  = \text{const.}$
@@ -174,18 +184,14 @@
 				\item easily measured with a Michelson interferometer
 			\end{itemize}
 			&
-			\begin{itemize}
-				\item constant phase relation between two points that are shifted perpendicular to the propagation direction
-				\item easily measured with a Young Double Slit experiment
+		
+				\gra[0.6]{Coherence}{Temporal coherence of wavelets \footnotemark}{\footnotetext{https://i.stack.imgur.com/U9JsT.png}}
 				
-			\end{itemize}
+		
 		\end{tabular}
 	\end{table}
 \end{frame}
-\begin{frame}
-	\frametitle{Coherence}
-	\gra[0.8]{Coherence}{Spatial and Temporal coherence of wavelets}{Spatial and Temporal coherence of wavelets: \textbf{left} spatial and temporal coherent wave \textbf{middle:} Spatial coherent and temporal incoherent wave \textbf{right:} incoherent wave \footnote{https://i.stack.imgur.com/U9JsT.png}}
-\end{frame}
+
 \begin{frame}
 	\frametitle{Types of Holography}
 	\begin{itemize}
@@ -196,109 +202,38 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Types of Holography}
-	\begin{itemize}
-		\item \textbf{{Area and Volume Hologram}}
-		\item Amplitude and Phase Hologram
-		\item Reflection and Transmission Hologram
-	\end{itemize}
-\end{frame}
-\begin{frame}
-	\frametitle{Types of Holography}
-	\begin{itemize}
-		\item Area and Volume Hologram
-		\item \textbf{Amplitude and Phase Hologram}
-		\item Reflection and Transmission Hologram
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Types of Holography}
-	\begin{itemize}
-		\item Area and Volume Hologram
-		\item Amplitude and Phase Hologram
-		\item \textbf{Reflection and Transmission Hologram}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Types of Holography}
-\gra[0.5]{Reflex_Transmissions_Hologram}{Comparison of Reflection and Transmission Hologram  \footfullcite{staats}}
-\end{frame}
-\begin{frame}
-	\frametitle{Reconstruction of a Hologram}
-	
-\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footfullcite{staats}}
-	$A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vitual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}$
-	
-\end{frame}
-\begin{frame}
 	\frametitle{Holographic Interferometry - Use}
-	\begin{itemize}
-		\item extremely precise measurement of movements
-		\item stress, strain and vibration analysis
-		\item non-destructive testing
-	\end{itemize}
-	\gra[0.34]{HI}{Holographic Interferometry of a Guitar \footnotemark}\footnotetext{http://hologram.se/tag/holographic-interferometry/}
-\end{frame}
-\begin{frame}
-	\frametitle{Holographic Interferometry - Methods}
-	\begin{itemize}
-		\item Double exposure holography
-		\item Real Time holography
-		\item Time average holography
-	\end{itemize}
-\end{frame}
-\begin{frame}
-	\frametitle{Holographic Interferometry - Methods}
-
-			\begin{table}
-				\centering
-				\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
-			\begin{itemize}
-				\item \textbf{Double exposure holography}
-				\item Real Time holography
-				\item Time average holography
-			\end{itemize}
-					&
-				\includegraphics[width=0.4\textwidth]{../figures/staebe4.png}
-				\end{tabular}
-			\end{table}
-
-	
-\end{frame}
-\begin{frame}
-	\frametitle{Holographic Interferometry - Methods}
 		\begin{table}
 			\centering
-			\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
-	\begin{itemize}
-		\item Double exposure holography
-		\item \textbf{Real Time holography}
-		\item Time average holography
-	\end{itemize}
+			\begin{tabular}{p{5cm}p{5cm}}
+				\textbf{Use}&\textbf{Methods}\\
+					\begin{itemize}
+						\item extremely precise measurement of movements
+						\item stress, strain and vibration analysis
+						\item non-destructive testing
+					\end{itemize}
+					\gra[0.34]{HI}{Holographic Interferometry of a Guitar \footnotemark}\footnotetext{http://hologram.se/tag/holographic-interferometry/}
+
+			
 				&
-				\includegraphics[width=0.4\textwidth]{../figures/aluminium2_edit.png}
+				\begin{itemize}
+					\item Double exposure holography
+					\item Real Time holography
+					\item Time average holography
+				\end{itemize}	
+
 			\end{tabular}
 		\end{table}
+\end{frame}
 
-\end{frame}
-\begin{frame}
-	\frametitle{Holographic Interferometry - Methods}
-	\begin{itemize}
-		\item Double exposure holography
-		\item Real Time holography
-		\item \textbf{Time average holography}
-	\end{itemize}
-\end{frame}
+
+
+
 \begin{frame}
 	\frametitle{The Helium-Neon-Laser}
  \gra[0.5]{HeNe}{Energy level system of the Helium-Neon-Laser \footnotemark}\footnotetext{https://lp.uni-goettingen.de/get/text/1804}
 \end{frame}
-\begin{frame}
-	\frametitle{Spatial Filter}
-	\gra[0.8]{SpatialFilter}{Set-Up of a Spatial Filter }
-\end{frame}
+
 
 \section{Experiments}
 \frame{\tableofcontents[currentsection]}
@@ -362,34 +297,16 @@
 		\item Cleaning: $1\,$minute
 	\end{itemize}
 \end{frame}
+
 \begin{frame}
 	\frametitle{Double Exposure Hologram - Results}
 	\gra[0.8]{staebe4}{Interference pattern on the beams}
 \end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\gra[0.8]{staebe2}{Measurement of the interference pattern (Steel)}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\gra[0.8]{staebe3}{Measurement of the interference pattern (Brass)}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\gra[0.8]{staebe1}{Measurement of the interference pattern (Aluminium)}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\gra[0.8]{Stab2gwid}{Measurement of the interference pattern (Steel)}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\gra[0.8]{Stab3gwid}{Measurement of the interference pattern (Brass)}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\gra[0.8]{Stab1gwid}{Measurement of the interference pattern (Aluminium)}
-\end{frame}
+%\begin{frame}
+%	\graThree[0.3]{staebe2}{staebe3}{staebe1}{}{}
+%	\graThree[0.3]{Stab2gwid}{Stab3gwid}{STab1gwid}{}{}
+%\end{frame}
+
 \begin{frame}
 	\frametitle{Double Exposure Hologram - Calculation of the Elastic Modulus}
 	\begin{table}
@@ -400,18 +317,29 @@
 		\end{tabular}
 	\end{table}
 \end{frame}
+
 \begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\graTwoOneB[0.6]{Stab2R1-edit}{Stab1R2-edit}{Results for the Steel beam}
+  \begin{table}
+  	\centering
+  	\begin{tabular}[width=\textwidth]{m{3cm}m{3cm}m{3cm}}
+  			\graTwoOneB[0.2]{Stab2R1-edit}{Stab1R2-edit}{Results for the Steel beam}&
+  			\graTwoOneB[0.2]{Stab3R1-edit}{Stab2R2-edit}{Results for the Brass beam}&
+  			\graTwoOneB[0.2]{Stab1R1-edit}{Stab3R2-edit}{Results for the Aluminium beam}
+  	\end{tabular}
+  \end{table}
 \end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\graTwoOneB[0.6]{Stab3R1-edit}{Stab2R2-edit}{Results for the Brass beam}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\graTwoOneB[0.6]{Stab1R1-edit}{Stab3R2-edit}{Results for the Aluminium beam}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Double Exposure Hologram - Results}
+%	\graTwoOneB[0.6]{Stab2R1-edit}{Stab1R2-edit}{Results for the Steel beam}
+%\end{frame}
+%\begin{frame}
+%	\frametitle{Double Exposure Hologram - Results}
+%	\graTwoOneB[0.6]{Stab3R1-edit}{Stab2R2-edit}{Results for the Brass beam}
+%\end{frame}
+%\begin{frame}
+%	\frametitle{Double Exposure Hologram - Results}
+%	\graTwoOneB[0.6]{Stab1R1-edit}{Stab3R2-edit}{Results for the Aluminium beam}
+%\end{frame}
 \begin{frame}
 	\frametitle{Double Exposure Hologram - Results}
 	\begin{table}
@@ -425,9 +353,26 @@
 \end{frame}
 \subsection{Real Time Hologram}
 \frame{\tableofcontents[currentsubsection]}
+
 \begin{frame}
-	\frametitle{Real Time Hologram - Set Up}
-	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
+	\frametitle{Real Time Hologram - Oscillations of an Aluminium Plate}	
+	\begin{table}
+		\centering
+		\begin{tabular}{p{6cm}p{4cm}}
+			
+			$$f_{m\nu}=\frac{x_{m\nu}^2h}{2\pi R^2}\sqrt{\frac{E}{12\rho(1-\mu^2)}}$$\newline
+			${\color{white}{-}}J_m(ix)\left[ J_{m-1}(x) - J_{m+1}(x)  \right]$ \newline $- iJ_m(x)\left[ J_{m-1}(ix) - J_{m+1}(ix)  \right] = 0$
+			\begin{itemize}
+				\item $ Radius R= (5.0\pm0.5)\,\mathrm{cm}$
+				\item $height h=5\,\mathrm{mm}$
+				\item $Elastic Modulus E =70\,\mathrm{GPa}$
+				\item $density \rho = 2700\,\frac{\mathrm{kg}}{\mathrm{m^3}}$
+				\item $\mu = 0.34$ 
+			\end{itemize}
+			&
+			\gra[0.8]{bessel_2}{Bessel functions \footnotemark{}}\footnotetext{http://www.quanten.de/forum/showthread.php5?t=118}
+		\end{tabular}
+	\end{table}
 \end{frame}
 \begin{frame}
 	\frametitle{Real Time Hologram - Set Up}
@@ -446,55 +391,24 @@
 		\end{overpic}
 	\end{figure}
 \end{frame}
+
 \begin{frame}
 	\frametitle{Real Time Hologram - Experimental Procedure}
 	\begin{itemize}
-		\item Take a hologram of the aluminium plate in rest
+		\item Take a hologram of the aluminium plate in rest (same process as before)
 		\item Stimulate the plate oscillations with a speaker
 		\item Block the reference beam
 		\item Light the hologram with a pulsed object beam
 		\item Go through the frequencies from about $100\,\si{Hz}$ to $6000\,\si{Hz}$ and search for resonance frequencies
 	\end{itemize}
 \end{frame}
-\begin{frame}
-	\frametitle{Real Time Hologram - Experimental Procedure}
-	\begin{itemize}
-		\item Soaking: several hours
-		\item Exposure: $5\,$minutes
-		\item Development: $3\,$minutes
-		\item Pre-watering: $10\,$seconds
-		\item Watering: $2\,$minutes
-		\item Bleaching: $45\,$minutes
-		\item Pre-watering: $3\times30\,$seconds
-		\item Watering: $1\,$minute
-	\end{itemize}
-\end{frame}
+
 \begin{frame}
 	\frametitle{Real Time Hologram - Experimental Procedure}
 	\gra[0.85]{oszi-inv}{Pulsing the Laser}%Set Up of the Michelson Interferometer}
 \end{frame}
-\begin{frame}
-	\frametitle{Real Time Hologram - Oscillations of an Aluminium Plate}	
-\begin{table}
-	\centering
-	\begin{tabular}{p{6cm}p{4cm}}
-	
-	$$f_{m\nu}=\frac{x_{m\nu}^2h}{2\pi R^2}\sqrt{\frac{E}{12\rho(1-\mu^2)}}$$\newline
-	${\color{white}{-}}J_m(ix)\left[ J_{m-1}(x) - J_{m+1}(x)  \right]$ \newline $- iJ_m(x)\left[ J_{m-1}(ix) - J_{m+1}(ix)  \right] = 0$
-		&
-	\begin{itemize}
-		\item $ R = (5.0\pm0.5)\,\mathrm{cm}$
-		\item $h=5\,\mathrm{mm}$
-		\item $E=70\,\mathrm{GPa}$
-		\item $\rho = 2700\,\frac{\mathrm{kg}}{\mathrm{m^3}}$
-		\item $\mu = 0.34$ 
-	\end{itemize}
-	\end{tabular}
-\end{table}
-\end{frame}
-\begin{frame}
-	\gra[0.8]{bessel_2}{Bessel functions \footnotemark{}}\footnotetext{http://www.quanten.de/forum/showthread.php5?t=118}
-\end{frame}
+
+
 
 \begin{frame}
 	\begin{table}[h]
@@ -558,61 +472,62 @@
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Fourier Optics - Huygen's Principle and Fraunhofer Diffraction}
-	\gra{Huygen}{Propagation of Waves based on Huygen's Principle \footnote{http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide14.pdf}}
+	\gra[0.4]{Huygen}{Propagation of Waves based on Huygen's Principle \footnote{http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide14.pdf}}
+		Fresnel-Kirchhoff-Integral Formula:
+		\begin{align}
+		U(x_0) &= \frac{1}{\lambda L} C \mathscr{F}{g(x, y)}    = \frac{1}{\lambda L} C   \int\limits_{-\infty}^{\infty}  g(x,y)e^{-ikx}dx    &  C  \cdot C^* &= 1       
+		\end{align}
+		
+		Intensity Distribution in the Far field:
+		\begin{align}
+		I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
+		\end{align}
 \end{frame}
-\begin{frame}
-	\frametitle{Fourier Optics - Huygen's Principle and Fraunhofer Diffraction}
-	
-	Fresnel-Kirchhoff-Integral Formula:
-	\begin{align}
-	U(x_0) &= \frac{1}{\lambda L} C \mathscr{F}{g(x, y)}    = \frac{1}{\lambda L} C   \int\limits_{-\infty}^{\infty}  g(x,y)e^{-ikx}dx    &  C  \cdot C^* &= 1       
-	\end{align}
-	
-	Intensity Distribution in the Far field:
-	\begin{align}
-	I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
-	\end{align}
-\end{frame}
+
 \begin{frame}
 	\frametitle{Fourier Transform of a Single Slit}
 \gra[0.8]{Einzelspalt}{Fourier optics for a single slit \footnote{https://www.chem.purdue.edu/courses/chm621/text/ft/basiset/rect/rectangle.gif}}
 \end{frame}
 
+
 \begin{frame}
 	\frametitle{Convolution Theorem}
-	\textbf{Convolution} is a mathematical operation computing a third function out of two functions $f$ and $g$ that can be imagined as ``smearing'' function $f$ with $g$:
-	\begin{align}
-	(f*g)(t)&=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t-\tau) d\tau
-	\end{align}
-	Using the definition of the Fourier transfrom, one can easily prove:
-	\begin{align}
-	\mathscr{F}(f*g)&=const. \mathscr{F}(f)\cdot \mathscr{F}(g)
-	\end{align}
-\end{frame}
-\begin{frame}
-	\frametitle{Convolution Theorem}
-	\gra[0.7]{Convolution}{Illustration of the Convolution theorem with the example of the double slit}
+		\begin{table}
+			\centering
+			\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
+				
+				
+			$	(f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t-\tau) d\tau $ \newline
+			$	\mathscr{F}(f*g)=const. \mathscr{F}(f)\cdot \mathscr{F}(g) $
+				&
+				\includegraphics[width=0.4\textwidth]{../figures/COnvolution.png}\\
+			
+			\end{tabular}
+		\end{table}
 \end{frame}
 \begin{frame}
 	\frametitle{Cross- and Autocorrelation}
-\textbf{Cross-Correlation} describes the similarity of two functions dependent on the displacement of one relative to another:
-	\begin{align}
-	(f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t+\tau) d\tau \label{corr}
-	\end{align}
-\textbf{Auto-Correlation} describes the self-similarity of a function with a displaced version of itself
+		\begin{table}
+			\centering
+			\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
+				
+				
+			\textbf{Cross-Correlation} describes the similarity of two functions dependent on the displacement of one relative to another:
+			$ (f*g)(t)=\int\limits_{-\infty}^{\infty} f(\tau)\cdot g(t+\tau) d\tau \label{corr} $
+			\textbf{Auto-Correlation} describes the self-similarity of a function with a displaced version of itself
+				&
+		\includegraphics[width=0.4\textwidth]{../figures/correlation.png}\footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}\\
+				
+			\end{tabular}
+		\end{table}
+
 \end{frame}
-\begin{frame}
-	\frametitle{Cross- and Autocorrelation}
-	\gra[0.7]{correlation}{Visual comparison of convolution, cross-correlation and autocorrelation  \footnotemark} \footnotetext{By Cmglee - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=20206883}
-\end{frame}
+
 \begin{frame}
 	\frametitle{4f-Correlator}
 	\gra[0.8]{Correlator}{4f-Correlator (with no mask in the transform plane)\footnote{http://www4.uwsp.edu/physastr/kmenning/images/Hecht4.11.F.26.png}} 
 \end{frame}
-\begin{frame}
-	\frametitle{Fourier Interferometry}
-	Blablabla
-\end{frame}
+
 \begin{frame}
 	\frametitle{Fourier Interferometry - Experimental Set Up}
    \gra[0.8]{Versuchsaufbau_4}{Experimental set-up for the cross-correlation measurement  \footfullcite{Bamberger}}
@@ -621,41 +536,34 @@
 	\frametitle{Fourier Interferometry - Experimental Set Up}
 	\gra[0.8]{aufbau4}{Experimental set-up for the cross-correlation measurement}
 \end{frame}
-\begin{frame}
-		\frametitle{Fourier Interferometry - Experimental Procedure}
-	\begin{itemize}
-		\item Exposure: $8\,$minutes
-		\item Development: $3\,$minutes
-		\item Pre-watering: $10\,$seconds
-		\item Watering: $2\,$minutes
-		\item Bleaching: $45\,$minutes
-		\item Pre-watering: $3 \times 30\,$seconds
-		\item Watering: $1\,$minute
-	\end{itemize}
-\end{frame}
+
 \begin{frame}
 	\frametitle{Fourier Interferometry - Results}
-
-\begin{figure}
+\begin{table}
 	\centering
-	\begin{overpic}[width=0.3\textwidth,tics=10]
-		{../figures/fourier-0-2-edit.png}
-		\put(10,85){\Large\textcolor{white}{$\alpha=0\degree$}}
-	\end{overpic}
-	\begin{overpic}[width=0.3\textwidth,tics=10]
-		{../figures/fourier-15-2-edit.png}
-		\put(10,85){\Large\textcolor{white}{$\alpha=15\degree$}}
-	\end{overpic}\\
+	\begin{tabular}{cc}
+	\includegraphics[width=0.3\textwidth]{../figures/Korrelation_Spalt1.png}	
+
+	&
+	%\begin{figure}
+		\centering
+		\begin{overpic}[width=0.3\textwidth,tics=10]{../figures/fourier-0-2-edit.png}
+			\put(10,85){\Large\textcolor{white}{$\alpha=0\degree$}}
+		\end{overpic}
+		\begin{overpic}[width=0.3\textwidth,tics=10]{../figures/fourier-15-2-edit.png}
+			\put(10,85){\Large\textcolor{white}{$\alpha=15\degree$}}
+		\end{overpic}\newline
 		\vspace{0.2 cm}
-	\begin{overpic}[width=0.3\textwidth,tics=10]
-		{../figures/fourier-30-2-edit.png}
-		\put(10,85){\Large\textcolor{white}{$\alpha=30\degree$}}
-	\end{overpic}
-	\begin{overpic}[width=0.3\textwidth,tics=10]
-		{../figures/fourier-45-2-edit.png}
-		\put(10,85){\Large\textcolor{white}{$\alpha=45\degree$}}
-	\end{overpic}
-\end{figure}
+		\begin{overpic}[width=0.3\textwidth,tics=10]{../figures/fourier-30-2-edit.png}
+			\put(10,85){\Large\textcolor{white}{$\alpha=30\degree$}}
+		\end{overpic}
+		\begin{overpic}[width=0.3\textwidth,tics=10]{../figures/fourier-45-2-edit.png}
+			\put(10,85){\Large\textcolor{white}{$\alpha=45\degree$}}
+		\end{overpic}
+	%\end{figure} 	
+    \end{tabular}
+\end{table}
+
 \end{frame}
 \begin{frame}
 \frametitle{Fourier Interferometry - Results}
@@ -781,3 +689,18 @@
 	\end{table}
 \end{frame}
 \end{document}
+
+%\begin{frame}
+%	\frametitle{Types of Holography}
+%	\gra[0.5]{Reflex_Transmissions_Hologram}{Comparison of Reflection and Transmission Hologram  \footfullcite{staats}}
+%\end{frame}
+
+%\begin{frame}
+%	\frametitle{Spatial Filter}
+%	\gra[0.8]{SpatialFilter}{Set-Up of a Spatial Filter }
+%\end{frame}
+
+%\begin{frame}
+%	\frametitle{Hologram of an object point}
+%	\gra[0.5]{obj2}{Blackness of a photo plate for two and four object points respectively \footfullcite{staats}}
+%\end{frame}
