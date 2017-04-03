@@ -288,10 +288,9 @@
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Double Exposure Hologram - Set Up}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
 	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
-\end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Set Up}
 	\begin{figure}
 		\centering
 		\begin{overpic}[width=0.85\textwidth,tics=20]
@@ -306,20 +305,33 @@
 			\put(10,35){\footnotesize\textcolor{white}{Photo Plate}}
 		\end{overpic}
 	\end{figure}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\item Expose two times
+			\begin{itemize}
+				\item with weights
+				\item without weights
+			\end{itemize}
+			\item Develop to make the intensities visible and the holographic medium insensitive to light
+			\item Bleach to make the hologram transparent and get a phase hologram
+		\end{itemize}
+	\end{column}
+	\end{columns}
 \end{frame}
-\begin{frame}
-	\frametitle{Double Exposure Hologram - Experimental Procedure}
-	\begin{itemize}
-		\item Exposure: $2\times5\,$minutes
-		\item Development: $3\,$minutes
-		\item Pre-watering: $10\,$seconds
-		\item Watering: $2\,$minutes
-		\item Bleaching: $15\,$minutes
-		\item Pre-watering: $10\,$seconds
-		\item Watering: $10\,$minutes
-		\item Cleaning: $1\,$minute
-	\end{itemize}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Double Exposure Hologram - Experimental Procedure}
+%	\begin{itemize}
+%		\item Exposure: $2\times5\,$minutes
+%		\item Development: $3\,$minutes
+%		\item Pre-watering: $10\,$seconds
+%		\item Watering: $2\,$minutes
+%		\item Bleaching: $15\,$minutes
+%		\item Pre-watering: $10\,$seconds
+%		\item Watering: $10\,$minutes
+%		\item Cleaning: $1\,$minute
+%	\end{itemize}
+%\end{frame}
 
 \begin{frame}
 	\frametitle{Double Exposure Hologram - Results}
@@ -336,7 +348,13 @@
 		\centering
 		\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
 			\includegraphics[width=0.6\textwidth]{../figures/balken_biegen.png}&
-			$z=-\frac{12F}{Ebc^3}\left(\frac{ax^2}{2}-\frac{x^3}{6} \right)$
+			$z=-\frac{12F}{Ebc^3}\left(\frac{ax^2}{2}-\frac{x^3}{6} \right)$\newline
+			\begin{align*}
+			\Delta \varphi=\frac{\pi}{2}(2n+1)\hspace{0.5cm}\mbox{with }n=0,1,2,\cdots\\
+			y=\frac{\lambda}{4}(2n+1)\hspace{0.5cm}\mbox{with }n=0,1,2,\cdots\\
+			y(x)=A\cdot\left(5x^2-\frac{1}{6}x^3\right)+Bx+C\\
+			E=\frac{12mg}{Abc^3}
+			\end{align*}  
 		\end{tabular}
 	\end{table}
 \end{frame}
@@ -346,9 +364,9 @@
   \begin{table}
   	\centering
   	\begin{tabular}[width=\textwidth]{m{3cm}m{3cm}m{3cm}}
-  			\graTwoOneB[0.2]{Stab2R1-edit}{Stab1R2-edit}{Results for the Steel beam}&
-  			\graTwoOneB[0.2]{Stab3R1-edit}{Stab2R2-edit}{Results for the Brass beam}&
-  			\graTwoOneB[0.2]{Stab1R1-edit}{Stab3R2-edit}{Results for the Aluminium beam}
+  			\graTwoOneB[0.3]{Stab2R1-edit}{Stab1R2-edit}{Results for the Steel beam}&
+  			\graTwoOneB[0.3]{Stab3R1-edit}{Stab2R2-edit}{Results for the Brass beam}&
+  			\graTwoOneB[0.3]{Stab1R1-edit}{Stab3R2-edit}{Results for the Aluminium beam}
   	\end{tabular}
   \end{table}
 	\begin{table}
@@ -422,7 +440,16 @@
 
 \begin{frame}
 	\frametitle{Real Time Hologram - Experimental Procedure}
-	\gra[0.85]{oszi-inv}{Pulsing the Laser}%Set Up of the Michelson Interferometer}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		\gra{oszi-inv}{Pulsing the Laser}%Set Up of the Michelson Interferometer}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Blabla
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 
@@ -488,11 +515,34 @@
 	\footnotetext{\fullcite{staats}}
 \end{frame}
 
+\begin{frame}
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\gra{LinFitResFreq}{}
+	\begin{itemize}
+		\item Slope not significantly different from one
+		\item Offset not significantly different from zero
+		\item[]$\Rightarrow$ Validates our results
+		\item Suggests underestimated statistical errors
+	\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\gra{LinFitResFreq1}{}
+	\begin{itemize}
+		\item R-square-value: $0.9977$
+		\item Supports linearity of the relation
+		\item Confirms theoretical expectations
+		\item[] \ 
+	\end{itemize}
+	\end{column}
+	\end{columns}
+\end{frame}
+
 \subsection{Fourier Interferometry}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Fourier Optics - Huygen's Principle and Fraunhofer Diffraction}
-	\gra[0.4]{Huygen}{Propagation of Waves based on Huygen's Principle \footnote{http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide14.pdf}}
+	\gra[0.6]{Huygen}{Propagation of Waves based on Huygen's Principle \footnote{http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide14.pdf}}
 		Fresnel-Kirchhoff-Integral Formula:
 		\begin{align}
 		U(x_0) &= \frac{1}{\lambda L} C \mathscr{F}{g(x, y)}    = \frac{1}{\lambda L} C   \int\limits_{-\infty}^{\infty}  g(x,y)e^{-ikx}dx    &  C  \cdot C^* &= 1       
@@ -785,26 +835,33 @@
 		\end{tabular}
 	\end{table}
 \end{frame}
-\end{document}
 
-%\begin{frame}
-%	\frametitle{Types of Holography}
-%	\gra[0.5]{Reflex_Transmissions_Hologram}{Comparison of Reflection and Transmission Hologram  \footfullcite{staats}}
-%\end{frame}
+\begin{frame}
+	\LARGE{Fragen?}
+\end{frame}
 
-%\begin{frame}
-%	\frametitle{Spatial Filter}
-%	\gra[0.8]{SpatialFilter}{Set-Up of a Spatial Filter }
-%\end{frame}
 
-%\begin{frame}
-%	\frametitle{Hologram of an object point}
-%	\gra[0.5]{obj2}{Blackness of a photo plate for two and four object points respectively \footfullcite{staats}}
-%\end{frame}
+\begin{frame}
+	\frametitle{Types of Holography}
+	\gra[0.5]{Reflex_Transmissions_Hologram}{Comparison of Reflection and Transmission Hologram  \footfullcite{staats}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spatial Filter}
+	\gra[0.8]{SpatialFilter}{Set-Up of a Spatial Filter }
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hologram of an object point}
+	\gra[0.5]{obj2}{Blackness of a photo plate for two and four object points respectively \footfullcite{staats}}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Pockels Cell}
+	\begin{itemize}
 	\item change of the refracting properties of an opitical medium induced by an electric field
 	\item birefringence: refractive index depending on the polarization of light and/or the propagation direction of light
-	
+	\end{itemize}
 \end{frame}
+
+\end{document}
