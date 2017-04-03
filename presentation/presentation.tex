@@ -80,7 +80,7 @@
 \begin{frame}
 	\frametitle{Holography - What is it?}
 	\gra[0.7]{holo-schach}{}
-	\Footnotetext{}{http://www.holoworld.com/holo/images/hologram.jpg}
+	\footnotetext{}{http://www.holoworld.com/holo/images/hologram.jpg}
 \end{frame}
 \begin{frame}
 	\frametitle{Holography - What is it?}
@@ -92,71 +92,188 @@
 	\end{tabular}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Princple Set-Up of a Holography experiment}
-	\gra[0.8]{PrincipleSetUp}{}
-\end{frame}
-
 \section{Theoretical Background}
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
 	\frametitle{Princple Set-Up of a Holography experiment}
 	\gra[0.8]{PrincipleSetUp}{}
 \end{frame}
-
 \begin{frame}
 	\frametitle{Interference}
+	\gra[0.7]{stripes}{Interference Pattern of two Plane Waves}
 \end{frame}
 \begin{frame}
-	\frametitle{Coherence}
-\textbf{Coherence:} Degree of correlation of physical quantities of a single wave or between multiple waves or even wave packets
+	\frametitle{Interference}
+	\begin{table}
+		\centering
+		\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
+			\includegraphics[width=0.7\textwidth]{../figures/Interference1.png}&
+					$A_1(r) = E_1(r) e^{i(kr+\phi_1)}$\newline
+					$A_2(r) = E_2 e^{i(kx\sin(\theta)+\phi_2)}$
+		\end{tabular}
+	\end{table}
+	
+	$I=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))$
 
-Added up Intensity of coherent Waves:
-
-\begin{align}
-I=\left| a_1 e^{i \phi_1} + a_2 e^{i \phi_2} \right|^2 = \left(I_1+I_2 \right) \left[ 1 + m \cos(\Delta \delta)\right], 
-\end{align}
-
-Added up Intensity of Incohernt waves:
-
-\begin{align}
-I=\left| a_1 e^{i \phi_1} \right|^2+ \left| a_2 e^{i \phi_2}\right|^2 = I_1+I_2
-\end{align}
 \end{frame}
+
+
 \begin{frame}
-\begin{table}
-	\centering
-	\begin{tabular}{p{5cm}p{5cm}}
-		\textbf{Temporal Coherence}&\textbf{Spatial Coherence}\\
-		\begin{align*}
-		\Delta \phi \left( t \right) - \phi\left( t + \tau\right)  = \text{const.}
-		\end{align*}
-		\begin{align*}
-		\tau_c = \frac{1}{\Delta \nu} \approx\approx \frac{\lambda^2}{c\Delta \lambda}
-		\end{align*}
-		&
-		Spatial Coherence Bla Bla
-	\end{tabular}
-\end{table}
-\end{frame}
-\begin{frame}
-	\frametitle{Coherence}
-\gra[0.8]{Coherence}{Spatial and Temporal coherence of wavelets}{Spatial and Temporal coherence of wavelets: \textbf{left} spatial and temporal coherent wave \textbf{middle:} Spatial coherent and temporal incoherent wave \textbf{right:} incoherent wave \footnote{https://i.stack.imgur.com/U9JsT.png}}
+	\frametitle{Hologram of an object point}
+	\gra[0.8]{obj}{Blackness of a photo plate for an object point (spherical wave) \footfullcite{staats}}
 \end{frame}
 \begin{frame}
 	\frametitle{Hologram of an object point}
+	\gra[0.5]{obj2}{Blackness of a photo plate for two and four object points respectively \footfullcite{staats}}
+\end{frame}
+\begin{frame}
+	\frametitle{Coherence}
+	\textbf{Coherence:} Degree of correlation of physical quantities of a single wave or between multiple waves or even wave packets
+	
+	Added up Intensity of coherent Waves:
+	
+	\begin{align}
+	I=\left| a_1 e^{i \phi_1} + a_2 e^{i \phi_2} \right|^2 = \left(I_1+I_2 \right) \left[ 1 + m \cos(\Delta \delta)\right], 
+	\end{align}
+	
+	Added up Intensity of Incohernt waves:
+	
+	\begin{align}
+	I=\left| a_1 e^{i \phi_1} \right|^2+ \left| a_2 e^{i \phi_2}\right|^2 = I_1+I_2
+	\end{align}
+\end{frame}
+\begin{frame}
+	\begin{table}
+		\centering
+		\begin{tabular}{p{5cm}p{5cm}}
+			\textbf{Temporal Coherence}&\textbf{Spatial Coherence}\\
+			
+			\begin{itemize}
+				\item $\Delta \phi \left( t \right) - \phi\left( t + \tau\right)  = \text{const.}$
+				\item $	\tau_c = \frac{1}{\Delta \nu} \approx \frac{\lambda^2}{c\Delta \lambda}$
+				\item easily measured with a Michelson interferometer
+			\end{itemize}
+			&
+			\begin{itemize}
+				\item constant phase relation between two points that are shifted perpendicular to the propagation direction
+				\item easily measured with a Young Double Slit experiment
+				
+			\end{itemize}
+		\end{tabular}
+	\end{table}
+\end{frame}
+\begin{frame}
+	\frametitle{Coherence}
+	\gra[0.8]{Coherence}{Spatial and Temporal coherence of wavelets}{Spatial and Temporal coherence of wavelets: \textbf{left} spatial and temporal coherent wave \textbf{middle:} Spatial coherent and temporal incoherent wave \textbf{right:} incoherent wave \footnote{https://i.stack.imgur.com/U9JsT.png}}
 \end{frame}
 \begin{frame}
 	\frametitle{Types of Holography}
+	\begin{itemize}
+			\item Area and Volume Hologram
+			\item Amplitude and Phase Hologram
+			\item Reflection and Transmission Hologram
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Types of Holography}
+	\begin{itemize}
+		\item \textbf{{Area and Volume Hologram}}
+		\item Amplitude and Phase Hologram
+		\item Reflection and Transmission Hologram
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Types of Holography}
+	\begin{itemize}
+		\item Area and Volume Hologram
+		\item \textbf{Amplitude and Phase Hologram}
+		\item Reflection and Transmission Hologram
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Types of Holography}
+	\begin{itemize}
+		\item Area and Volume Hologram
+		\item Amplitude and Phase Hologram
+		\item \textbf{Reflection and Transmission Hologram}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Types of Holography}
+\gra[0.5]{Reflex_Transmissions_Hologram}{Comparison of Reflection and Transmission Hologram  \footfullcite{staats}}
 \end{frame}
 \begin{frame}
 	\frametitle{Reconstruction of a Hologram}
+	
+\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footfullcite{staats}}
+	$A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vitual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}$
+	
 \end{frame}
 \begin{frame}
-	\frametitle{Holographic Interferometry}
+	\frametitle{Holographic Interferometry - Use}
+	\begin{itemize}
+		\item extremely precise measurement of movements
+		\item stress, strain and vibration analysis
+		\item non-destructive testing
+	\end{itemize}
+	\gra[0.34]{HI}{Holographic Interferometry of a Guitar \footnotemark}\footnotetext{http://hologram.se/tag/holographic-interferometry/}
 \end{frame}
 \begin{frame}
-	\frametitle{Apparatus}
+	\frametitle{Holographic Interferometry - Methods}
+	\begin{itemize}
+		\item Double exposure holography
+		\item Real Time holography
+		\item Time average holography
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Holographic Interferometry - Methods}
+
+			\begin{table}
+				\centering
+				\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
+			\begin{itemize}
+				\item \textbf{Double exposure holography}
+				\item Real Time holography
+				\item Time average holography
+			\end{itemize}
+					&
+				\includegraphics[width=0.4\textwidth]{../figures/staebe4.png}
+				\end{tabular}
+			\end{table}
+
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Holographic Interferometry - Methods}
+		\begin{table}
+			\centering
+			\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
+	\begin{itemize}
+		\item Double exposure holography
+		\item \textbf{Real Time holography}
+		\item Time average holography
+	\end{itemize}
+				&
+				\includegraphics[width=0.4\textwidth]{../figures/aluminium2_edit.png}
+			\end{tabular}
+		\end{table}
+
+\end{frame}
+\begin{frame}
+	\frametitle{Holographic Interferometry - Methods}
+	\begin{itemize}
+		\item Double exposure holography
+		\item Real Time holography
+		\item \textbf{Time average holography}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{The Helium-Neon-Laser}
+ \gra[0.5]{HeNe}{Energy level system of the Helium-Neon-Laser \footnotemark}\footnotetext{https://lp.uni-goettingen.de/get/text/1804}
 \end{frame}
 \section{Experiments}
 \frame{\tableofcontents[currentsection]}
@@ -164,56 +281,62 @@ I=\left| a_1 e^{i \phi_1} \right|^2+ \left| a_2 e^{i \phi_2}\right|^2 = I_1+I_2
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Set Up}
-	\gra[0.85]{Coherence_length}{}%Set Up of the Michelson Interferometer}
+%	\gra[0.85]{Coherence_length}{}%Set Up of the Michelson Interferometer}
 \end{frame}
 \begin{frame}
 	\frametitle{Set Up}
 	\begin{figure}
 		\centering
-		\begin{overpic}[width=0.85\textwidth,tics=20]
-			{../figures/aufbau_michelson.png}
-			\put(20,37){\footnotesize\textcolor{white}{Mirror 1}}
-			\put(30,17){\footnotesize\textcolor{white}{Mirror 2}}
-			\put(40,36){\footnotesize\textcolor{white}{Beam Splitter}}
-			\put(67,37){\footnotesize\textcolor{white}{Laser}}
-		\end{overpic}
+%		\begin{overpic}[width=0.85\textwidth,tics=20]
+%			{../figures/aufbau_michelson.png}
+%			\put(20,37){\footnotesize\textcolor{white}{Mirror 1}}
+%			\put(30,17){\footnotesize\textcolor{white}{Mirror 2}}
+%			\put(40,36){\footnotesize\textcolor{white}{Beam Splitter}}
+%			\put(67,37){\footnotesize\textcolor{white}{Laser}}
+%		\end{overpic}
 	\end{figure}
 \end{frame}
 \begin{frame}
 	\frametitle{Interference}
-	\gra[0.67]{michelson1}{Interference in the Michelson interferometer}
-	\centering\movie[externalviewer]{\includegraphics[width=0.6cm]{../figures/play.png}Movie of the disturbance by jumping}{../figures/michelson.mov}
+%	\gra[0.67]{michelson1}{Interference in the Michelson interferometer}
+%	\centering\movie[externalviewer]{\includegraphics[width=0.6cm]{../figures/play.png}Movie of the disturbance by jumping}{../figures/michelson.mov}
 \end{frame}
 \subsection{Double Exposure Hologram}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
 	\frametitle{Set Up}
-	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
+%	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
 \end{frame}
 \begin{frame}
 	\frametitle{Set Up}
 	\begin{figure}
 		\centering
-		\begin{overpic}[width=0.85\textwidth,tics=20]
-			{../figures/aufbau-2.png}
-			\put(10,10){\footnotesize\textcolor{white}{Mirror 1}}
-			\put(22,20){\footnotesize\textcolor{white}{Spatial Filter 1}}
-			\put(60,57){\footnotesize\textcolor{white}{Mirror 2}}
-			\put(60,37){\footnotesize\textcolor{white}{Spatial Filter 2}}
-			\put(50,10){\footnotesize\textcolor{white}{Beam Splitter}}
-			\put(88,13){\footnotesize\textcolor{white}{Laser}}
-			\put(26,45){\footnotesize\textcolor{white}{Object}}
-			\put(10,35){\footnotesize\textcolor{white}{Photo Plate}}
-		\end{overpic}
+%		\begin{overpic}[width=0.85\textwidth,tics=20]
+%			{../figures/aufbau-2.png}
+%			\put(10,10){\footnotesize\textcolor{white}{Mirror 1}}
+%			\put(22,20){\footnotesize\textcolor{white}{Spatial Filter 1}}
+%			\put(60,57){\footnotesize\textcolor{white}{Mirror 2}}
+%			\put(60,37){\footnotesize\textcolor{white}{Spatial Filter 2}}
+%			\put(50,10){\footnotesize\textcolor{white}{Beam Splitter}}
+%			\put(88,13){\footnotesize\textcolor{white}{Laser}}
+%			\put(26,45){\footnotesize\textcolor{white}{Object}}
+%			\put(10,35){\footnotesize\textcolor{white}{Photo Plate}}
+%		\end{overpic}
 	\end{figure}
 \end{frame}
 \begin{frame}
 	\frametitle{Double Exposure Hologram}
-	\gra[0.8]{staebe4}{Interference pattern on the beams}
+%	\gra[0.8]{staebe4}{Interference pattern on the beams}
 \end{frame}
 \begin{frame}
 	\frametitle{Calculation of the Elastic Modulus}
-	Blablabla
+	\begin{table}
+		\centering
+		\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
+			\includegraphics[width=0.6\textwidth]{../figures/balken_biegen.png}&
+			$z=-\frac{12F}{Ebc^3}\left(\frac{ax^2}{2}-\frac{x^3}{6} \right)$
+		\end{tabular}
+	\end{table}
 \end{frame}
 \subsection{Real Time Hologram}
 \frame{\tableofcontents[currentsubsection]}
@@ -222,9 +345,46 @@ I=\left| a_1 e^{i \phi_1} \right|^2+ \left| a_2 e^{i \phi_2}\right|^2 = I_1+I_2
 	Blablabla
 \end{frame}
 \begin{frame}
-	\frametitle{Oscillations of an Aluminium Plate}
-	Blablabla
+	\frametitle{Oscillations of an Aluminium Plate}	
+\begin{table}
+	\centering
+	\begin{tabular}{p{6cm}p{4cm}}
+	
+	$$f_{m\nu}=\frac{x_{m\nu}^2h}{2\pi R^2}\sqrt{\frac{E}{12\rho(1-\mu^2)}}$$\newline
+	${\color{white}{-}}J_m(ix)\left[ J_{m-1}(x) - J_{m+1}(x)  \right]$ \newline $- iJ_m(x)\left[ J_{m-1}(ix) - J_{m+1}(ix)  \right] = 0$
+		&
+	\begin{itemize}
+		\item $ R = (5.0\pm0.5)\,\mathrm{cm}$
+		\item $h=5\,\mathrm{mm}$
+		\item $E=70\,\mathrm{GPa}$
+		\item $\rho = 2700\,\frac{\mathrm{kg}}{\mathrm{m^3}}$
+		\item $\mu = 0.34$ 
+	\end{itemize}
+	\end{tabular}
+\end{table}
 \end{frame}
+\begin{frame}
+	\gra[0.8]{bessel_2}{Bessel functions \footnotemark{}}\footnotetext{http://www.quanten.de/forum/showthread.php5?t=118}
+\end{frame}
+
+\begin{frame}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c|c|c}
+		Mode 		& $x_{m\nu}$ & Calculated Frequency [Hz] 	 \\ \hline\hline
+		$m=0,\nu=0$	&$3.19622$   &$5082$						\\ \hline
+		$m=1,\nu=0$	& $4.61090$  & $10577$					\\ \hline
+		$m=0,\nu=1$	& $6.30644$  & $19787$					\\ \hline
+		$m=2,\nu=0$	& $5.90568$  & $17352$					\\ \hline
+		$m=2,\nu=1$	& $9.19688$  & $42081$					\\ \hline
+		$m=1,\nu=1$	& $7.79927$  & $30263$				     \\ \hline
+		$m=3,\nu=0$	& $7.14353$  & $25388$                \\ \hline
+		$m=3,\nu=1$	& $10.53670$ & $55235$
+	\end{tabular} \vskip 0.2cm
+	{Calculated Eigenfrequencies of the Aluminium plate}
+\end{table}	
+\end{frame}
+
 \subsection{Fourier Interferometry}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
@@ -236,7 +396,7 @@ I=\left| a_1 e^{i \phi_1} \right|^2+ \left| a_2 e^{i \phi_2}\right|^2 = I_1+I_2
 	
 	Fresnel-Kirchhoff-Integral Formula:
 	\begin{align}
-	U(x_0) &= \frac{1}{\lambda L} C \mathscr{F}{g(x, y)}    = \frac{1}{\lambda L} C   \int\limits_{-\infty}^{\infty}  g(x,y)e^{-ikx}dx    &  C  \cdot C^* &= 1                         \label{FKK}
+	U(x_0) &= \frac{1}{\lambda L} C \mathscr{F}{g(x, y)}    = \frac{1}{\lambda L} C   \int\limits_{-\infty}^{\infty}  g(x,y)e^{-ikx}dx    &  C  \cdot C^* &= 1       
 	\end{align}
 	
 	Intensity Distribution in the Far field:
