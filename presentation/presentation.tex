@@ -61,6 +61,26 @@
 	{#4}
 	\end{table}
 }
+\newcommand{\graTwoOneB}[4][]{
+	\begin{table}
+		\centering
+		\begin{tabular}[width=\textwidth]{c}
+			\includegraphics[width=#1\textwidth]{../figures/#2.png}\\
+			\includegraphics[width=#1\textwidth]{../figures/#3.png}\\
+			#4
+		\end{tabular}
+	\end{table}
+}
+\newcommand{\graTwoOneC}[5]{
+	\begin{table}
+		\centering
+		\begin{tabular}[width=\textwidth]{cc}
+			\includegraphics[width=#1\textwidth]{../figures/#3.png}&
+			\includegraphics[width=#2\textwidth]{../figures/#4.png}\\
+		\end{tabular}
+		#5
+	\end{table}
+}
 \newcommand{\nlOne}{\\&\small }
 \newcommand{\nlTwo}{\\&\small }
 \newcommand{\degree}{^\circ}
@@ -280,11 +300,11 @@
 \subsection{Michelson Interferometer}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
-	\frametitle{Set Up}
-%	\gra[0.85]{Coherence_length}{}%Set Up of the Michelson Interferometer}
+	\frametitle{Michelson Interferometer - Set Up}
+	\gra[0.85]{Coherence_length}{}%Set Up of the Michelson Interferometer}
 \end{frame}
 \begin{frame}
-	\frametitle{Set Up}
+	\frametitle{Michelson Interferometer - Set Up}
 	\begin{figure}
 		\centering
 %		\begin{overpic}[width=0.85\textwidth,tics=20]
@@ -297,18 +317,18 @@
 	\end{figure}
 \end{frame}
 \begin{frame}
-	\frametitle{Interference}
-%	\gra[0.67]{michelson1}{Interference in the Michelson interferometer}
-%	\centering\movie[externalviewer]{\includegraphics[width=0.6cm]{../figures/play.png}Movie of the disturbance by jumping}{../figures/michelson.mov}
+	\frametitle{Michelson Interferometer - Interference}
+	\gra[0.67]{michelson1}{Interference in the Michelson interferometer}
+	\centering\movie[externalviewer]{\includegraphics[width=0.6cm]{../figures/play.png}Movie of the disturbance by jumping}{../figures/michelson.mov}
 \end{frame}
 \subsection{Double Exposure Hologram}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
-	\frametitle{Set Up}
-%	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
+	\frametitle{Double Exposure Hologram - Set Up}
+	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
 \end{frame}
 \begin{frame}
-	\frametitle{Set Up}
+	\frametitle{Double Exposure Hologram - Set Up}
 	\begin{figure}
 		\centering
 %		\begin{overpic}[width=0.85\textwidth,tics=20]
@@ -325,11 +345,48 @@
 	\end{figure}
 \end{frame}
 \begin{frame}
-	\frametitle{Double Exposure Hologram}
-%	\gra[0.8]{staebe4}{Interference pattern on the beams}
+	\frametitle{Double Exposure Hologram - Experimental Procedure}
+	\begin{itemize}
+		\item Exposure: $2\times5\,$minutes
+		\item Development: $3\,$minutes
+		\item Pre-watering: $10\,$seconds
+		\item Watering: $2\,$minutes
+		\item Bleaching: $15\,$minutes
+		\item Pre-watering: $10\,$seconds
+		\item Watering: $10\,$minutes
+		\item Cleaning: $1\,$minute
+	\end{itemize}
 \end{frame}
 \begin{frame}
-	\frametitle{Calculation of the Elastic Modulus}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{staebe4}{Interference pattern on the beams}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{staebe2}{Measurement of the interference pattern (Steel)}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{staebe3}{Measurement of the interference pattern (Brass)}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{staebe1}{Measurement of the interference pattern (Aluminium)}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{Stab2gwid}{Measurement of the interference pattern (Steel)}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{Stab3gwid}{Measurement of the interference pattern (Brass)}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\gra[0.8]{Stab1gwid}{Measurement of the interference pattern (Aluminium)}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Calculation of the Elastic Modulus}
 	\begin{table}
 		\centering
 		\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
@@ -338,14 +395,81 @@
 		\end{tabular}
 	\end{table}
 \end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\graTwoOneB[0.6]{Stab2R1-edit}{Stab1R2-edit}{Results for the Steel beam}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\graTwoOneB[0.6]{Stab3R1-edit}{Stab2R2-edit}{Results for the Brass beam}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\graTwoOneB[0.6]{Stab1R1-edit}{Stab3R2-edit}{Results for the Aluminium beam}
+\end{frame}
+\begin{frame}
+	\frametitle{Double Exposure Hologram - Results}
+	\begin{table}
+		\begin{tabular}{c|ccc}
+			Material&Steel&Brass&Aluminium\\\hline
+			$E\,/\,\si{GPa}$&$196\pm5$&$104\pm3$&$68.5\pm1.6$\\
+			$E_{lit}\,/\,\si{GPa}$\footfullcite{staats}&$195$&$100$&$72$
+		\end{tabular}\\\scriptsize\ \\
+		{\small Elastic Modules of Steel, Brass and Aluminium}
+	\end{table}
+\end{frame}
 \subsection{Real Time Hologram}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}
-	\frametitle{Real Time Hologram}
-	Blablabla
+	\frametitle{Real Time Hologram - Set Up}
+	\gra[0.85]{Versuchsaufbau_2}{}%Set Up of the Michelson Interferometer}
 \end{frame}
 \begin{frame}
-	\frametitle{Oscillations of an Aluminium Plate}	
+	\frametitle{Real Time Hologram - Set Up}
+	\begin{figure}
+		\centering
+		\begin{overpic}[width=0.85\textwidth,tics=20]
+			{../figures/aufbau3.png}
+			\put(60,20){\footnotesize\textcolor{white}{Mirror 1}}
+			\put(60,35){\footnotesize\textcolor{white}{Spatial Filter 1}}
+			\put(34,50){\footnotesize\textcolor{white}{Mirror 2}}
+			\put(40,47){\footnotesize\textcolor{white}{Spatial Filter 2}}
+			\put(60,42){\footnotesize\textcolor{white}{Beam Splitter}}
+			\put(65,57){\footnotesize\textcolor{white}{Laser}}
+			\put(20,35){\footnotesize\textcolor{white}{Object}}
+			\put(22,16){\footnotesize\textcolor{white}{Photo Plate}}
+		\end{overpic}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Experimental Procedure}
+	\begin{itemize}
+		\item Take a hologram of the aluminium plate in rest
+		\item Stimulate the plate oscillations with a speaker
+		\item Block the reference beam
+		\item Light the hologram with a pulsed object beam
+		\item Go through the frequencies from about $100\,\si{Hz}$ to $6000\,\si{Hz}$ and search for resonance frequencies
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Experimental Procedure}
+	\begin{itemize}
+		\item Soaking: several hours
+		\item Exposure: $5\,$minutes
+		\item Development: $3\,$minutes
+		\item Pre-watering: $10\,$seconds
+		\item Watering: $2\,$minutes
+		\item Bleaching: $45\,$minutes
+		\item Pre-watering: $3\times30\,$seconds
+		\item Watering: $1\,$minute
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Experimental Procedure}
+	\gra[0.85]{oszi-inv}{Pulsing the Laser}%Set Up of the Michelson Interferometer}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Oscillations of an Aluminium Plate}	
 \begin{table}
 	\centering
 	\begin{tabular}{p{6cm}p{4cm}}
@@ -368,21 +492,61 @@
 \end{frame}
 
 \begin{frame}
-\begin{table}[h]
-	\centering
-	\begin{tabular}{c|c|c}
-		Mode 		& $x_{m\nu}$ & Calculated Frequency [Hz] 	 \\ \hline\hline
-		$m=0,\nu=0$	&$3.19622$   &$5082$						\\ \hline
-		$m=1,\nu=0$	& $4.61090$  & $10577$					\\ \hline
-		$m=0,\nu=1$	& $6.30644$  & $19787$					\\ \hline
-		$m=2,\nu=0$	& $5.90568$  & $17352$					\\ \hline
-		$m=2,\nu=1$	& $9.19688$  & $42081$					\\ \hline
-		$m=1,\nu=1$	& $7.79927$  & $30263$				     \\ \hline
-		$m=3,\nu=0$	& $7.14353$  & $25388$                \\ \hline
-		$m=3,\nu=1$	& $10.53670$ & $55235$
-	\end{tabular} \vskip 0.2cm
-	{Calculated Eigenfrequencies of the Aluminium plate}
-\end{table}	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c|c|c}
+			Mode 		& $x_{m\nu}$ & Calculated Frequency [Hz] 	 \\ \hline\hline
+			$m=0,\nu=0$	&$3.19622$   &$5082$						\\ \hline
+			$m=1,\nu=0$	& $4.61090$  & $10577$					\\ \hline
+			$m=0,\nu=1$	& $6.30644$  & $19787$					\\ \hline
+			$m=2,\nu=0$	& $5.90568$  & $17352$					\\ \hline
+			$m=2,\nu=1$	& $9.19688$  & $42081$					\\ \hline
+			$m=1,\nu=1$	& $7.79927$  & $30263$				     \\ \hline
+			$m=3,\nu=0$	& $7.14353$  & $25388$                \\ \hline
+			$m=3,\nu=1$	& $10.53670$ & $55235$
+		\end{tabular} \vskip 0.2cm
+		{Calculated Eigenfrequencies of the Aluminium plate}
+	\end{table}	
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\graTwoOneC{0.65}{0.34}{aluminium2_edit}{aluminium2_lit}{$f=(441.5\pm0.5)\,\si{Hz}$}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\graTwoOneC{0.65}{0.34}{aluminium3_edit}{aluminium3_lit}{$f=(1059.0\pm1.0)\,\si{Hz}$}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\graTwoOneC{0.65}{0.34}{aluminium6_edit}{aluminium6_lit}{$f=(1716.0\pm1.0)\,\si{Hz}$}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\graTwoOneC{0.65}{0.34}{aluminium7_edit}{aluminium7_lit}{$f=(2061.0\pm1.0)\,\si{Hz}$}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\graTwoOneC{0.65}{0.34}{aluminium9_edit}{aluminium9_lit}{$f=(2964\pm5)\,\si{Hz}$}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\graTwoOneC{0.65}{0.34}{aluminium10_edit}{aluminium10_lit}{$f=(5383\pm5)\,\si{Hz}$}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\begin{table}
+		\centering
+		\begin{tabular}{c|c|c}
+			Mode 		& Measured frequency [Hz] 	& Literature value [Hz]\\ \hline\hline
+			$m=0,\nu=0$	& $441.5\pm0.5$					& 448	\\ \hline
+			$m=1,\nu=0$	& $1059\pm1.0$				& 983	\\ \hline
+			$m=2,\nu=0$	& $1716\pm1.0$				& 1592	\\ \hline
+			$m=2,\nu=1$	& $2061.0\pm1.0$				& 4090	\\ \hline
+			$m=1,\nu=1$	& $2964\pm5$				& 2854 \\ \hline
+			$m=3,\nu=1$	& $5383\pm5$				&-
+		\end{tabular}\\\scriptsize\ \\\small
+		{Results for the resonant frequencies}
+	\end{table}
 \end{frame}
 
 \subsection{Fourier Interferometry}
@@ -455,13 +619,13 @@
 \begin{frame}
 		\frametitle{Fourier Interferometry - Experimental Procedure}
 	\begin{itemize}
-		\item Exposure: $8\,\mathrm{minutes}$
-		\item Development: $3\,\mathrm{minutes}$
-		\item Pre-watering: $10\,\mathrm{seconds}$
-		\item Watering: $2\,\mathrm{minutes}$
-		\item Bleaching: $45\,\mathrm{minutes}$
-		\item Pre-watering: $3 \times 30\,\mathrm{seconds}$
-		\item Watering: $1\,\mathrm{minutes}$
+		\item Exposure: $8\,$minutes
+		\item Development: $3\,$minutes
+		\item Pre-watering: $10\,$seconds
+		\item Watering: $2\,$minutes
+		\item Bleaching: $45\,$minutes
+		\item Pre-watering: $3 \times 30\,$seconds
+		\item Watering: $1\,$minute
 	\end{itemize}
 \end{frame}
 \begin{frame}
@@ -511,14 +675,104 @@
 \end{figure}
 \end{frame}
 \begin{frame}
-	\frametitle{Fourier Interferometry - Comparison with Theoretical Rsults}
+	\frametitle{Fourier Interferometry - Comparison with Theoretical Results}
 \graTwoOne[0.4]{Korrelation_Spalt1}{Korrelation_Spalt2}{Theoretical Predictions}
 \end{frame}
 
 \section{Summary and Discussion}
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
-	\frametitle{Summary of our Results}
-	Blablabla
+	\frametitle{Double Exposure Hologram - Results}
+	\begin{table}
+		\begin{tabular}{c|ccc}
+			Material&Steel&Brass&Aluminium\\\hline
+			$E\,/\,\si{GPa}$&$196\pm5$&$104\pm3$&$68.5\pm1.6$\\
+			$E_{lit}\,/\,\si{GPa}$\footfullcite{staats}&$195$&$100$&$72$
+		\end{tabular}\\\scriptsize\ \\
+		{\small Elastic Modules of Steel, Brass and Aluminium}
+	\end{table}
+	\pause
+	\begin{itemize}
+		\item Overexposure of Aluminium leads to difficult determination of the minima
+		\pause
+		\item Scaling and Evaluation with Gwyddion may be not enough accurate
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Real Time Hologram - Results}
+	\begin{columns}
+		\column{.7\textwidth}
+		%\begin{block}{}
+			\begin{table}
+				\centering
+				\begin{tabular}{c|c|c|c}
+					$m$ & $\nu$ 		& $f_{m\nu}\,/\,\si{Hz}$ 	& $f_{m\nu, \text{lit}}\,/\,\si{Hz}$\\ \hline\hline
+					$0$&$0$	& $441.5\pm0.5$					& 448	\\ \hline
+					$1$&$0$	& $1059\pm1.0$				& 983	\\ \hline
+					$2$&$0$	& $1716\pm1.0$				& 1592	\\ \hline
+					$2$&$1$	& $2061.0\pm1.0$				& 4090	\\ \hline
+					$1$&$1$	& $2964\pm5$				& 2854 \\ \hline
+					$3$&$1$	& $5383\pm5$				&-
+				\end{tabular}\\\scriptsize\ \\\small
+				{Results for the resonant frequencies\footfullcite{staats}}
+			\end{table}
+		%\end{block}
+		\column{0.3\textwidth}
+		%\begin{block}{}
+			\begin{itemize}
+				\item Blabla
+			\end{itemize}
+		%\end{block}
+	\end{columns}
+\end{frame}
+\begin{frame}
+	\frametitle{Fourier Interferometry - Results}
+	\begin{table}
+		\centering
+		\begin{tabular}{m{5cm}m{5cm}}
+			\begin{figure}
+				\centering
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-0-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=0\degree$}}
+				\end{overpic}
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-15-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=15\degree$}}
+				\end{overpic}
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-30-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=30\degree$}}
+				\end{overpic}\\
+				\vspace{0.1 cm}
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-45-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=45\degree$}}
+				\end{overpic}
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-60-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=60\degree$}}
+				\end{overpic}
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-75-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=75\degree$}}
+				\end{overpic}\\
+				
+				\vspace{0.1 cm}
+				
+				\begin{overpic}[width=0.135\textwidth,tics=10]
+					{../figures/fourier-90-2-edit.png}
+					\put(10,80){\textcolor{white}{$\alpha=90\degree$}}
+				\end{overpic}
+			\end{figure}
+			&
+			\begin{itemize}
+				\item Cross Correlation can be seen with bare eyes
+				\item Difficult to take pictures
+				\item Very dark because of bad bleaching
+				\item Difficult to find good focus settings
+			\end{itemize}
+		\end{tabular}
+	\end{table}
 \end{frame}
 \end{document}
