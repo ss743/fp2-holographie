@@ -135,10 +135,12 @@
 			\gra[0.6]{stripes}{Interference Pattern of two Plane Waves}
 			&
 			\includegraphics[width=0.4\textwidth]{../figures/Interference1.png}\\
-			$A_1(r) = E_1(r) e^{i(kr+\phi_1)}$\newline
-			$A_2(r) = E_2 e^{i(kx\sin(\theta)+\phi_2)}$
-			$I=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))$
 		\end{tabular}
+		\begin{align*}
+		A_1(r) &= E_1(r) e^{i(kr+\phi_1)}\\
+		A_2(r) &= E_2 e^{i(kx\sin(\theta)+\phi_2)}\\
+		I&=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))
+		\end{align*}
 	\end{table}
 \end{frame}
 
@@ -146,8 +148,9 @@
 \begin{frame}
 	\frametitle{Hologram of an object point}
 	\begin{tabular}{m{5cm}m{5cm}}
-	\graTwoOneB[0.2]{obj1}{obj1b}{Blackness of a photo plate for an\newline object point (spherical wave) \footfullcite{staats}}&
-	\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footnotemark}
+	\graTwoOneB[0.2]{obj1}{obj1b}{}
+	Blackness of a photo plate for an object point\newline(spherical wave) \footfullcite{staats}&
+	\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footnotemark[1]}
 	\end{tabular}
 	$A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vitual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}$
 	
@@ -158,30 +161,26 @@
 	
 	Added up Intensity of coherent Waves:
 	
-	\begin{align}
+	\begin{align*}
 	I=\left| a_1 e^{i \phi_1} + a_2 e^{i \phi_2} \right|^2 = \left(I_1+I_2 \right) \left[ 1 + m \cos(\Delta \delta)\right], 
-	\end{align}
+	\end{align*}
 	
-	Added up Intensity of Incohernt waves:
+	Added up Intensity of incoherent waves:
 	
-	\begin{align}
+	\begin{align*}
 	I=\left| a_1 e^{i \phi_1} \right|^2+ \left| a_2 e^{i \phi_2}\right|^2 = I_1+I_2
-	\end{align}
-\end{frame}
-\begin{frame}
+	\end{align*}
+
 	\begin{table}
 		\centering
-		\begin{tabular}{p{5cm}p{5cm}}
+		\begin{tabular}{m{5cm}m{5cm}}
 			\textbf{Temporal Coherence}&\\
-			
 			\begin{itemize}
 				\item $\Delta \phi \left( t \right) - \phi\left( t + \tau\right)  = \text{const.}$
 				\item $	\tau_c = \frac{1}{\Delta \nu} \approx \frac{\lambda^2}{c\Delta \lambda}$
 				\item easily measured with a Michelson interferometer
 			\end{itemize}
-			&
-		
-				\gra[0.6]{Coherence}{Temporal coherence of wavelets \footnotemark}{\footnotetext{https://i.stack.imgur.com/U9JsT.png}}
+			&\gra[0.45]{Coherence}{Temporal coherence of wavelets \footnotemark}{\footnotetext{https://i.stack.imgur.com/U9JsT.png}}
 				
 		
 		\end{tabular}
