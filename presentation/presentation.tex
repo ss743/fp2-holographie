@@ -133,9 +133,10 @@
 		\begin{tabular}[width=\textwidth]{m{6cm}m{4cm}}
 
 				
-			\gra[0.6]{stripes}{Interference Pattern of two Plane Waves}
+			\gra[0.6]{stripes}{Interference Pattern of two Plane Waves\footnote{http://www.mdpi.com/2072-666X/2/2/221/htm}}
 			&
-			\includegraphics[width=0.4\textwidth]{../figures/Interference1.png}\\
+			\includegraphics[width=0.4\textwidth]{../figures/Interference1.png}\newline
+			{\small Interference on the photographic plate\footfullcite{staats}}\\
 		\end{tabular}
 		\begin{align*}
 		A_1(r) &= E_1(r) e^{i(kr+\phi_1)}\\
@@ -143,6 +144,7 @@
 		I&=I_1+I_2+2\sqrt{I_1I_2}\cos(k(r-x\sin\theta))
 		\end{align*}
 	\end{table}
+	%\Footnotetext{2}{\fullcite{staats}}
 \end{frame}
 
 
@@ -150,10 +152,10 @@
 	\frametitle{Hologram of an object point}
 	\begin{tabular}{m{5cm}m{5cm}}
 	\graTwoOneB[0.2]{obj1}{obj1b}{}
-	Blackness of a photo plate for an object point\newline(spherical wave) \footfullcite{staats}&
-	\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footnotemark[1]}
-	\end{tabular}
-	$A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{vitual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}$
+	Blackness of a photo plate for an object point\newline(spherical wave) \footfullcite{staats}\pause&
+	\gra[0.5]{Reconstruction1}{Reconstruction of the Hologram \footnotemark[3]}
+	\end{tabular}\pause
+	$A(r)=\underbrace{[T_0-Ct_B(I_1+I_2)]A_R\ e^{ikx \sin\theta}}_{\mbox{no information}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{ikr}}_{\mbox{virtual image}} - \underbrace{\sqrt{I_1I_2}A_RCt_B\ e^{-ikr}e^{2ikx \sin\theta}}_{\mbox{real image}}$
 	
 \end{frame}
 \begin{frame}
@@ -444,11 +446,11 @@
 		\begin{column}{0.5\textwidth}
 		\gra{oszi-inv}{Pulsing the Laser}%Set Up of the Michelson Interferometer}
 		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Blabla
-			\end{itemize}
-		\end{column}
+%		\begin{column}{0.5\textwidth}
+%			\begin{itemize}
+%				\item Blabla
+%			\end{itemize}
+%		\end{column}
 	\end{columns}
 \end{frame}
 
@@ -506,11 +508,11 @@
 			\end{table}		
 		\end{column}
 		\pause
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Blabla
-			\end{itemize}
-		\end{column}
+%		\begin{column}{0.5\textwidth}
+%			\begin{itemize}
+%				\item Blabla
+%			\end{itemize}
+%		\end{column}
 	\end{columns}
 	\footnotetext{\fullcite{staats}}
 \end{frame}
@@ -742,27 +744,18 @@
 \section{Summary and Discussion}
 \frame{\tableofcontents[currentsection]}
 \begin{frame}
-	\frametitle{Double Exposure Hologram - Results}
-	\begin{table}
-		\begin{tabular}{c|ccc}
-			Material&Steel&Brass&Aluminium\\\hline
-			$E\,/\,\si{GPa}$&$196\pm5$&$104\pm3$&$68.5\pm1.6$\\
-			$E_{lit}\,/\,\si{GPa}$\footfullcite{staats}&$195$&$100$&$72$
-		\end{tabular}\\\scriptsize\ \\
-		{\small Elastic Modules of Steel, Brass and Aluminium}
-	\end{table}
-	\pause
-	\begin{itemize}
-		\item Overexposure of Aluminium leads to difficult determination of the minima
-		\pause
-		\item Scaling and Evaluation with Gwyddion may be not enough accurate
-	\end{itemize}
-\end{frame}
-\begin{frame}
-	\frametitle{Real Time Hologram - Results}
+	\frametitle{Summary of the Results}
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
-			\begin{table}
+			\begin{table}[h]
+				\begin{tabular}{c|ccc}
+					Material&Steel&Brass&Aluminium\\\hline
+					$E\,/\,\si{GPa}$&$196\pm5$&$104\pm3$&$68.5\pm1.6$\\
+					$E_{lit}\,/\,\si{GPa}$&$195$&$100$&$72$
+				\end{tabular}\\\scriptsize\ \\
+				{\small Elastic Modules of Steel, Brass and Aluminium}
+			\end{table}
+			\begin{table}[h]
 				\centering
 				\begin{tabular}{c|c|c|c}
 					$m$ & $\nu$ 		& $f_{m\nu}\,/\,\si{Hz}$ 	& $f_{m\nu, \text{lit}}\,/\,\si{Hz}$\\ \hline\hline
@@ -773,68 +766,128 @@
 					$1$&$1$	& $2964\pm5$				& 2854 \\ \hline
 					$3$&$1$	& $5383\pm5$				&-
 				\end{tabular}\\\scriptsize\ \\\small
-				{Results for the resonant frequencies\footnotemark}
+				{Results for the resonant frequencies}
 			\end{table}		
 		\end{column}
-		\pause
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Blabla
-			\end{itemize}
-		\end{column}
-	\end{columns}
-	\footnotetext{\fullcite{staats}}
-\end{frame}
-\begin{frame}
-	\frametitle{Fourier Interferometry - Results}
-	\begin{table}
-		\centering
-		\begin{tabular}{m{5cm}m{5cm}}
-			\begin{figure}
+		%\pause
+		\begin{column}{0.3\textwidth}
+			\begin{figure}[h]
 				\centering
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-0-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=0\degree$}}
 				\end{overpic}
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-15-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=15\degree$}}
 				\end{overpic}
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-30-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=30\degree$}}
 				\end{overpic}\\
 				\vspace{0.1 cm}
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-45-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=45\degree$}}
 				\end{overpic}
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-60-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=60\degree$}}
 				\end{overpic}
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-75-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=75\degree$}}
 				\end{overpic}\\
 				
 				\vspace{0.1 cm}
 				
-				\begin{overpic}[width=0.135\textwidth,tics=10]
+				\begin{overpic}[width=0.27\textwidth,tics=10]
 					{../figures/fourier-90-2-edit.png}
 					\put(10,80){\textcolor{white}{$\alpha=90\degree$}}
 				\end{overpic}
 			\end{figure}
-			&\pause
-			\begin{itemize}
-				\item Cross Correlation can be seen with bare eyes\pause
-				\item Difficult to take pictures\pause
-				\item Very dark because of bad bleaching\pause
-				\item Difficult to find good focus settings
-			\end{itemize}
-		\end{tabular}
-	\end{table}
+		\end{column}
+		\Footnotetext{ }{Literaturwerte aus \fullcite{staats}}
+	\end{columns}
+	
 \end{frame}
+%\begin{frame}
+%	\frametitle{Real Time Hologram - Results}
+%	\begin{columns}
+%		\begin{column}{0.6\textwidth}
+%			\begin{table}
+%				\centering
+%				\begin{tabular}{c|c|c|c}
+%					$m$ & $\nu$ 		& $f_{m\nu}\,/\,\si{Hz}$ 	& $f_{m\nu, \text{lit}}\,/\,\si{Hz}$\\ \hline\hline
+%					$0$&$0$	& $441.5\pm0.5$					& 448	\\ \hline
+%					$1$&$0$	& $1059\pm1.0$				& 983	\\ \hline
+%					$2$&$0$	& $1716\pm1.0$				& 1592	\\ \hline
+%					$2$&$1$	& $2061.0\pm1.0$				& 4090	\\ \hline
+%					$1$&$1$	& $2964\pm5$				& 2854 \\ \hline
+%					$3$&$1$	& $5383\pm5$				&-
+%				\end{tabular}\\\scriptsize\ \\\small
+%				{Results for the resonant frequencies\footnotemark}
+%			\end{table}		
+%		\end{column}
+%		\pause
+%%		\begin{column}{0.5\textwidth}
+%%			\begin{itemize}
+%%				\item Blabla
+%%			\end{itemize}
+%%		\end{column}
+%	\end{columns}
+%	\footnotetext{\fullcite{staats}}
+%\end{frame}
+%\begin{frame}
+%	\frametitle{Fourier Interferometry - Results}
+%	\begin{table}
+%		\centering
+%		\begin{tabular}{m{5cm}m{5cm}}
+%			\begin{figure}
+%				\centering
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-0-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=0\degree$}}
+%				\end{overpic}
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-15-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=15\degree$}}
+%				\end{overpic}
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-30-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=30\degree$}}
+%				\end{overpic}\\
+%				\vspace{0.1 cm}
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-45-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=45\degree$}}
+%				\end{overpic}
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-60-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=60\degree$}}
+%				\end{overpic}
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-75-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=75\degree$}}
+%				\end{overpic}\\
+%				
+%				\vspace{0.1 cm}
+%				
+%				\begin{overpic}[width=0.135\textwidth,tics=10]
+%					{../figures/fourier-90-2-edit.png}
+%					\put(10,80){\textcolor{white}{$\alpha=90\degree$}}
+%				\end{overpic}
+%			\end{figure}
+%			&\pause
+%			\begin{itemize}
+%				\item Cross Correlation can be seen with bare eyes\pause
+%				\item Difficult to take pictures\pause
+%				\item Very dark because of bad bleaching\pause
+%				\item Difficult to find good focus settings
+%			\end{itemize}
+%		\end{tabular}
+%	\end{table}
+%\end{frame}
 
 \begin{frame}
 	\LARGE{Fragen?}
